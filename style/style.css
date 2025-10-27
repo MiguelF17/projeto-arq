@@ -44,7 +44,6 @@ header img {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
     padding: 20px;
 
 }
@@ -60,23 +59,35 @@ nav a {
 }
 
 nav a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: -3px;
-  background-color: #1976D2;
-  transition: width 0.3s;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #658EA3;
+    transition: width 0.3s;
 }
 
 nav a:hover {
-  color: #1976D2;
-  transform: translateY(-3px);
+    color: #658EA3;
+    transform: translateY(-3px);
 }
 
 nav a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
+
 /* barra de pesquisa */
+
+.search-form input {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    width: 250px;
+}
+
+.search-form input:hover {
+    border: 1px solid #658EA3;
+}
