@@ -14,17 +14,11 @@ body {
 
 header {
     text-align: center;
-    background-color: #f9f9f9;
     display: flex;
-    width: 100%;
-    align-items: center;
+    padding: 0px 20px;
+    height: 80px;
     justify-content: space-between;
-}
-
-header p {
-    font-size: 15px;
-    color: #555;
-    margin: auto 0;
+    align-items: center;
 }
 
 header a {
@@ -40,7 +34,6 @@ header img {
 }
 
 
-
 /* nav */
 
 nav ul {
@@ -53,7 +46,7 @@ nav ul {
 nav a {
     text-align: center;
     position: relative;
-    margin: 20px 50px;
+    margin: 0px 40px;
     text-decoration: none;
     color: #333;
     transition: color 0.3s, transform 0.3s;
@@ -78,6 +71,12 @@ nav a:hover {
 
 nav a:hover::after {
     width: 100%;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 }
 
 
@@ -117,3 +116,64 @@ nav a:hover::after {
 
 /* hero section */
 
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.308), rgba(0, 0, 0, 0.445)),
+        url(../style/imgs/background.jpg) no-repeat center center/cover;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.hero-text {
+    width: 45%;
+    line-height: 1.2;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 70px;
+}
+
+.hero-text h1 {
+    color: #a2c1dd;
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    opacity: 80%;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    display: inline-block;
+    color: #fff;
+    background: transparent;
+    padding: 15px 70px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #fff;
+    color: #a2c1dd;
+}
