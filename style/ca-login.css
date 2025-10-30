@@ -6,7 +6,7 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(./imgs/cadastro-bg.jpg) center/cover no-repeat;
     background-size: cover;
-    background-position: center -200px;
+    background-position: center
 }
 
 .conta-container {
@@ -19,7 +19,8 @@ body {
 /* formulario */
 
 .form-box {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: #f9f9f9;
     padding: 45px 50px;
     border-radius: 15px;
