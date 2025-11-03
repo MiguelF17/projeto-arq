@@ -1,0 +1,61 @@
+body {
+    background-color: #f9f9f9;
+}
+
+/* menu principal */
+
+.menu {
+    max-width: 900px;
+    max-height: 500px;
+    margin: 60px auto;
+    background-color: antiquewhite;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.item {
+    background: #ccc;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.item img {
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item p {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+
+}
+
+/* tamanhos diferentes */
+
+.grande {
+    flex: 0 0 300px;
+    height: 250px;
+}
+
+.medio {
+    flex: 1 0 300px;
+    height: 200px;
+}
+
+.pequeno {
+    flex: 1 0 150px;
+    height: 200px;
+}
