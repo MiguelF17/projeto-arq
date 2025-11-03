@@ -1,24 +1,24 @@
 body {
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
 }
 
 /* menu principal */
 
-.menu {
-    max-width: 900px;
-    max-height: 500px;
-    margin: 60px auto;
-    background-color: antiquewhite;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.titulo {
+    font-size: 50px;
+    padding: 40px;
+    text-align: center;
 }
 
-.row {
-    display: flex;
+.menu {
+    max-width: 1200px;
+    max-height: 500px;
+    margin: auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
-    justify-content: center;
+    padding: 20px;
 }
 
 .item {
@@ -28,34 +28,82 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    height: 200px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    transition: 0.3s ease;
+    
+}
+
+.item:hover {
+    transform: scale(102%);
+    filter: brightness(120%);
+}
+
+.item a {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
 }
 
 .item img {
-    position: relative;
+    display: block;
     object-fit: cover;
     object-position: center;
+    filter: brightness(70%);
 }
 
 .item p {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     font-weight: bold;
-
+    font-size: 20px;
+    z-index: 1;
+    transition: 0.3s ease;
 }
 
 /* tamanhos diferentes */
 
 .grande {
-    flex: 0 0 300px;
+    grid-column: span 3;
     height: 250px;
 }
 
 .medio {
-    flex: 1 0 300px;
-    height: 200px;
+    grid-column: span 2;
+    height: 250px;
 }
 
 .pequeno {
-    flex: 1 0 150px;
-    height: 200px;
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 250px;
+}
+
+/* animacoes */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titulo {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+.menu {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
 }
