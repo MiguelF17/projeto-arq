@@ -71,22 +71,6 @@ body {
     justify-content: center;
 }
 
-.btn .btn-cadastro {
-    background-color: #658EA3;
-    color: #fff;
-    border: none;
-    padding: 12px 40px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: sans-serif;
-    font-size: 16px;
-}
-
-.btn-cadastro:hover {
-    background-color: #91BACD;
-}
-
 /* link login e cadastro*/
 
 .login-link {
