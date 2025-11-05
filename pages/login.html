@@ -38,10 +38,15 @@
                     </div>
 
 
-                    <div class="input-group-login">
+                    <div class="input-group-cadastro">
                         <label for="senha">Senha</label>
-                        <input type="password" id="senha" name="senha" required placeholder="Sua senha">
+                        <div class="input-wrapper">
+                            <input type="password" id="senha" name="senha" required placeholder="Sua senha">
+                            <img src="../style/icons/hidden.png" alt="Mostrar senha" class="toggle-visibility"
+                                onclick="toggleSenha(this, 'senha')">
+                        </div>
                     </div>
+
                     <p class="senha-link">
                         Esqueceu sua senha?
                         <a href="#">Recupere aqui</a>
