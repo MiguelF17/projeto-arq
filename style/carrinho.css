@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card-produto {
+    margin: 100px;
+}
+
+.imagem-produto {
+    width: 20px;
+    height: 20px;
+}
+
+.texto-principal {
+    font-size: 35px;
+}
+
