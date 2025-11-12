@@ -17,20 +17,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* carrossel */
 
-let slideIndex = 0;
-showSlides();
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".carousel-track");
+  const slides = Array.from(track.children);
+  const dotsContainer = document.querySelector(".dots");
 
-function showSlides() {
-  const slides = document.getElementsByClassName("slides");
+  // Limpa qualquer dot duplicado antes de criar
+  dotsContainer.innerHTML = "";
 
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  // Cria os dots dinamicamente de acordo com os slides
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.dataset.index = i;
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.children);
+  let current = 0;
+
+  function showSlide(index) {
+    current = index;
+    track.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot) => dot.classList.remove("active"));
+    dots[index].classList.add("active");
   }
 
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      showSlide(Number(dot.dataset.index));
+    });
+  });
 
-  slides[slideIndex - 1].style.display = "block";
-
-  setTimeout(showSlides, 5000); // muda a cada 5 segundos
-}
+  // autoplay
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }, 4000);
+});
