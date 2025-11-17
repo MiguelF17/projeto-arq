@@ -15,5 +15,3 @@ function toggleSenha(img, inputId) {
     img.alt = "Mostrar senha";
   }
 }
-
-/* Barra de pesquisa */
