@@ -1,0 +1,227 @@
+/* HERO */
+.sobre-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./imgs/sobre-bg.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
+    padding: 0 20px;
+}
+
+.sobre-hero h1 {
+    text-align: center;
+    font-size: 60px;
+}
+
+.sobre-hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.titulo-sobre {
+    font-size: 40px;
+    text-align: center;
+}
+
+/* HISTÓRIA */
+
+.historia-narrativa {
+    max-width: 70%;
+    margin: 80px auto;
+    padding: 0 20px;
+    line-height: 1.8;
+}
+
+.historia-narrativa p {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* LINHA DO TEMPO */
+
+
+.linha-do-tempo {
+    background: #7C9FB1;
+    color: #fff;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.timeline {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.timeline .ano {
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* NÚMEROS */
+
+.nossos-numeros {
+    background: #99B4C2;
+    color: #fff;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.numeros-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.num h3 {
+    font-size: 40px;
+}
+
+
+/* MISSÃO */
+
+/* Fundo da seção */
+.oque-guia {
+    background: #b0c3cf;
+    /* o mesmo fundo azul acinzentado */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Título */
+.oque-guia h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: white;
+}
+
+/* Container dos cards */
+.glass-cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+/* Card glass */
+.glass-card {
+    width: 320px;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(18px);
+
+    color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: .3s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card h3 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.glass-card ul {
+    list-style-position: inside;
+}
+
+.glass-card p,
+.glass-card li {
+    color: #f5f5f5;
+    line-height: 1.7;
+}
+
+
+
+/* EQUIPE */
+.nossa-equipe {
+    background: #fafafa;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.equipe-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.membro img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* compromisso */
+.compromisso {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.compromisso p {
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+/* contato */
+
+.contato-call {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.contato-call .btn {
+    background-color: #658EA3;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: sans-serif;
+    font-size: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.btn:hover {
+    transform: scale(105%);
+    background-color: #88bbd4;
+}
+
+
+/* animacoes de surgir*/
+
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-animate].show {
+    opacity: 1;
+    transform: translateY(0);
+}

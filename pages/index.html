@@ -13,6 +13,8 @@
 
 <body>
 
+    <!-- navbar -->
+
     <header>
 
         <a href="index.html">
@@ -46,6 +48,9 @@
 
     </header>
 
+
+    <!-- parte principal -->
+
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -58,48 +63,93 @@
                         Cada móvel é pensado para refletir o seu estilo e elevar o cotidiano a um novo nível de harmonia
                         e elegância.
                     </p>
-                    <a href="home.html" class="hero-btn" data-animate data-delay="0.6s">Explorar</a>
+                    <a href="home.html" class="hero-btn" data-animate data-delay="0.4s">Explorar</a>
                 </div>
 
             </div>
 
         </section>
 
-        <h2 class="titulo" data-animate=>Produtos em destaque</h2>
 
-        <section class="destaques">
 
-            <div class="card" data-animate>
-                <a href="#" class="card-link">
-                    <img src="../style/imgs/card.jpg" alt="">
-                    <div class="card-text">
-                        <h3>####</h3>
-                        <p>lorem ipsum lorem lorem</p>
-                    </div>
-                </a>
+        <!-- produtos em destaque -->
+
+        <h2 class="titulo" data-animate data-delay="0.2s">Produtos em destaque</h2>
+
+        <section class="carousel" data-animate data-delay="0.4s">
+
+            <div class="carousel-gradient"></div>
+
+            <div class="carousel-track">
+                <div class="slide">
+                    <a href="#">
+                        <img src="../style/imgs/banner1.png" alt="Sofá Horizon">
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a href="#">
+                        <img src="../style/imgs/banner2.png" alt="Cadeira Luna">
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a href="#">
+                        <img src="../style/imgs/banner3.png" alt="Mesa Aurora">
+                    </a>
+                </div>
+
+                <div class="slide">
+                    <a href="#">
+                        <img src="../style/imgs/banner4.png" alt="Mesa Aurora">
+                    </a>
+                </div>
+
             </div>
 
-            <div class="card" data-animate data-delay="0.2s">
-                <a href="#" class="card-link">
-                    <img src="../style/imgs/card.jpg" alt="">
-                    <div class="card-text">
-                        <h3>####</h3>
-                        <p>lorem ipsum lorem lorem</p>
-                    </div>
-                </a>
+            <div class="dots"></div>
+
+        </section>
+
+
+        <!-- seção app -->
+
+
+        <section class="app-section"data-animate>
+
+            <div class="app-phone" data-animate data-delay="0.2s">
+                <img src="../style/imgs/phone.png" alt="Celular">
             </div>
 
-            <div class="card" data-animate data-delay="0.4s">
-                <a href="#" class="card-link">
-                    <img src="../style/imgs/card.jpg" alt="">
-                    <div class="card-text">
-                        <h3>####</h3>
-                        <p>lorem ipsum lorem lorem</p>
+            <div class="app-info">
+                <h2 data-animate data-delay="0.2s">ACESSE O CELULAR E</h2>
+                <h1 data-animate data-delay="0.4s">VEJA JÁ NO APP</h1>
+
+                <div class="app-stores" data-animate data-delay="0.6s">
+                    <div class="store">
+                        <a href="#">
+                            <img src="../style/imgs/appstore.png" alt="">
+                        </a>
                     </div>
-                </a>
+
+                    <div class="store">
+                        <a href="#">
+                            <img src="../style/imgs/googleplay.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="qr-code">
+                <p data-animate data-delay="0.8s">Ou acesse o QR CODE</p>
+                <img src="../style/imgs/qrcode.png" alt="QR CODE" data-animate data-delay="1s">
             </div>
 
         </section>
+
+
+        <!-- página sobre -->
 
         <section class="about">
             <div class="about-text">
@@ -107,7 +157,7 @@
                 <p data-animate data-delay="0.4s">Na ARQ, acreditamos que o design vai além da estética — é sobre criar
                     ambientes que inspiram, acolhem e expressam personalidade. Combinamos funcionalidade e beleza em
                     cada projeto e móvel, transformando espaços em verdadeiros reflexos de quem você é.</p>
-                <a href="#" class="hero-btn" data-animate data-delay="0.6s">Saiba mais</a>
+                <a href="sobre.html" class="hero-btn" data-animate data-delay="0.6s">Saiba mais</a>
             </div>
 
             <div class="about-video" data-animate data-delay="0.8s">
@@ -116,6 +166,9 @@
         </section>
 
     </main>
+
+
+    <!-- footer -->
 
     <footer class="footer">
         <div class="footer-social">
