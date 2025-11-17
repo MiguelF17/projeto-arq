@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARQ - Contato</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'arq-primary': '#658EA3', // Azul Principal
+                        'arq-hover': '#88bbd4', // Azul Claro de Hover
+                        'arq-dark': '#333', // Cor de texto principal
+                        'arq-footer': '#2a2a2a', // Cor do rodapé
+                        'arq-header': '#f9f9f9', // Cor do cabeçalho
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body class="font-sans">
+
+    <header class="bg-arq-header shadow-md px-4 sm:px-8 flex flex-wrap justify-between items-center h-20">
+        
+        <a href="index.html" class="flex items-center text-decoration-none">
+            <div class="logo flex items-center">
+                <img class="w-20 h-auto rounded-lg"
+                    src="https://placehold.co/80x40/658EA3/ffffff?text=ARQ"
+                    alt="ARQ - Página Inicial"
+                    onerror="this.onerror=null; this.src='https://placehold.co/80x40/658EA3/ffffff?text=ARQ'">
+                <p class="text-black ml-4 text-sm font-semibold hidden md:block">Móveis e interiores</p>
+            </div>
+        </a>
+        
+        <div class="navegacao">
+            
+            <nav class="hidden lg:flex">
+                <ul class="flex list-none p-0">
+                    <li><a href="index.html" class="nav-link-custom mx-5 text-arq-dark hover:text-arq-primary">Início</a></li>
+                    <li><a href="produto.html" class="nav-link-custom mx-5 text-arq-dark hover:text-arq-primary">Produtos</a></li>
+                    <li><a href="#" class="nav-link-custom mx-5 text-arq-dark hover:text-arq-primary">Sobre</a></li>
+                    <li><a href="#" class="nav-link-custom mx-5 text-arq-dark hover:text-arq-primary">Contato</a></li>
+                </ul>
+            </nav>
+            
+            
+            <form class="search-form hidden xl:block ml-10" action="/buscar" method="get">
+                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos..."
+                    class="py-2.5 px-5 border border-gray-300 rounded-full w-64 focus:border-arq-primary hover:border-arq-primary transition duration-300 shadow-inner">
+            </form>
+            
+            <div class="icons flex items-center gap-5 ml-auto md:ml-10">
+                <a href="#" class="group">
+                    <svg class="w-[25px] h-[25px] text-gray-700 group-hover:text-arq-primary transition duration-300 transform group-hover:scale-110" 
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                </a>
+                <a href="cadastro.html" class="group">
+                    <svg class="w-[25px] h-[25px] text-gray-700 group-hover:text-arq-primary transition duration-300 transform group-hover:scale-110" 
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto py-12 sm:py-16 px-4">
+        
+        <h1 class="text-5xl font-extrabold text-center text-arq-dark mb-4">Fale Conosco</h1>
+        <p class="text-center text-xl text-gray-600 mb-12">Estamos prontos para transformar seu ambiente. Envie sua mensagem!</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+            <div class="lg:col-span-2 bg-white p-6 sm:p-10 rounded-2xl shadow-xl">
+                <h2 class="text-3xl font-bold text-arq-dark mb-8 border-b pb-4">Envie uma Mensagem</h2>
+
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Seu Nome Completo</label>
+                        <input type="text" id="name" name="name" required class="form-input" placeholder="João da Silva">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Seu Email</label>
+                        <input type="email" id="email" name="email" required class="form-input" placeholder="seu.email@exemplo.com">
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Assunto</label>
+                        <input type="text" id="subject" name="subject" required class="form-input" placeholder="Dúvida sobre produto | Orçamento | Parceria">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Sua Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required class="form-input resize-none" placeholder="Descreva sua solicitação aqui..."></textarea>
+                    </div>
+
+                    <div id="formMessage" class="hidden py-3 px-4 rounded-lg text-sm text-center font-medium"></div>
+
+                    <button type="submit" id="submitBtn"
+                        class="w-full btn bg-arq-primary text-white font-bold rounded-xl shadow-lg shadow-arq-primary/30 hover:bg-arq-hover transition-all duration-300 transform hover:scale-[1.01]"
+                        style="padding: 12px 40px;">
+                        Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+
+            <div class="lg:col-span-1 bg-gray-100 p-6 sm:p-8 rounded-2xl shadow-lg h-full">
+                <h2 class="text-3xl font-bold text-arq-dark mb-8 border-b border-gray-300 pb-4">Nossos Detalhes</h2>
+                
+                <div class="space-y-8">
+                    
+                    <div class="contact-detail flex items-start space-x-4">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <p class="font-semibold text-arq-dark">Endereço</p>
+                            <p class="text-gray-600 text-sm">Rua direita, 955-vila santo antonio-Cotia/sp 123<br>São Paulo, SP - Brasil</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail flex items-start space-x-4">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.08 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <div>
+                            <p class="font-semibold text-arq-dark">Telefone & WhatsApp</p>
+                            <p class="text-gray-600 text-sm">+55 (11) 91935-6510</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail flex items-start space-x-4">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <div>
+                            <p class="font-semibold text-arq-dark">Email</p>
+                            <p class="text-gray-600 text-sm">Suporte@arqmoveis.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail flex items-start space-x-4">
+                        <svg class="w-6 h-6 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                            <p class="font-semibold text-arq-dark">Horário de Atendimento</p>
+                            <p class="text-gray-600 text-sm">Segunda a Sexta: 9h às 18h<br>Sábados: 9h às 15h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-6 border-t border-gray-300">
+                    <h3 class="text-xl font-semibold mb-4 text-arq-dark">Nossa Localização</h3>
+                    <div class="w-full h-40 bg-gray-300 rounded-lg overflow-hidden shadow-inner">
+                        <img class="w-full h-full object-cover" 
+                                src="https://placehold.co/400x160/ccd0d5/658EA3?text=Mapa+Localização" 
+                                alt="Mapa de localização da loja ARQ"
+                                onerror="this.onerror=null; this.src='https://placehold.co/400x160/ccd0d5/658EA3?text=Mapa+Localização'">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer bg-arq-footer text-white py-16 px-4 sm:px-8 mt-auto">
+        <div class="max-w-7xl mx-auto w-full">
+            
+            <div class="footer-social text-center mb-10 border-b border-gray-700 pb-8">
+                <h3 class="text-2xl font-semibold mb-6">Siga-nos!</h3>
+                <div class="social-icons flex justify-center space-x-6">
+                    <a href="#" class="inline-block hover:opacity-80 transition transform hover:scale-125 duration-300">
+                        <img class="w-8 h-8 filter invert" src="https://placehold.co/30x30/ffffff/000000?text=F" alt="Facebook">
+                    </a>
+                    <a href="#" class="inline-block hover:opacity-80 transition transform hover:scale-125 duration-300">
+                        <img class="w-8 h-8 filter invert" src="https://placehold.co/30x30/ffffff/000000?text=I" alt="Instagram">
+                    </a>
+                    <a href="#" class="inline-block hover:opacity-80 transition transform hover:scale-125 duration-300">
+                        <img class="w-8 h-8 filter invert" src="https://placehold.co/30x30/ffffff/000000?text=P" alt="Pinterest">
+                    </a>
+                    <a href="#" class="inline-block hover:opacity-80 transition transform hover:scale-125 duration-300">
+                        <img class="w-8 h-8 filter invert" src="https://placehold.co/30x30/ffffff/000000?text=X" alt="X (Twitter)">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-columns flex flex-wrap justify-center md:justify-start gap-10 md:gap-16 lg:gap-20 text-left">
+                
+                <div class="footer-column w-full sm:w-1/3 md:w-auto">
+                    <h4 class="text-lg font-semibold mb-4 text-white">Atendimento</h4>
+                    <ul class="list-none p-0 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">WhatsApp</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Perguntas frequentes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Denúncias</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column w-full sm:w-1/3 md:w-auto">
+                    <h4 class="text-lg font-semibold mb-4 text-white">Como trabalhamos</h4>
+                    <ul class="list-none p-0 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de uso</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Troca e devolução</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Requisitos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mapa do site</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Relatório de Igualdade Salarial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column w-full sm:w-1/3 md:w-auto">
+                    <h4 class="text-lg font-semibold mb-4 text-white">Institucional</h4>
+                    <ul class="list-none p-0 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">A ARQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Trabalhe conosco</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sustentabilidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Lojas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Best Friday</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="mt-8 text-center text-gray-500">© 2025 ARQ - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

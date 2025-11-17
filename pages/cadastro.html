@@ -4,42 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+    <title>Criação de Conta - Etapa 1</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/ca-login.css">
-    <script src="../javascript/script.js"></script>
+    <script defer src="../javascript/script.js"></script> 
 </head>
 
 <body>
 
-    <!-- navbar -->
-
     <header>
-
         <a href="index.html">
             <div class="logo">
                 <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
                 <p>Móveis e interiores</p>
             </div>
         </a>
-
-
     </header>
     
-
-    <!-- cadastro -->
-
     <section class="conta">
-
         <div class="conta-container">
             <div class="form-box">
 
                 <h2>Crie sua conta</h2>
 
-                <form id="cadastroEtapa1">
+                <form id="cadastroEtapa1"> 
                     <div class="input-group-cadastro">
                         <label for="nome">Usuário</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Crie seu usuário">
+                        <input type="text" id="nome" name="nome" required placeholder="Crie seu usuário" minlength="3">
                     </div>
 
                     <div class="input-group-cadastro">
@@ -49,12 +40,12 @@
 
                     <div class="input-group-cadastro">
                         <label for="cemail">Confirmar e-mail</label>
-                        <input type="cemail" id="cemail" name="cemail" required placeholder="Confirmar seu e-mail">
+                        <input type="email" id="cemail" name="cemail" required placeholder="Confirmar seu e-mail">
                     </div>
 
-                     <div class="input-group-cadastro">
+                    <div class="input-group-cadastro">
                         <label for="telefone">Telefone</label>
-                        <input type="text" id="telefone" name="telefone" required placeholder="Número de telefone">
+                        <input type="tel" id="telefone" name="telefone" required placeholder="Número de telefone (Ex: 11987654321)" pattern="[0-9]{10,11}">
                     </div>
 
                     <div class="btn-container">
