@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
+    <title>ARQ - Carrinho</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/carrinho.css">
 </head>
+
 <body>
     <header>
         <a href="index.html">
@@ -15,7 +17,7 @@
                 <p>Móveis e interiores</p>
             </div>
         </a>
- 
+
         <div class="navegacao">
             <nav>
                 <ul>
@@ -25,13 +27,13 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
- 
+
             <form class="search-form" action="/buscar" method="get">
                 <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
             </form>
- 
+
             <div class="icons">
-                <a href="#"><img src="../style/icons/cart.png" alt="Carrinho"></a>
+                <a href="carrinho.html"><img src="../style/icons/cart.png" alt="Carrinho"></a>
                 <a href="cadastro.html"><img src="../style/icons/user.png" alt="Perfil"></a>
             </div>
         </div>
@@ -39,118 +41,231 @@
 
     <h1 class="title">Meu Carrinho</h1>
 
-    <div class="container">
+    <main>
 
-        <div class="card">
-            <div class="imagem-produto">
-                <img src="../style/imgs/cama-box.png" alt="Imagem do produto">
-            </div>
-            <div class="texto-principal">
-                <h3>Cama box baú queen</h3>
-                <p class="preço">R$ 1.610,67</p>
-                <div class="acoes">
-                    <button class="btn btn-comprar">Comprar</button>
-                    <div class="quantidade">
-                        <button class="menos">−</button>
-                        <input type="number" value="1" min="1">
-                        <button class="mais">+</button>
-                    </div>
-                    <a href="" class="lixeira">
-                        <img src="../style/icons/lixeira.png" style="width: 25px; height: auto;">
-                    </a>
+        <!-- cama -->
+
+        <div class="container">
+
+            <div class="card">
+
+                <a href="" class="lixeira">
+                    <img src="../style/icons/lixeira.png" alt="Remover">
+                </a>
+
+                <div class="imagem-produto">
+                    <img src="../style/imgs/cama-box.png" alt="Imagem do produto">
                 </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="imagem-produto">
-                <img src="../style/imgs/poltrona.jpg" alt="Imagem do produto">
-            </div>
-            <div class="texto-principal">
-                <h3>Poltrona opala cor cinza escuro</h3>
-                <p class="preço">R$ 296,90</p>
-                <div class="acoes">
-                    <button class="btn btn-comprar">Comprar</button>
-                    <div class="quantidade">
-                        <button class="menos">−</button>
-                        <input type="number" value="1" min="1">
-                        <button class="mais">+</button>
+                <div class="card-content">
+
+                    <h3>Cama box baú queen</h3>
+                    <p class="preco">R$ 1.610,67</p>
+
+                    <div class="acoes">
+                        <div class="qtd-control">
+                            <button class="qtd-btn minus">-</button>
+                            <input type="text" value="1" class="qtd-input" readonly>
+                            <button class="qtd-btn plus">+</button>
+                        </div>
                     </div>
-                    <a href="" class="lixeira">
-                        <img src="../style/icons/lixeira.png" style="width: 25px; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="imagem-produto">
-                <img src="../style/imgs/bau-pe-de-cama.webp" alt="Imagem do produto">
+                </div>
+
             </div>
-            <div class="texto-principal">
-                <h3>Puff baú pé de cama box queen cor cinza</h3>
-                <p class="preço">R$ 267,70</p>
-                <div class="acoes">
-                    <button class="btn btn-comprar">Comprar</button>
-                    <div class="quantidade">
-                        <button class="menos">−</button>
-                        <input type="number" value="1" min="1">
-                        <button class="mais">+</button>
+
+
+            <!-- poltrona -->
+
+
+
+            <div class="card">
+
+                <a href="" class="lixeira">
+                    <img src="../style/icons/lixeira.png" alt="Remover">
+                </a>
+
+                <div class="imagem-produto">
+                    <img src="../style/imgs/poltrona.jpg" alt="Imagem do produto">
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Poltrona opala cor cinza escuro</h3>
+                    <p class="preco">R$ 296,90</p>
+
+                    <div class="acoes">
+                        <div class="qtd-control">
+                            <button class="qtd-btn minus">-</button>
+                            <input type="text" value="1" class="qtd-input" readonly>
+                            <button class="qtd-btn plus">+</button>
+                        </div>
                     </div>
-                    <a href="" class="lixeira">
-                        <img src="../style/icons/lixeira.png" style="width: 25px; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="imagem-produto">
-                <img src="../style/imgs/torneira.webp" alt="Imagem do produto">
+                </div>
+
             </div>
-            <div class="texto-principal">
-                <h3>Torneira de cozinha preta pia gourmet em Inox</h3>
-                <p class="preço">R$ 220,80</p>
-                <div class="acoes">
-                    <button class="btn btn-comprar">Comprar</button>
-                    <div class="quantidade">
-                        <button class="menos">−</button>
-                        <input type="number" value="1" min="1">
-                        <button class="mais">+</button>
+
+
+            <!-- baú -->
+
+
+
+            <div class="card">
+
+                <a href="" class="lixeira">
+                    <img src="../style/icons/lixeira.png" alt="Remover">
+                </a>
+
+                <div class="imagem-produto">
+                    <img src="../style/imgs/bau-pe-de-cama.webp" alt="Imagem do produto">
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Puff baú pé de cama box queen cor cinza</h3>
+                    <p class="preco">R$ 267,70</p>
+
+                    <div class="acoes">
+                        <div class="qtd-control">
+                            <button class="qtd-btn minus">-</button>
+                            <input type="text" value="1" class="qtd-input" readonly>
+                            <button class="qtd-btn plus">+</button>
+                        </div>
                     </div>
-                    <a href="" class="lixeira">
-                        <img src="../style/icons/lixeira.png" style="width: 25px; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="imagem-produto">
-                <img src="../style/imgs/sofa-cama-retratil.png" alt="Imagem do produto">
+                </div>
+
             </div>
-            <div class="texto-principal">
-                <h3>Sofá cama retrátil cinza - 3 lugares</h3>
-                <p class="preço">R$ 499,99</p>
-                <div class="acoes">
-                    <button class="btn btn-comprar">Comprar</button>
-                    <div class="quantidade">
-                        <button class="menos">−</button>
-                        <input type="number" value="1" min="1">
-                        <button class="mais">+</button>
+
+
+
+            <!-- torneira -->
+
+
+
+            <div class="card">
+
+                <a href="" class="lixeira">
+                    <img src="../style/icons/lixeira.png" alt="Remover">
+                </a>
+
+                <div class="imagem-produto">
+                    <img src="../style/imgs/torneira.webp" alt="Imagem do produto">
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Torneira de cozinha preta pia gourmet em Inox</h3>
+                    <p class="preco">R$ 220,80</p>
+
+                    <div class="acoes">
+                        <div class="qtd-control">
+                            <button class="qtd-btn minus">-</button>
+                            <input type="text" value="1" class="qtd-input" readonly>
+                            <button class="qtd-btn plus">+</button>
+                        </div>
                     </div>
-                    <a href="" class="lixeira">
-                        <img src="../style/icons/lixeira.png" style="width: 25px; height: auto;">
-                    </a>
+
                 </div>
+
+            </div>
+
+
+
+            <!-- sofa-cama -->
+
+
+            <div class="card">
+
+                <a href="" class="lixeira">
+                    <img src="../style/icons/lixeira.png" alt="Remover">
+                </a>
+
+                <div class="imagem-produto">
+                    <img src="../style/imgs/sofa-cama-retratil.png" alt="Imagem do produto">
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Sofá cama retrátil cinza - 3 lugares</h3>
+                    <p class="preco">R$ 499,99</p>
+
+                    <div class="acoes">
+                        <div class="qtd-control">
+                            <button class="qtd-btn minus">-</button>
+                            <input type="text" value="1" class="qtd-input" readonly>
+                            <button class="qtd-btn plus">+</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="container-buttons">
+                <a href="home.html" class="btn btn-voltar">Continuar comprando</a>
+                <a class="btn btn-finalizar">Finalizar carrinho</a>
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-social">
+            <h3>Siga-nos!</h3>
+            <div class="social-icons">
+                <a href="#"><img src="../style/icons/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../style/icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../style/icons/pinterest-logo.png" alt="Pinterest"></a>
+                <a href="#"><img src="../style/icons/twitter.png" alt="X"></a>
             </div>
         </div>
 
-        <div class="container-buttons">
-            <button class="btn btn-voltar">Continuar comprando</button>
-            <button class="btn btn-finalizar">Finalizar carrinho</button>
-        </div>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Denúncias</a></li>
+                </ul>
+            </div>
 
-    </div>
+            <div class="footer-column">
+                <h4>Como trabalhamos</h4>
+                <ul>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Troca e devolução</a></li>
+                    <li><a href="#">Requisitos</a></li>
+                    <li><a href="#">Mapa do site</a></li>
+                    <li><a href="#">Relatório de Igualdade Salarial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">A ARQ</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Sustentabilidade</a></li>
+                    <li><a href="#">Lojas</a></li>
+                    <li><a href="#">Best Friday</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>© 2025 ARQ - Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src="../javascript/carrinho.js"></script>
 </body>
+
 </html>
