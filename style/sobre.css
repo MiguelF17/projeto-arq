@@ -4,7 +4,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 400px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,8 +38,8 @@
 }
 
 .historia-narrativa p {
-    font-size: 20px;
-    text-align: center;
+    font-size: 18px;
+    text-align: justify;
 }
 
 
