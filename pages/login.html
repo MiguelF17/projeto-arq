@@ -4,101 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>ARQ - Acesso à Conta</title>
-    <!-- Carrega o Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuração de cor e fonte -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // Cores baseadas no CSS do usuário
-                        'arq-primary': '#658EA3', // Cor principal (azul/slate)
-                        'arq-hover': '#88bbd4', // Cor de hover do botão
-                        'arq-dark': '#333', // Cor de texto
-                        'arq-footer': '#2a2a2a', // Cor do rodapé
-                        'arq-header': '#f9f9f9', // Cor do cabeçalho
-                    },
-                    fontFamily: {
-                        // Poppins como principal, com fallback para Inter e sans-serif
-                        sans: ['Poppins', 'Inter', 'sans-serif'], 
-                    },
-                }
-            }
-        }
-    </script>
-    <!-- Carrega a fonte Poppins do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos customizados para replicar o efeito ::after da navegação e outros resets */
-        
-        /* Reset para o body */
-        body {
-            line-height: 1.6;
-            color: var(--arq-dark);
-            background-color: #f8fafc;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Estilo para o link de navegação (replicando o ::after) */
-        .nav-link-custom {
-            position: relative;
-            transition: color 0.3s, transform 0.3s;
-            display: inline-block;
-        }
-
-        .nav-link-custom::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            left: 0;
-            bottom: -3px;
-            background-color: #658EA3;
-            transition: width 0.3s;
-        }
-
-        .nav-link-custom:hover {
-            color: #658EA3;
-            transform: translateY(-3px);
-        }
-
-        .nav-link-custom:hover::after {
-            width: 100%;
-        }
-
-        /* Estilo para o wrapper do campo de senha */
-        .input-wrapper {
-            position: relative;
-        }
-
-        .toggle-visibility {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            width: 1.5rem;
-            height: 1.5rem;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-
-        .toggle-visibility:hover {
-            opacity: 1;
-        }
-    </style>
-=======
     <title>ARQ - Login</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/ca-login.css">
     <script src="../javascript/script.js"></script>
->>>>>>> b0964b4aa47d6b273ab274dd1fb4c494f3b12a26
 </head>
 
 <body class="font-sans">
