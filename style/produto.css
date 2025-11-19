@@ -12,7 +12,7 @@
   padding: 30px;
   border: 1px solid #817e7e2d;
   border-radius: 10px;
-  background-color: #f7f4f4b4;
+  background-color: #fcfafab4;
 }
  .filtro-preco strong {
   font-size: 50px;
@@ -25,7 +25,7 @@
   background-color: #fffefe;
   width: 470px;
   padding: 10px;
-  height: 500px;
+  height: 520px;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
@@ -78,20 +78,6 @@
 }
 .lista a:hover {
   color: rgb(240, 21, 21);              /* muda a cor ao passar o mouse */
-}
-.aplicar {
-  width: 100%;
-  padding: 8px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 3px;
-}
-.aplicar:hover {
-  background-color: #0056b3;
 }
 
  /*---------Fim da Categoria-----------*/
