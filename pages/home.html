@@ -7,6 +7,7 @@
     <title>ARQ - Início</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../style/produto.css">
 
 </head>
 
@@ -48,58 +49,218 @@
 
     </header>
 
-    <!-- menu -->
+
+    <main>
+
+        <!-- menu -->
+
+        <section>
+
+            <h1 class="titulo">MENU</h1>
+            <h2 class="sub-titulo">Design que transforma o espaço</h2>
+
+            <div class="menu">
+
+                <div class="item medio">
+                    <a href="#">
+                        <img src="../style/imgs/bedroom.webp" alt="" />
+                        <p>Quarto</p>
+                    </a>
+                </div>
+                <div class="item grande">
+                    <a href="">
+                        <img src="../style/imgs/livingroom.jpg" alt="" />
+                        <p>Sala de Estar</p>
+                    </a>
+                </div>
+                <div class="item pequeno">
+                    <a href="">
+                        <img src="../style/imgs/bathroom.jpg" alt="" />
+                        <p>Banheiro</p>
+                    </a>
+                </div>
+                <div class="item pequeno">
+                    <a href="">
+                        <img src="../style/imgs/homeoffice.jpg" alt="" />
+                        <p>Escritório</p>
+                    </a>
+                </div>
+                <div class="item pequeno">
+                    <a href="">
+                        <img src="../style/imgs/decoration.jpg" alt="" />
+                        <p>Decoração</p>
+                    </a>
+                </div>
+                <div class="item medio">
+                    <a href="">
+                        <img src="../style/imgs/kitchen.jpg" alt="" />
+                        <p>Cozinha</p>
+                    </a>
+                </div>
+                <div class="item medio">
+                    <a href="">
+                        <img src="../style/imgs/diningroom.webp" alt="" />
+                        <p>Sala de Jantar</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!--filtro -->
+
+        <section class="catalogo">
+            <div class="filtro-preco">
+                <strong>Filtro </strong>
+                <div class="price-filter-container"><!--filtrar preço-->
+                    <h2>Filtrar por Preço:</h2>
+                    <form id="price-filter-form">
+                        <label for="min-price">De:</label>
+                        <input type="number" id="min-price" name="min-price" placeholder="R$ Mínimo">
+
+                        <label for="max-price">Até:</label>
+                        <input type="number" id="max-price" name="max-price" placeholder="R$ Máximo">
+                    </form>
+                    <br>
+                    <div>
+                        <h2>Filtrar por categoria:</h2>
+                        <div>
+                            <nav>
+                                <ul class="lista"> <!--lista das paginas filtráveis-->
+                                    <li><a href="produto.html">Sala e Quartos.</a></li>
+                                    <br>
+                                    <li><a href="produto1.html">Cozinha e sala de jantar.</a></li>
+                                    <br>
+                                    <li><a href="produto2.html">Banheiro.</a></li>
+                                    <br>
+                                    <li><a href="produto3.html">Lavanderia e Quintal.</a></li>
+                                </ul>
+                            </nav>
+                            <button class="aplicar">Aplicar Filtro</button><!--para ativar o filtro-->
+                        </div>
+                        <div class="intervalo">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-    <h1 class="titulo">MENU</h1>
-    <h2 class="sub-titulo">Design que transforma o espaço</h2>
+            <!--fim de filtro -->
+            <!------------------------------------------------------------------------------------------->
+            <!--Produto a direita (tela de produto)-->
+            <div class="container">
+                <h1>Sala e Quarto</h1>
+                <div class="grid"> <!--tela maior (camada)-->
+                    <a href="#">
+                        <div class="card">
+                    </a><!--tela interna(camada)-->
+                    <img src="../style/imgs/sofacinza.png" alt="sofa cinza">
+                    <div class="info">
+                        <h2>Sofá Cor Cinza Modern</h2>
+                        <p class="price">R$2.120,55</p>
+                        <p class="installments">Sem Juros</p>
+                    </div>
+                </div>
 
-    <div class="menu">
+                <a href="#">
+                    <div class="card">
+                </a><!--tela interna(camada)-->
+                <img src="/style/imgs/poutronas.png.png" alt="conjunto de poltronas">
+                <div class="info">
+                    <h2>Poltronas Bege e puff</h2>
+                    <p class="price">R$576,79</p>
+                    <p class="installments">Sem Juros</p>
+                </div>
+            </div>
 
-        <div class="item medio">
             <a href="#">
-                <img src="../style/imgs/bedroom.webp" alt="" />
-                <p>Quarto</p>
-            </a>
-        </div>
-        <div class="item grande">
-            <a href="">
-                <img src="../style/imgs/livingroom.jpg" alt="" />
-                <p>Sala de Estar</p>
-            </a>
-        </div>
-        <div class="item pequeno">
-            <a href="">
-                <img src="../style/imgs/bathroom.jpg" alt="" />
-                <p>Banheiro</p>
-            </a>
-        </div>
-        <div class="item pequeno">
-            <a href="">
-                <img src="../style/imgs/homeoffice.jpg" alt="" />
-                <p>Escritório</p>
-            </a>
-        </div>
-        <div class="item pequeno">
-            <a href="">
-                <img src="../style/imgs/decoration.jpg" alt="" />
-                <p>Decoração</p>
-            </a>
-        </div>
-        <div class="item medio">
-            <a href="">
-                <img src="../style/imgs/kitchen.jpg" alt="" />
-                <p>Cozinha</p>
-            </a>
-        </div>
-        <div class="item medio">
-            <a href="">
-                <img src="../style/imgs/diningroom.webp" alt="" />
-                <p>Sala de Jantar</p>
-            </a>
-        </div>
+                <div class="card">
+            </a><!--tela interna(camada)-->
+            <img src="/style/imgs/ccabeceiras.png" alt="conjunto de cabeceiras">
+            <div class="info">
+                <h2>Conjunto Cabeceiras</h2>
+                <p class="price">R$242,45</p>
+                <p class="installments">Sem Juros</p>
+            </div>
+            </div>
 
-    </div>
+            <a href="#">
+                <div class="card">
+            </a><!--tela interna(camada)-->
+            <img src="/style/imgs/poltrona.png" alt="poltrona">
+            <div class="info">
+                <h2>Poltrona Branca Atual</h2>
+                <p class="price">R$562,32</p>
+                <p class="installments">Sem Juros</p>
+            </div>
+            </div>
+
+            </div>
+            <br>
+            <div class="grid"> <!--tela maior (camada)-->
+                <a href="#">
+                    <div class="card">
+                </a><!--tela interna(camada)-->
+                <img src="/style/imgs/camacinza.png" alt="cama cinza">
+                <div class="info">
+                    <h2>Cama Cinza moderna</h2>
+                    <p class="price">R$2360,79</p>
+                    <p class="installments">Sem Juros</p>
+                </div>
+            </div>
+
+            <a href="#">
+                <div class="card">
+            </a><!--tela interna(camada)-->
+            <img src="/style/imgs/poutrona2.png" alt="poltrona acizentada">
+            <div class="info">
+                <h2>Poltrona Acinzentada</h2>
+                <p class="price">R$662,32</p>
+                <p class="installments">Sem Juros</p>
+            </div>
+            </div>
+
+            <a href="#">
+                <div class="card">
+            </a><!--tela interna(camada)-->
+            <img src="/style/imgs/luminaria.png" alt="luminária de teto">
+            <div class="info">
+                <h2>Lustre Luminária</h2>
+                <p class="price">R$835,36</p>
+                <p class="installments">Sem Juros</p>
+            </div>
+
+            <a href="#">
+                <div class="card">
+            </a><!--tela interna(camada)-->
+            <img src="sofa.jpg" alt="Sofá Cinza">
+            <div class="info">
+                <h2>Sofá Cinza Seccional</h2>
+                <p class="price">R$1.002,02</p>
+                <p class="installments">Sem Juros</p>
+            </div>
+            </div>
+
+
+            </div>
+
+            <a href="#">
+                <div class="card">
+            </a><!--tela interna(camada)-->
+            <img src="/style/imgs/murrat.png" alt="Cabeceira Murat Cinza">
+            <div class="info">
+                <h2>Cabeceira Murat Cinza</h2>
+                <p class="price">R$662,32</p>
+                <p class="installments">Sem Juros</p>
+            </div>
+            </div>
+
+            </div>
+            <!--fim da página do produto-->
+            </div>
+        </section>
+
+    </main>
 
 
     <!-- footer -->
