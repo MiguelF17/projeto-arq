@@ -8,7 +8,6 @@ const TEMP_USER_KEY = "tempUserData";
 const USER_KEY = "userData";
 const LOGGED_KEY = "loggedUser";
 
-
 // ======================================================
 //                VERIFICA LOGIN GLOBAL + SAUDAÇÃO
 // ======================================================
@@ -16,27 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const perfilBtn = document.getElementById("btnPerfil");
     const saudacao = document.getElementById("saudacaoPerfil");
 
-    // pega o usuário logado (objeto) do LOGGED_KEY
     const usuarioLogado = JSON.parse(localStorage.getItem(LOGGED_KEY));
 
     if (perfilBtn) {
-        if (usuarioLogado) {
-            perfilBtn.href = "perfil.html";
-        } else {
-            perfilBtn.href = "login.html";
-        }
+        perfilBtn.href = usuarioLogado ? "perfil.html" : "login.html";
     }
 
-    // só anima se tiver saudacao no DOM e se houver usuário logado
     if (saudacao && usuarioLogado && window.location.pathname.includes("home.html")) {
-        // usa o nome do objeto salvo (usuarioLogado.nome)
-        animarSaudacao(`Olá, ${usuarioLogado.nome}`);
+        saudacao.textContent = `Olá, ${usuarioLogado.nome}`;
     }
 
-    // carregar os dados do perfil (se existir a página)
     carregarDadosPerfil();
 });
-
 
 // ======================================================
 //                    ETAPA 1 DO CADASTRO
@@ -47,10 +37,10 @@ if (etapa1) {
     etapa1.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const nome = document.getElementById("nome").value;
-        const email = document.getElementById("email").value;
-        const cemail = document.getElementById("cemail").value;
-        const telefone = document.getElementById("telefone").value;
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const cemail = document.getElementById("cemail").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
 
         if (email !== cemail) {
             alert("Os e-mails não coincidem.");
@@ -64,6 +54,69 @@ if (etapa1) {
     });
 }
 
+// ======================================================
+//          MÁSCARAS → CPF, CEP e TELEFONE
+// ======================================================
+document.addEventListener("input", (e) => {
+    let input = e.target;
+
+    // TELEFONE
+    if (input.id === "telefone") {
+        input.value = input.value
+            .replace(/\D/g, "")
+            .replace(/^(\d{2})(\d)/, "($1) $2")
+            .replace(/(\d{5})(\d)/, "$1-$2")
+            .substring(0, 15);
+    }
+
+    // CPF
+    if (input.id === "cpf") {
+        input.value = input.value
+            .replace(/\D/g, "")
+            .replace(/(\d{3})(\d)/, "$1.$2")
+            .replace(/(\d{3})(\d)/, "$1.$2")
+            .replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+            .substring(0, 14);
+    }
+
+    // CEP
+    if (input.id === "cep") {
+        input.value = input.value
+            .replace(/\D/g, "")
+            .replace(/(\d{5})(\d)/, "$1-$2")
+            .substring(0, 9);
+    }
+});
+
+// ======================================================
+//         BUSCA AUTOMÁTICA DE ENDEREÇO PELO CEP
+// ======================================================
+const cepInput = document.getElementById("cep");
+
+if (cepInput) {
+    cepInput.addEventListener("blur", async () => {
+        const cep = cepInput.value.replace(/\D/g, "");
+
+        if (cep.length === 8) {
+            try {
+                const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const dados = await resposta.json();
+
+                if (dados.erro) {
+                    alert("CEP não encontrado.");
+                    return;
+                }
+
+                document.getElementById("rua").value = dados.logradouro;
+                document.getElementById("bairro").value = dados.bairro;
+                document.getElementById("cidade").value = dados.localidade;
+                document.getElementById("estado").value = dados.uf;
+            } catch (err) {
+                alert("Erro ao buscar CEP.");
+            }
+        }
+    });
+}
 
 // ======================================================
 //                    ETAPA 2 DO CADASTRO
@@ -75,31 +128,26 @@ if (etapa2) {
         e.preventDefault();
 
         const tempData = JSON.parse(localStorage.getItem(TEMP_USER_KEY));
+
         if (!tempData) {
             alert("Erro: volte para a primeira etapa.");
             window.location.href = "cadastro.html";
             return;
         }
 
+        const cpf = document.getElementById("cpf").value;
         const cep = document.getElementById("cep").value;
         const numero = document.getElementById("numero").value;
-        const cpf = document.getElementById("cpf").value;
 
-        if (!cep || !numero || !cpf) {
-            alert("Preencha todos os campos.");
-            return;
-        }
-
+        tempData.cpf = cpf;
         tempData.cep = cep;
         tempData.numero = numero;
-        tempData.cpf = cpf;
 
         localStorage.setItem(TEMP_USER_KEY, JSON.stringify(tempData));
 
         window.location.href = "cadastro3.html";
     });
 }
-
 
 // ======================================================
 //                    ETAPA 3 DO CADASTRO
@@ -111,6 +159,7 @@ if (etapa3) {
         e.preventDefault();
 
         const tempData = JSON.parse(localStorage.getItem(TEMP_USER_KEY));
+
         if (!tempData) {
             alert("Erro: volte para o início.");
             window.location.href = "cadastro.html";
@@ -130,15 +179,13 @@ if (etapa3) {
         localStorage.setItem(USER_KEY, JSON.stringify(tempData));
         localStorage.removeItem(TEMP_USER_KEY);
 
-        alert("Conta criada com sucesso!");
+        alert("Cadastro concluído!");
         window.location.href = "login.html";
     });
 }
 
-
-
 // ======================================================
-//                       LOGIN
+//                        LOGIN
 // ======================================================
 const formLogin = document.getElementById("formLogin");
 
@@ -146,33 +193,30 @@ if (formLogin) {
     formLogin.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const nome = document.getElementById("nome").value;
-        const senha = document.getElementById("senha").value;
+        const nomeEmail = document.getElementById("loginNome").value.trim();
+        const senha = document.getElementById("loginSenha").value.trim();
 
         const user = JSON.parse(localStorage.getItem(USER_KEY));
 
         if (!user) {
-            alert("Conta não encontrada.");
+            alert("Nenhuma conta cadastrada.");
             return;
         }
 
-        if ((nome === user.nome || nome === user.email) && senha === user.senha) {
+        if ((nomeEmail === user.nome || nomeEmail === user.email) && senha === user.senha) {
             localStorage.setItem(LOGGED_KEY, JSON.stringify(user));
             window.location.href = "home.html";
         } else {
-            alert("Usuário ou senha incorretos.");
+            alert("Usuário/e-mail ou senha incorretos.");
         }
     });
 }
 
-
-
 // ======================================================
-//                      PERFIL
+//             CARREGAR DADOS DO PERFIL
 // ======================================================
 function carregarDadosPerfil() {
-    const container = document.getElementById("dadosUsuario");
-    if (!container) return;
+    if (!document.getElementById("perfilNome")) return;
 
     const user = JSON.parse(localStorage.getItem(LOGGED_KEY));
 
@@ -181,115 +225,64 @@ function carregarDadosPerfil() {
         return;
     }
 
-    container.innerHTML = `
-        <p><strong>Usuário:</strong> ${user.nome}</p>
-        <p><strong>Email:</strong> ${user.email}</p>
-        <p><strong>Telefone:</strong> ${user.telefone}</p>
-        <p><strong>CPF:</strong> ${user.cpf}</p>
-        <p><strong>CEP:</strong> ${user.cep}</p>
-        <p><strong>Número:</strong> ${user.numero}</p>
-    `;
+    document.getElementById("perfilNome").textContent = user.nome;
+    document.getElementById("perfilEmail").textContent = user.email;
 }
 
-
-
 // ======================================================
-//                        LOGOUT
+//                       LOGOUT
 // ======================================================
 function logoutUser() {
-    localStorage.removeItem("loggedUser");
-    sessionStorage.clear(); // caso esteja usando
+    localStorage.removeItem(LOGGED_KEY);
     window.location.href = "login.html";
 }
 
-// =====================
-// SAUDAÇÃO ANIMADA (substituir aqui)
-// =====================
+// ======================================================
+//                MOSTRAR/OCULTAR SENHA
+// ======================================================
+function toggleSenha(img, id) {
+    const input = document.getElementById(id);
 
-/**
- * Digita o texto dentro do elemento (#saudacaoPerfil) e aplica animação CSS.
- * Recebe o texto completo, escreve letra a letra e adiciona a classe que ativa a transição/slide.
- */
-function animarSaudacao(texto) {
-    const span = document.getElementById("saudacaoPerfil");
-    if (!span) return;
-
-    // resetar estado
-    span.textContent = "";
-    span.style.opacity = "1";
-    span.style.transform = "translateX(20px)";
-
-    // escreve letra a letra
-    let i = 0;
-    function step() {
-        if (i < texto.length) {
-            span.textContent += texto.charAt(i);
-            i++;
-            // usa requestAnimationFrame para animação mais suave
-            requestAnimationFrame(step);
-        } else {
-            // quando terminar de digitar, aplica uma pequena animação de correção
-            span.style.transition = "transform 300ms ease, opacity 300ms ease";
-            span.style.transform = "translateX(0)";
-            // também adiciona a classe caso você queira usar keyframes CSS (opcional)
-            span.classList.add("animar-saudacao");
-        }
+    if (input.type === "password") {
+        input.type = "text";
+        img.src = "../style/icons/eye.png";
+    } else {
+        input.type = "password";
+        img.src = "../style/icons/hidden.png";
     }
-
-    // iniciar digitação com pequeno delay para parecer responsivo
-    setTimeout(() => requestAnimationFrame(step), 80);
 }
 
 
-
 // ======================================================
-//                 MÁSCARAS DE INPUT
+//               Animação "Olá"
 // ======================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    const saudacao = document.getElementById("saudacaoPerfil");
+    const btnPerfil = document.getElementById("btnPerfil");
 
-// TELEFONE
-document.addEventListener("input", (e) => {
-    if (e.target.id === "telefone") {
-        let v = e.target.value.replace(/\D/g, "");
-        v = v.replace(/^(\d{2})(\d)/, "($1) $2");
-        v = v.replace(/(\d{5})(\d)/, "$1-$2");
-        e.target.value = v;
-    }
-});
+    if (!saudacao || !btnPerfil) return;
 
-// CPF
-document.addEventListener("input", (e) => {
-    if (e.target.id === "cpf") {
-        let v = e.target.value.replace(/\D/g, "");
-        v = v.replace(/(\d{3})(\d)/, "$1.$2");
-        v = v.replace(/(\d{3})(\d)/, "$1.$2");
-        v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-        e.target.value = v;
-    }
-});
+    if (loggedUser) {
+        // Define o texto da saudação
+        saudacao.textContent = `Olá, ${loggedUser.nome.split(" ")[0]}!`;
 
-// CEP + VIA CEP
-document.addEventListener("input", async (e) => {
-    if (e.target.id === "cep") {
-        let v = e.target.value.replace(/\D/g, "");
-        v = v.replace(/^(\d{5})(\d)/, "$1-$2");
-        e.target.value = v;
+        // Força o estado inicial para que a transição funcione
+        saudacao.style.opacity = "0";
+        saudacao.style.transform = "translateX(15px)";
 
-        if (v.length === 9) {
-            const cepNum = v.replace("-", "");
+        // Dispara a animação
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                saudacao.style.opacity = "1";
+                saudacao.style.transform = "translateX(0)";
+            }, 50);
+        });
 
-            try {
-                const res = await fetch(`https://viacep.com.br/ws/${cepNum}/json/`);
-                const data = await res.json();
-
-                if (!data.erro) {
-                    document.getElementById("rua").value = data.logradouro || "";
-                    document.getElementById("bairro").value = data.bairro || "";
-                    document.getElementById("cidade").value = data.localidade || "";
-                    document.getElementById("estado").value = data.uf || "";
-                }
-            } catch {
-                alert("Erro ao buscar CEP.");
-            }
-        }
+        // Clique no perfil leva para a página de perfil
+        btnPerfil.href = "perfil.html";
+    } else {
+        // Usuário não logado, clique leva para login
+        btnPerfil.href = "login.html";
     }
 });
