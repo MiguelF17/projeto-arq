@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro Cozinha e sala de jantar</title>
+</head>
+<body>
+     <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="/style/produto.css">
+  <script src="../javascript/animacao.js"></script>
+  <script src="../javascript/script.js"></script>
+</head>
+
+<body>
+
+  <!-- navbar -->
+
+  <header>
+
+    <a href="index.html">
+      <div class="logo">
+        <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
+        <p>Móveis e interiores</p>
+      </div>
+    </a>
+
+    <div class="navegacao">
+      <nav>
+        <ul>
+          <li><a href="home.html">Início</a></li>
+          <li><a href="produto.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" action="/buscar" method="get">
+        <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
+      </form>
+
+      <div class="icons">
+        <a href="#"><img src="../style/icons/cart.png" alt="Carrinho"></a>
+        <a href="cadastro.html"><img src="../style/icons/user.png" alt=" Perfil"></a>
+      </div>
+    </div>
+  </header>
+
+  <!--fim da nav bar-->
+
+  <!--filtro -->
+  
+  <section class="catalogo">
+    <div class="filtro-preco">
+        <strong>Filtro </strong>
+        <div class="price-filter-container"><!--filtrar preço-->
+    <h2>Filtrar por Preço:</h2>
+    <form id="price-filter-form">
+    <label for="min-price">De:</label>
+    <input type="number" id="min-price" name="min-price" placeholder="R$ Mínimo">
+
+    <label for="max-price">Até:</label>
+    <input type="number" id="max-price" name="max-price" placeholder="R$ Máximo">
+  </form>
+  <br>
+  <div>
+      <h2>Filtrar por categoria:</h2>
+   <div>
+      <nav>
+        <ul class="lista"> <!--lista das paginas filtráveis-->
+          <li><a href="produto.html">Sala e Quartos.</a></li>
+          <br>
+          <li><a href="produto1.html">Cozinha e sala de jantar.</a></li>
+          <br>
+          <li><a href="produto2.html">Banheiro.</a></li>
+          <br>
+          <li><a href="produto3.html">Lavanderia e Quintal.</a></li>
+        </ul>
+      </nav>
+       <button class="aplicar">Aplicar Filtro</button><!--para ativar o filtro-->
+    </div>
+    <div class="intervalo">  
+      </div>
+    </div>
+</div>
+    </div>
+    <!--fim de filtro -->
+<!------------------------------------------------------------------------------------------->
+
+    <!--Produto a direita (tela de produto)-->
+    <div class="container">
+      <h1>Cozinha e sala de Jantar</h1>
+      <div class="grid"> <!--tela maior (camada)-->
+         <a href="#"><div class="card"></a><!--tela interna(camada)-->
+          <img src="/style/imgs/banco.png" alt="banco">
+          <div class="info">
+            <h2>Banco chique Branco</h2>
+            <p class="price">R$420,55</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+        </div>
+
+         <a href="#"><div class="card"></a><!--tela interna(camada)-->
+            <img src="/style/imgs/mesa de janta.png" alt="mesa">
+            <div class="info">
+            <h2>Mesa de janta moderna</h2>
+            <p class="price">R$976,79</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+        </div>
+
+          <a href="#"><div class="card"></a><!--tela interna(camada)-->
+            <img src="/style/imgs/amário.png" alt="armário">
+            <div class="info">
+            <h2>Armário de Cozinha</h2>
+            <p class="price">R$742,45</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+        </div>
+
+         <a href="#"><div class="card"></a><!--tela interna(camada)-->
+            <img src="/style/imgs/panelas.png" alt="panelas">
+            <div class="info">
+            <h2>Panelas e frigideiras</h2>
+            <p class="price">R$642,12</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+        </div>
+
+      </div>
+      <br>
+      <div class="grid"> <!--tela maior (camada)-->
+          <a href="#"><div class="card"></a><!--tela interna(camada)-->
+          <img src="/style/imgs/escorredor.png" alt="escorredor">
+        <div class="info">
+            <h2>Escorredor moderno</h2>
+            <p class="price">R$159,99</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+        </div>
+
+         <a href="#"><div class="card"></a><!--tela interna(camada)-->
+          <img src="/style/imgs/talheres.png" alt="talheres">
+          <div class="info">
+            <h2>Talheres modernos</h2>
+            <p class="price">R$32,32</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+        </div>
+
+         <a href="#"><div class="card"></a><!--tela interna(camada)-->
+          <img src="/style/imgs/pratos.png" alt="pratos">
+          <div class="info">
+            <h2>Pratos modernos prata</h2>
+            <p class="price">R$135,36</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+
+        </div>
+
+         <a href="#"><div class="card"></a><!--tela interna(camada)-->
+          <img src="/style/imgs/utencilios .png">
+          <div class="info">
+            <h2>Conjunto de utencíleos</h2>
+            <p class="price">R$32,32</p>
+            <p class="installments">Sem Juros</p>
+          </div>
+        </div>
+
+      </div>
+      <!--fim da página do produto-->
+    </div>
+  </section>
+</body>
+</body>
+</html>
