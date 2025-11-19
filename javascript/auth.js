@@ -196,8 +196,9 @@ function carregarDadosPerfil() {
 // ======================================================
 //                        LOGOUT
 // ======================================================
-function logout() {
-    localStorage.removeItem(LOGGED_KEY);
+function logoutUser() {
+    localStorage.removeItem("loggedUser");
+    sessionStorage.clear(); // caso esteja usando
     window.location.href = "login.html";
 }
 
