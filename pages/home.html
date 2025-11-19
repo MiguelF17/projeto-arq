@@ -7,8 +7,7 @@
     <title>ARQ - Início</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/home.css">
-    <script src="../javascript/animacao.js"></script>
-    <script src="../javascript/script.js"></script>
+
 </head>
 
 <body>
@@ -16,7 +15,7 @@
     <!-- navbar -->
 
     <header>
-        
+
         <a href="index.html">
             <div class="logo">
                 <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
@@ -39,8 +38,11 @@
             </form>
 
             <div class="icons">
-                <a href="carrinho.html"><img src="../style/icons/cart.png" alt="Carrinho"></a>
-                <a href="cadastro.html"><img src="../style/icons/user.png" alt=" Perfil"></a>
+                <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
+                <a href="cadastro.html" id="btnPerfil" class="perfil-btn">
+                    <span id="saudacaoPerfil"></span>
+                    <img src="../style/icons/user.png" alt="Perfil">
+                </a>
             </div>
         </div>
 
@@ -48,7 +50,7 @@
 
     <!-- menu -->
 
-    
+
     <h1 class="titulo">MENU</h1>
     <h2 class="sub-titulo">Design que transforma o espaço</h2>
 
@@ -149,6 +151,9 @@
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
 
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/animacao.js"></script>
 </body>
 
 </html>

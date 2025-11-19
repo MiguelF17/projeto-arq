@@ -7,8 +7,6 @@
     <title>ARQ - Sobre</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/sobre.css">
-    <script src="../javascript/animacao.js"></script>
-    <script src="../javascript/script.js"></script>
 </head>
 
 <body>
@@ -39,8 +37,11 @@
             </form>
 
             <div class="icons">
-                <a href="carrinho.html"><img src="../style/icons/cart.png" alt="Carrinho"></a>
-                <a href="cadastro.html"><img src="../style/icons/user.png" alt=" Perfil"></a>
+                <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
+                <a href="cadastro.html" id="btnPerfil" class="perfil-btn">
+                    <span id="saudacaoPerfil"></span>
+                    <img src="../style/icons/user.png" alt="Perfil">
+                </a>
             </div>
         </div>
 
@@ -119,7 +120,7 @@
         </section>
 
         <section class="oque-guia">
-            <h2 data-animate >O que nos guia</h2>
+            <h2 data-animate>O que nos guia</h2>
 
             <div class="glass-cards" data-animate data-delay="0.2s">
                 <div class="glass-card">
@@ -267,6 +268,10 @@
         </div>
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
+
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/animacao.js"></script>
 </body>
 
 </html>

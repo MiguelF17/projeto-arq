@@ -122,6 +122,54 @@ nav a:hover::after {
     filter: invert(49%) sepia(47%) saturate(269%) hue-rotate(156deg) brightness(98%) contrast(92%);
 }
 
+.perfil-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+}
+
+.carrinho-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Texto da saudação */
+#saudacaoPerfil {
+    opacity: 0;
+    transform: translateX(15px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    white-space: nowrap;
+}
+
+/* Ícone */
+.perfil-btn img {
+    width: 25px;
+    cursor: pointer;
+    filter: invert(15%) sepia(5%) saturate(24%) hue-rotate(314deg) brightness(94%) contrast(85%);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.perfil-btn img:hover {
+    transform: scale(1.1);
+    filter: invert(49%) sepia(47%) saturate(269%) hue-rotate(156deg) brightness(98%) contrast(92%);
+}
+
+/* Classe aplicada quando logado (ativa a animação) */
+.saudacao-ativa {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+
 /* botão padrão */
 
 .btn {

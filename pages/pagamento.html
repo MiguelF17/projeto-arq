@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/pagamento.css">
 </head>
+
 <body>
     <header>
         <a href="index.html">
@@ -15,7 +17,7 @@
                 <p>Móveis e interiores</p>
             </div>
         </a>
- 
+
         <div class="navegacao">
             <nav>
                 <ul>
@@ -25,14 +27,17 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
- 
+
             <form class="search-form" action="/buscar" method="get">
                 <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
             </form>
- 
+
             <div class="icons">
-                <a href="carrinho.html"><img src="../style/icons/cart.png" alt="Carrinho"></a>
-                <a href="cadastro.html"><img src="../style/icons/user.png" alt="Perfil"></a>
+                <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
+                <a href="cadastro.html" id="btnPerfil" class="perfil-btn">
+                    <span id="saudacaoPerfil"></span>
+                    <img src="../style/icons/user.png" alt="Perfil">
+                </a>
             </div>
         </div>
     </header>
@@ -42,16 +47,16 @@
     <h2 class="sub-titulo">Selecione a forma de pagamento</h2>
 
     <form>
-    <div class="formas-pagamento">
-        <input type="radio" id="cartao" name="metodo_pagamento" value="cartao_credito" checked>
-        <label class="botao" for="cartao">Cartão de Crédito</label>
+        <div class="formas-pagamento">
+            <input type="radio" id="cartao" name="metodo_pagamento" value="cartao_credito" checked>
+            <label class="botao" for="cartao">Cartão de Crédito</label>
 
-        <input type="radio" id="boleto" name="metodo_pagamento" value="boleto">
-        <label class="botao" for="boleto">Boleto</label>
+            <input type="radio" id="boleto" name="metodo_pagamento" value="boleto">
+            <label class="botao" for="boleto">Boleto</label>
 
-        <input type="radio" id="pix" name="metodo_pagamento" value="pix">
-        <label class="botao" for="pix">PIX</label>
-    </div>
+            <input type="radio" id="pix" name="metodo_pagamento" value="pix">
+            <label class="botao" for="pix">PIX</label>
+        </div>
     </form>
 
     <h2 class="sub-titulo">Dados do cartão</h2>
@@ -60,27 +65,35 @@
     <form class="form-pagamento-cartao" action="/processar_pagamento" method="POST">
         <div class="form-grupo">
             <label for="nome-completo">Nome completo</label>
-            <input type="text" id="nome-completo" name="nome_completo" placeholder="Digite seu nome completo" autocomplete="cc-name" required/>
+            <input type="text" id="nome-completo" name="nome_completo" placeholder="Digite seu nome completo"
+                autocomplete="cc-name" required />
         </div>
 
         <div class="form-grupo">
             <label for="numero-cartao">Número do Cartão</label>
-            <input type="text" id="numero-cartao" name="numero_cartao" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+            <input type="text" id="numero-cartao" name="numero_cartao" inputmode="numeric" pattern="[0-9\s]{13,19}"
+                autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
         </div>
-        
+
         <div class="form-row">
             <div class="form-grupo">
                 <label for="validade-cartao">Validade (MM/AA)</label>
-                <input type="text" id="validade-cartao" name="validade_cartao" pattern="(0[1-9]|1[0-2])\/\d{2}" placeholder="MM/AA" autocomplete="cc-exp" required>
+                <input type="text" id="validade-cartao" name="validade_cartao" pattern="(0[1-9]|1[0-2])\/\d{2}"
+                    placeholder="MM/AA" autocomplete="cc-exp" required>
             </div>
 
             <div class="form-grupo">
                 <label for="cvv-cartao">CVV</label>
-                <input type="text" id="cvv-cartao" name="cvv_cartao" inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" autocomplete="cc-csc" placeholder="xxx" required>
+                <input type="text" id="cvv-cartao" name="cvv_cartao" inputmode="numeric" pattern="[0-9]{3,4}"
+                    maxlength="4" autocomplete="cc-csc" placeholder="xxx" required>
             </div>
         </div>
 
     </form>
 
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/animacao.js"></script>
 </body>
+
 </html>
