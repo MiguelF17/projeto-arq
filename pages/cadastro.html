@@ -38,7 +38,7 @@
                 <form id="cadastroEtapa1">
                     <div class="input-group-cadastro">
                         <label for="nome">Usuário</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Crie seu usuário">
+                        <input type="text" id="nome" name="nome" required placeholder="Crie seu usuário" maxlength="20" minlength="4">
                     </div>
 
                     <div class="input-group-cadastro">
@@ -48,16 +48,16 @@
 
                     <div class="input-group-cadastro">
                         <label for="cemail">Confirmar e-mail</label>
-                        <input type="cemail" id="cemail" name="cemail" required placeholder="Confirmar seu e-mail">
+                        <input type="email" id="cemail" name="cemail" required placeholder="Confirmar seu e-mail">
                     </div>
 
                     <div class="input-group-cadastro">
                         <label for="telefone">Telefone</label>
-                        <input type="text" id="telefone" name="telefone" required placeholder="Número de telefone">
+                        <input type="text" id="telefone" name="telefone" required placeholder="Número de telefone" maxlength="15">
                     </div>
 
                     <div class="btn-container">
-                        <a href="cadastro2.html" class="btn btn-cadastro" id="proximaEtapa">Próxima Etapa</a>
+                        <button type="submit" class="btn btn-cadastro" id="proximaEtapa">Continuar</button>
                     </div>
 
                     <p class="login-link">

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARQ - Cadastro</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/ca-login.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <header>
+
+        <a href="index.html">
+            <div class="logo">
+                <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
+                <p>Móveis e interiores</p>
+            </div>
+        </a>
+
+
+    </header>
+
+    <!-- cadastro -->
+
+    <section class="conta">
+
+        <div class="conta-container">
+            <div class="form-box ca2">
+
+                <h2>Crie sua conta</h2>
+
+                <form id="cadastroEtapa3">
+
+
+                        <div class="input-group-cadastro full">
+                            <label for="senha">Senha</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="senha" name="senha" required placeholder="Criar uma senha"
+                                    minlength="8">
+                                <img src="../style/icons/hidden.png" alt="Mostrar senha" class="toggle-visibility"
+                                    onclick="toggleSenha(this, 'senha')">
+                            </div>
+                        </div>
+
+                        <div class="input-group-cadastro full">
+                            <label for="confirmar-senha">Confirmar senha</label>
+                            <input type="password" id="confirmar-senha" name="confirmar-senha" required
+                                placeholder="Confirme sua senha">
+                        </div>
+
+
+                    <div class="btn-container">
+                        <button type="submit" class="btn btn-cadastro" id="finalizarCadastro">Cadastrar</button>
+                    </div>
+
+                    <p class="login-link">
+                        Já tem uma conta?
+                        <a href="login.html">Entre aqui</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="../javascript/script.js"></script>]
+    <script src="../javascript/auth.js"></script>
+</body>
+
+</html>

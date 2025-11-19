@@ -163,12 +163,6 @@ nav a:hover::after {
     filter: invert(49%) sepia(47%) saturate(269%) hue-rotate(156deg) brightness(98%) contrast(92%);
 }
 
-/* Classe aplicada quando logado (ativa a animação) */
-.saudacao-ativa {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
-}
-
 
 /* botão padrão */
 
