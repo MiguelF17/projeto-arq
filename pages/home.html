@@ -62,43 +62,43 @@
             <div class="menu">
 
                 <div class="item medio">
-                    <a href="#">
+                    <a href="#" class="categoria-menu" data-categoria="Quarto">
                         <img src="../style/imgs/bedroom.webp" alt="" />
                         <p>Quarto</p>
                     </a>
                 </div>
                 <div class="item grande">
-                    <a href="">
+                    <a href="#" class="categoria-menu" data-categoria="Sala de Estar">
                         <img src="../style/imgs/livingroom.jpg" alt="" />
                         <p>Sala de Estar</p>
                     </a>
                 </div>
                 <div class="item pequeno">
-                    <a href="">
+                    <a href="#" class="categoria-menu" data-categoria="Banheiro">
                         <img src="../style/imgs/bathroom.jpg" alt="" />
                         <p>Banheiro</p>
                     </a>
                 </div>
                 <div class="item pequeno">
-                    <a href="">
+                    <a href="#" class="categoria-menu" data-categoria="Escritório & Home Office">
                         <img src="../style/imgs/homeoffice.jpg" alt="" />
-                        <p>Escritório</p>
+                        <p>Escritório & Home Office</p>
                     </a>
                 </div>
                 <div class="item pequeno">
-                    <a href="">
+                    <a href="#" class="categoria-menu" data-categoria="Decoração">
                         <img src="../style/imgs/decoration.jpg" alt="" />
                         <p>Decoração</p>
                     </a>
                 </div>
                 <div class="item medio">
-                    <a href="">
+                    <a href="#" class="categoria-menu" data-categoria="Cozinha">
                         <img src="../style/imgs/kitchen.jpg" alt="" />
                         <p>Cozinha</p>
                     </a>
                 </div>
                 <div class="item medio">
-                    <a href="">
+                    <a href="#" class="categoria-menu" data-categoria="Sala de Jantar">
                         <img src="../style/imgs/diningroom.webp" alt="" />
                         <p>Sala de Jantar</p>
                     </a>
@@ -111,140 +111,120 @@
 
         <!-- filtro -->
         <section class="catalogo">
-            <section class="filtro">
+            <div class="filtro">
                 <div class="filtro-container">
-                    <h1 class="filtro-titulo">Filtro</h1>
 
-                    <!-- Filtrar por preço -->
-                    <div class="filtro-price">
-                        <h2>Filtrar por preço:</h2>
-                        <form id="filtroPrecoForm">
-                            <div class="input-group">
-                                <label for="precoMin">De:</label>
-                                <input type="number" id="precoMin" name="precoMin" placeholder="R$ Mínimo">
-                            </div>
-                            <div class="input-group">
-                                <label for="precoMax">Até:</label>
-                                <input type="number" id="precoMax" name="precoMax" placeholder="R$ Máximo">
-                            </div>
-                        </form>
+                    <h1 class="filtro-titulo">Filtrar Produtos</h1>
+
+                    <!-- Preço -->
+                    <div class="filtro-box">
+                        <h2>Preço</h2>
+                        <div class="input-duplo">
+                            <input type="number" id="precoMin" placeholder="Min">
+                            <input type="number" id="precoMax" placeholder="Max">
+                        </div>
                     </div>
 
-                    <!-- Filtrar por categoria -->
-                    <div class="filtro-categoria">
-                        <h2>Filtrar por categoria:</h2>
-                        <ul class="lista-categorias">
-                            <li><a href="">Área Externa & Varanda</a></li>
-                            <li><a href="">Banheiro</a></li>
-                            <li><a href="">Cozinha</a></li>
-                            <li><a href="">Decoração</a></li>
-                            <li><a href="">Escritório & Home Office</a></li>
-                            <li><a href="">Infantil & Juvenil</a></li>
-                            <li><a href="">Lavanderia e Quintal</a></li>
-                            <li><a href="">Quarto</a></li>
-                            <li><a href="">Sala de Estar</a></li>
-                            <li><a href="">Sala de Jantar</a></li>
-                        </ul>
+                    <!-- Categoria -->
+                    <div class="filtro-box">
+                        <h2>Categoria</h2>
+                        <select id="categoriaSelect">
+                            <option value="">Todas</option>
+                            <option>Banheiro</option>
+                            <option>Cozinha</option>
+                            <option>Decoração</option>
+                            <option>Escritório & Home Office</option>
+                            <option>Infantil & Juvenil</option>
+                            <option>Lavanderia e Quintal</option>
+                            <option>Quarto</option>
+                            <option>Sala de Estar</option>
+                            <option>Sala de Jantar</option>
+                        </select>
                     </div>
 
-                    <button id="aplicarFiltroBtn" class="btn aplicar-filtro">Aplicar Filtro</button>
+                    <!-- Ordenação -->
+                    <div class="filtro-box">
+                        <h2>Ordenar por</h2>
+                        <select id="ordenar">
+                            <option value="">Nenhum</option>
+                            <option value="menorPreco">Preço: menor → maior</option>
+                            <option value="maiorPreco">Preço: maior → menor</option>
+                            <option value="az">Nome: A → Z</option>
+                            <option value="za">Nome: Z → A</option>
+                        </select>
+                    </div>
+
+                    <!-- Material -->
+                    <div class="filtro-box">
+                        <h2>Material</h2>
+                        <select id="materialSelect">
+                            <option value="">Nenhum</option>
+                            <option>Madeira</option>
+                            <option>Tecido</option>
+                            <option>Linho</option>
+                            <option>Veludo</option>
+                            <option>Couro Sintético</option>
+                            <option>Aço Inox</option>
+                            <option>Alumínio</option>
+                            <option>Ferro</option>
+                            <option>Mármore</option>
+                            <option>Vidro</option>
+                            <option>Porcelana</option>
+                            <option>Acrílico</option>
+                            <option>Plástico</option>
+                        </select>
+                    </div>
+
+                    <!-- Cor -->
+                    <div class="filtro-box">
+                        <h2>Cor</h2>
+                        <select id="corSelect">
+                            <option value="">Nenhum</option>
+                            <option>Branco</option>
+                            <option>Preto</option>
+                            <option>Cinza</option>
+                            <option>Bege</option>
+                            <option>Marrom</option>
+                            <option>Madeira Natural</option>
+                            <option>Vermelho</option>
+                            <option>Azul</option>
+                            <option>Verde</option>
+                            <option>Amarelo</option>
+                            <option>Dourado</option>
+                            <option>Prata</option>
+                            <option>Rosé / Cobre</option>
+                        </select>
+                    </div>
+
+                    <button id="aplicarFiltroBtn" class="btn aplicar-filtro">
+                        Aplicar Filtros
+                    </button>
+
+                    <button id="limparFiltroBtn" class="btn limpar-filtros">Limpar Filtros</button>
+
                 </div>
-            </section>
+            </div>
+
 
             <!--fim de filtro -->
 
             <!--Produto a direita (tela de produto)-->
 
-            <section class="produtos">
+            <div class="produtos">
+
                 <div class="container">
-                    <h1>Sala e Quarto</h1>
+                    <h1 id="tituloCatalogo">Geral</h1>
 
-                    <div class="grid">
-                        <a href="#" class="card">
-                            <img src="../style/imgs/sofacinza.png" alt="Sofá Cinza">
-                            <div class="info">
-                                <h2>Sofá Cor Cinza Modern</h2>
-                                <p class="price">R$2.120,55</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
+                    <!-- grade dos produtos -->
+                    <div class="grid" id="produtosGrid"></div>
 
-                        <a href="#" class="card">
-                            <img src="../style/imgs/poutronas.png" alt="Conjunto de Poltronas">
-                            <div class="info">
-                                <h2>Poltronas Bege e Puff</h2>
-                                <p class="price">R$576,79</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card">
-                            <img src="../style/imgs/ccabeceiras.png" alt="Conjunto de Cabeceiras">
-                            <div class="info">
-                                <h2>Conjunto Cabeceiras</h2>
-                                <p class="price">R$242,45</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card">
-                            <img src="../style/imgs/poltrona.png" alt="Poltrona Branca">
-                            <div class="info">
-                                <h2>Poltrona Branca Atual</h2>
-                                <p class="price">R$562,32</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card">
-                            <img src="../style/imgs/camacinza.png" alt="Cama Cinza">
-                            <div class="info">
-                                <h2>Cama Cinza Moderna</h2>
-                                <p class="price">R$2.360,79</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card">
-                            <img src="../style/imgs/poutrona2.png" alt="Poltrona Acinzentada">
-                            <div class="info">
-                                <h2>Poltrona Acinzentada</h2>
-                                <p class="price">R$662,32</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card">
-                            <img src="../style/imgs/luminaria.png" alt="Luminária de Teto">
-                            <div class="info">
-                                <h2>Lustre Luminária</h2>
-                                <p class="price">R$835,36</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card">
-                            <img src="../style/imgs/sofa.png" alt="Sofá Cinza Seccional">
-                            <div class="info">
-                                <h2>Sofá Cinza Seccional</h2>
-                                <p class="price">R$1.002,02</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-
-                        <a href="#" class="card">
-                            <img src="../style/imgs/murrat.png" alt="Cabeceira Murat Cinza">
-                            <div class="info">
-                                <h2>Cabeceira Murat Cinza</h2>
-                                <p class="price">R$662,32</p>
-                                <p class="installments">Sem Juros</p>
-                            </div>
-                        </a>
-                    </div>
+                    <!-- paginação -->
+                    <div class="paginacao" id="paginacao"></div>
                 </div>
-            </section>
-        </section>
 
+            </div>
+
+        </section>
 
 
     </main>
@@ -302,6 +282,8 @@
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/animacao.js"></script>
     <script src="../javascript/scroll.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/catalogo.js"></script>
 </body>
 
 </html>
