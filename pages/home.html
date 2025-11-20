@@ -34,9 +34,11 @@
                 </ul>
             </nav>
 
-            <form class="search-form" action="/buscar" method="get">
-                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
             </form>
+
 
             <div class="icons">
                 <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
@@ -284,6 +286,7 @@
     <script src="../javascript/scroll.js"></script>
     <script src="../javascript/produtos.js"></script>
     <script src="../javascript/catalogo.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
 </body>
 
 </html>

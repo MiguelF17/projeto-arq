@@ -101,6 +101,33 @@ nav a:hover::after {
     border: 1px solid #658EA3;
 }
 
+/* Caixa de sugestões */
+.sugestoes {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    z-index: 9999;
+    text-align: left;
+}
+
+.sugestao-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sugestao-item:hover {
+    background: #f2f2f2;
+}
+
+
+/* Impede bugs no input */
+.search-form {
+    position: relative;
+}
+
+
 /* perfil e carrinho */
 
 .icons {
