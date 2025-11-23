@@ -214,13 +214,15 @@ document.addEventListener("DOMContentLoaded", () => {
     [precoMinInput, precoMaxInput, categoriaSelect, materialSelect, corSelect, ordenarSelect]
         .forEach(input => {
             if (!input) return;
+
             input.addEventListener("input", () => {
-                // se o usuário interagir com select/campo, limpamos a seleção do menu
-                if (input !== categoriaSelect) {
-                    categoriaSelecionada = "";
-                }
+                // sempre que o usuário mexer em QUALQUER filtro,
+                // o menu deixa de controlar a categoria
+                categoriaSelecionada = "";
+
             });
         });
+
 
     function aplicarFiltros() {
         let filtrados = [...produtos];

@@ -106,7 +106,7 @@ const produtos = [
         preco: 642.12,
         categoria: "Cozinha",
         cor: "Verde",
-        material: "Metal",
+        material: "Alumínio",
         imagem: "../style/imgs/panelas.png"
     },
     {
