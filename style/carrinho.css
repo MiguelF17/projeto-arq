@@ -130,7 +130,7 @@
   gap: 16px;
 }
 
-/* RESPONSIVIDADE */
+/* Responsiviade */
 @media (max-width: 700px) {
   .card {
     flex-direction: column;

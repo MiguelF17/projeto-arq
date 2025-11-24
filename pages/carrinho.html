@@ -22,14 +22,15 @@
             <nav>
                 <ul>
                     <li><a href="home.html">Início</a></li>
-                    <li><a href="produto.html">Produtos</a></li>
+                    <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
 
-            <form class="search-form" action="/buscar" method="get">
-                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
             </form>
 
             <div class="icons">
@@ -269,8 +270,9 @@
 
 
     <script src="../javascript/carrinho.js"></script>
-    <script src="../javascript/script.js"></script>
     <script src="../javascript/auth.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
 </body>
 
 </html>

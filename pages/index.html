@@ -27,26 +27,26 @@
             <nav>
                 <ul>
                     <li><a href="home.html">Início</a></li>
-                    <li><a href="produto.html">Produtos</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
+                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
+                    <li><a href="contato.html" id="linkContato">Contato</a></li>
                 </ul>
             </nav>
 
-            <form class="search-form" action="/buscar" method="get">
-                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
             </form>
 
 
             <div class="icons">
                 <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
-                <a href="cadastro.html" id="btnPerfil" class="perfil-btn">
-                    <span class="animar-saudacao"></span>
+                <a id="btnPerfil" class="perfil-btn">
+                    <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
             </div>
         </div>
-
 
     </header>
 
@@ -84,25 +84,25 @@
 
             <div class="carousel-track">
                 <div class="slide">
-                    <a href="#">
+                    <a href="home.html">
                         <img src="../style/imgs/banner1.png" alt="Sofá Horizon">
                     </a>
                 </div>
 
                 <div class="slide">
-                    <a href="#">
+                    <a href="home.html">
                         <img src="../style/imgs/banner2.png" alt="Cadeira Luna">
                     </a>
                 </div>
 
                 <div class="slide">
-                    <a href="#">
+                    <a href="home.html">
                         <img src="../style/imgs/banner3.png" alt="Mesa Aurora">
                     </a>
                 </div>
 
                 <div class="slide">
-                    <a href="#">
+                    <a href="home.html">
                         <img src="../style/imgs/banner4.png" alt="Mesa Aurora">
                     </a>
                 </div>
@@ -129,13 +129,13 @@
 
                 <div class="app-stores" data-animate data-delay="0.6s">
                     <div class="store">
-                        <a href="#">
+                        <a href="cadastro.html">
                             <img src="../style/imgs/appstore.png" alt="">
                         </a>
                     </div>
 
                     <div class="store">
-                        <a href="#">
+                        <a href="cadastro.html">
                             <img src="../style/imgs/googleplay.png" alt="">
                         </a>
                     </div>
@@ -219,9 +219,10 @@
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../javascript/script.js"></script>
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/animacao.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
 </body>
 
 </html>

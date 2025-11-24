@@ -1,0 +1,173 @@
+/* Img sofá */
+.card {
+    width: 560px;
+    height: 450px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 20px;
+    margin-left: 130px;
+    
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    position: relative;
+}
+
+.coracao {
+    position: absolute;
+    right: 9px;
+    top: 10px;
+
+    transition: transform 0.3s, filter 0.3s; 
+}
+
+.coracao:hover  {
+    filter: invert(49%) sepia(47%) saturate(269%) hue-rotate(156deg) brightness(98%) contrast(92%);
+}
+
+.card-img {
+    text-align: center;
+    padding: 30px;
+}
+
+/* carrosel de outras imagens */
+.mini-cards {
+    width: 102px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 7px;
+    margin-top: 18px;
+
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.208) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.contentMini-Card {
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-cards-img {
+    text-align: center;
+    padding: 10px;
+}
+
+.contentCard {
+    display: flex;
+}
+
+/* Informações parte direita */
+h3 {
+    color: rgb(0, 0, 0);
+}
+
+.info {
+    position: absolute;
+    margin-left: 860px;
+    margin-top: 20px;
+    font-size: 15px;
+
+
+    color: #4E7183;
+}
+
+hr {
+    width: 500px;
+}
+
+h6 {
+    width: 500px;
+    color: #949494;
+}
+
+.valores {
+
+}
+
+/* cards para trocar a cor */
+
+.contentCores {
+    display: flex;
+    gap: 20px; /* gap é espaçamento */
+}
+
+.trocaCores {
+    width: 85px;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.208) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    border-radius: 3px;
+    align-items: center;
+
+}
+
+.trocaCores img {
+    width: 70px;
+    height: 60px;
+    padding: 7px;
+
+
+}
+
+h5 {
+    text-decoration: line-through;
+    font-size: 10px;
+
+    color: #949494;
+}
+
+/* avaliação */
+.avaliacao {
+    width: 660px;
+    height: 190px;
+    border: 1px;
+    box-shadow: rgba(0, 0, 0, 0.208) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 3px;
+    border-radius: 8px;
+
+    margin-left: 130px;
+    margin-top: 40px;
+}
+
+.avaliacao img {
+    text-align: center;
+}
+
+/* botões */
+
+.btns {
+    margin: 10px;
+    margin-left: 50px;
+}
+.btn-comprar {
+    width: 400px;
+    height: 40px;
+    background-color: #658EA3;
+    color: #fff;
+    border-radius: 7px;
+    border: #658EA3;
+}
+
+.btn-carrinho {
+    width: 400px;
+    height: 40px;
+    background-color: #fff;
+    color: #658EA3;
+    border-radius: 7px;
+    border: 1px solid #658EA3;
+    margin-top: 10px;
+}
+
+.frete {
+    width:  500px;
+    height: 190px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.208) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 8px;
+    margin-top: 35px;
+}
+
+.frete img {
+    width: 450px;
+    height: 180px;
+}
+

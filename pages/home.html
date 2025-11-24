@@ -7,6 +7,7 @@
     <title>ARQ - Início</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="../style/produto.css">
 
 </head>
 
@@ -27,15 +28,17 @@
             <nav>
                 <ul>
                     <li><a href="home.html">Início</a></li>
-                    <li><a href="produto.html">Produtos</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
+                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
+                    <li><a href="contato.html" id="linkContato">Contato</a></li>
                 </ul>
             </nav>
 
-            <form class="search-form" action="/buscar" method="get">
-                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
             </form>
+
 
             <div class="icons">
                 <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
@@ -48,58 +51,186 @@
 
     </header>
 
-    <!-- menu -->
+
+    <main>
+
+        <!-- menu -->
+
+        <section>
+
+            <h1 class="titulo">MENU</h1>
+            <h2 class="sub-titulo">Design que transforma o espaço</h2>
+
+            <div class="menu">
+
+                <div class="item medio">
+                    <a href="#" class="categoria-menu" data-categoria="Quarto">
+                        <img src="../style/imgs/bedroom.webp" alt="" />
+                        <p>Quarto</p>
+                    </a>
+                </div>
+                <div class="item grande">
+                    <a href="#" class="categoria-menu" data-categoria="Sala de Estar">
+                        <img src="../style/imgs/livingroom.jpg" alt="" />
+                        <p>Sala de Estar</p>
+                    </a>
+                </div>
+                <div class="item pequeno">
+                    <a href="#" class="categoria-menu" data-categoria="Banheiro">
+                        <img src="../style/imgs/bathroom.jpg" alt="" />
+                        <p>Banheiro</p>
+                    </a>
+                </div>
+                <div class="item pequeno">
+                    <a href="#" class="categoria-menu" data-categoria="Escritório & Home Office">
+                        <img src="../style/imgs/homeoffice.jpg" alt="" />
+                        <p>Escritório & Home Office</p>
+                    </a>
+                </div>
+                <div class="item pequeno">
+                    <a href="#" class="categoria-menu" data-categoria="Decoração">
+                        <img src="../style/imgs/decoration.jpg" alt="" />
+                        <p>Decoração</p>
+                    </a>
+                </div>
+                <div class="item medio">
+                    <a href="#" class="categoria-menu" data-categoria="Cozinha">
+                        <img src="../style/imgs/kitchen.jpg" alt="" />
+                        <p>Cozinha</p>
+                    </a>
+                </div>
+                <div class="item medio">
+                    <a href="#" class="categoria-menu" data-categoria="Sala de Jantar">
+                        <img src="../style/imgs/diningroom.webp" alt="" />
+                        <p>Sala de Jantar</p>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <h1 class="titulo" id="catalogoSecao">Produtos</h1>
+        <h2 class="sub-titulo">Formas que preenchem o cômodo</h2>
+
+        <!-- filtro -->
+        <section class="catalogo">
+            <div class="filtro">
+                <div class="filtro-container">
+
+                    <h1 class="filtro-titulo">Filtrar Produtos</h1>
+
+                    <!-- Preço -->
+                    <div class="filtro-box">
+                        <h2>Preço</h2>
+                        <div class="input-duplo">
+                            <input type="number" id="precoMin" placeholder="Min">
+                            <input type="number" id="precoMax" placeholder="Max">
+                        </div>
+                    </div>
+
+                    <!-- Categoria -->
+                    <div class="filtro-box">
+                        <h2>Categoria</h2>
+                        <select id="categoriaSelect">
+                            <option value="">Todas</option>
+                            <option>Banheiro</option>
+                            <option>Cozinha</option>
+                            <option>Decoração</option>
+                            <option>Escritório & Home Office</option>
+                            <option>Infantil & Juvenil</option>
+                            <option>Lavanderia e Quintal</option>
+                            <option>Quarto</option>
+                            <option>Sala de Estar</option>
+                            <option>Sala de Jantar</option>
+                        </select>
+                    </div>
+
+                    <!-- Ordenação -->
+                    <div class="filtro-box">
+                        <h2>Ordenar por</h2>
+                        <select id="ordenar">
+                            <option value="">Nenhum</option>
+                            <option value="menorPreco">Preço: menor → maior</option>
+                            <option value="maiorPreco">Preço: maior → menor</option>
+                            <option value="az">Nome: A → Z</option>
+                            <option value="za">Nome: Z → A</option>
+                        </select>
+                    </div>
+
+                    <!-- Material -->
+                    <div class="filtro-box">
+                        <h2>Material</h2>
+                        <select id="materialSelect">
+                            <option value="">Nenhum</option>
+                            <option>Madeira</option>
+                            <option>Tecido</option>
+                            <option>Linho</option>
+                            <option>Veludo</option>
+                            <option>Couro Sintético</option>
+                            <option>Aço Inox</option>
+                            <option>Alumínio</option>
+                            <option>Ferro</option>
+                            <option>Mármore</option>
+                            <option>Vidro</option>
+                            <option>Porcelana</option>
+                            <option>Acrílico</option>
+                            <option>Plástico</option>
+                        </select>
+                    </div>
+
+                    <!-- Cor -->
+                    <div class="filtro-box">
+                        <h2>Cor</h2>
+                        <select id="corSelect">
+                            <option value="">Nenhum</option>
+                            <option>Branco</option>
+                            <option>Preto</option>
+                            <option>Cinza</option>
+                            <option>Bege</option>
+                            <option>Marrom</option>
+                            <option>Madeira Natural</option>
+                            <option>Vermelho</option>
+                            <option>Azul</option>
+                            <option>Verde</option>
+                            <option>Amarelo</option>
+                            <option>Dourado</option>
+                            <option>Prata</option>
+                            <option>Rosé / Cobre</option>
+                        </select>
+                    </div>
+
+                    <button id="aplicarFiltroBtn" class="btn aplicar-filtro">
+                        Aplicar Filtros
+                    </button>
+
+                    <button id="limparFiltroBtn" class="btn limpar-filtros">Limpar Filtros</button>
+
+                </div>
+            </div>
 
 
-    <h1 class="titulo">MENU</h1>
-    <h2 class="sub-titulo">Design que transforma o espaço</h2>
+            <!--fim de filtro -->
 
-    <div class="menu">
+            <!--Produto a direita (tela de produto)-->
 
-        <div class="item medio">
-            <a href="#">
-                <img src="../style/imgs/bedroom.webp" alt="" />
-                <p>Quarto</p>
-            </a>
-        </div>
-        <div class="item grande">
-            <a href="">
-                <img src="../style/imgs/livingroom.jpg" alt="" />
-                <p>Sala de Estar</p>
-            </a>
-        </div>
-        <div class="item pequeno">
-            <a href="">
-                <img src="../style/imgs/bathroom.jpg" alt="" />
-                <p>Banheiro</p>
-            </a>
-        </div>
-        <div class="item pequeno">
-            <a href="">
-                <img src="../style/imgs/homeoffice.jpg" alt="" />
-                <p>Escritório</p>
-            </a>
-        </div>
-        <div class="item pequeno">
-            <a href="">
-                <img src="../style/imgs/decoration.jpg" alt="" />
-                <p>Decoração</p>
-            </a>
-        </div>
-        <div class="item medio">
-            <a href="">
-                <img src="../style/imgs/kitchen.jpg" alt="" />
-                <p>Cozinha</p>
-            </a>
-        </div>
-        <div class="item medio">
-            <a href="">
-                <img src="../style/imgs/diningroom.webp" alt="" />
-                <p>Sala de Jantar</p>
-            </a>
-        </div>
+            <div class="produtos">
 
-    </div>
+                <div class="container">
+                    <h1 id="tituloCatalogo">Geral</h1>
+
+                    <!-- grade dos produtos -->
+                    <div class="grid" id="produtosGrid"></div>
+
+                    <!-- paginação -->
+                    <div class="paginacao" id="paginacao"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
 
 
     <!-- footer -->
@@ -151,9 +282,12 @@
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../javascript/script.js"></script>
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/animacao.js"></script>
+    <script src="../javascript/scroll.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/catalogo.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
 </body>
 
 </html>
