@@ -1,5 +1,6 @@
-/* container geral */
-
+/* ------------------------ */
+/*  LAYOUT DO CATÁLOGO      */
+/* ------------------------ */
 
 .catalogo {
   max-width: 1200px;
@@ -7,7 +8,6 @@
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 30px;
-  align-items: start;
 }
 
 /* ------------------------ */
@@ -15,93 +15,95 @@
 /* ------------------------ */
 
 .filtro {
-  background-color: #ffffff;
-  padding: 25px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  position: sticky;
+  top: 24px;
   height: fit-content;
+  box-shadow: 0 6px 20px rgba(14, 44, 61, 0.06);
+  border: 1px solid #eef3f6;
 }
 
-.filtro-container h1.filtro-titulo {
-  text-align: left;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 22px;
-}
-
-.filtro-price h2,
-.filtro-categoria h2 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #555;
-}
-
-/* inputs de preço */
-.filtro-price .input-group {
+.filtro-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  gap: 20px;
 }
 
-.filtro-price label {
+.filtro-titulo {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+/* bloco do filtro */
+.filtro-box h2 {
   font-size: 14px;
-  margin-bottom: 5px;
-  color: #333;
+  font-weight: 700;
+  color: #3a5566;
+  margin-bottom: 8px;
 }
 
-.filtro-price input {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-.filtro-price input:focus {
-  border-color: #658EA3;
-  box-shadow: 0 0 5px rgba(101, 142, 163, 0.5);
-  outline: none;
-}
-
-/* categorias */
-.filtro-categoria ul.lista-categorias {
-  list-style: none;
-  padding: 0;
-}
-
-.filtro-categoria ul.lista-categorias li {
-  margin-bottom: 10px;
-}
-
-.filtro-categoria ul.lista-categorias li a {
-  text-decoration: none;
-  color: #658EA3;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.filtro-categoria ul.lista-categorias li a:hover {
-  color: #88bbd4;
-}
-
-
-/* botão aplicar filtro */
-.btn.aplicar-filtro {
+/* inputs/select */
+.filtro-box input,
+.filtro-box select {
   width: 100%;
-  padding: 10px 0;
-  border-radius: 6px;
-  background-color: #658EA3;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, #fbfeff, #f6fbff);
+  border: 1px solid #dce8ef;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow .18s ease, transform .08s;
+}
+
+.filtro-box input:focus,
+.filtro-box select:focus {
+  border-color: #5f9fb3;
+  box-shadow: 0 6px 18px rgba(95, 159, 179, 0.12);
+  transform: translateY(-1px);
+}
+
+/* inputs lado a lado */
+.input-duplo {
+  display: flex;
+  gap: 10px;
+}
+
+/* botão aplicar */
+.aplicar-filtro {
+  background: #658EA3;
   color: #fff;
   border: none;
-  font-size: 16px;
+  padding: 12px 0;
+  border-radius: 12px;
+  font-size: 15px;
   cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 700;
+  letter-spacing: .2px;
+  box-shadow: 0 8px 20px rgba(19, 70, 90, 0.08);
 }
 
-.btn.aplicar-filtro:hover {
-  background-color: #88bbd4;
-  transform: scale(1.03);
+.aplicar-filtro:hover {
+  transform: translateY(-3px);
+}
+
+.limpar-filtros {
+  background: transparent;
+  border: 2px solid #658EA3;
+  color: #658EA3;
+  padding: 12px 0;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: .2px;
+  box-shadow: 0 8px 20px rgba(19, 70, 90, 0.08);
+}
+
+.limpar-filtros:hover {
+  transform: translateY(-3px);
+  background: #f5f5f5;
 }
 
 
@@ -109,61 +111,130 @@
 /*         PRODUTOS         */
 /* ------------------------ */
 
-.produtos .container {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
 .produtos h1 {
-  margin-bottom: 20px;
-  font-size: 30px;
-  color: #333;
+  font-size: 28px;
+  margin-bottom: 8px;
 }
 
+/* GRID: colunas fixas para evitar esticamento com 1 item */
 .produtos .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 colunas no desktop */
   gap: 20px;
 }
 
+/* responsivo — 3 / 2 / 1 colunas conforme tela */
+@media (max-width: 1100px) {
+  .produtos .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .produtos .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .produtos .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* card */
 .produtos .card {
-  background-color: #fff;
-  border-radius: 10px;
+  display: block;
+  border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: linear-gradient(180deg, #ffffff, #fbfcfd);
+  box-shadow: 0 8px 22px rgba(20, 40, 50, 0.06);
+  transition: transform .22s ease, box-shadow .22s ease;
 }
 
 .produtos .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(20, 40, 50, 0.12);
 }
 
 .produtos .card img {
   width: 100%;
+  height: 160px;
+  object-fit: cover;
   display: block;
 }
 
-.produtos .card .info {
-  padding: 15px;
+.produtos .info {
+  padding: 12px;
 }
 
-.produtos .card .info h2 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.produtos .card .info .price {
-  font-weight: bold;
-  color: #658EA3;
-  margin-bottom: 5px;
-}
-
-.produtos .card .info .installments {
+.produtos .info h2 {
   font-size: 14px;
-  color: #777;
+  margin-bottom: 8px;
+  color: #000;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.price {
+  color: #658EA3;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.installments {
+  display: block;
+  margin-top: 6px;
+  color: #000;
+  font-size: 13px;
+}
+
+.nenhum-produto {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1.4rem;
+  color: #555;
+  font-weight: 500;
+  background: #f3f3f3;
+  border-radius: 10px;
+}
+
+/* Paginação */
+
+#paginacao {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+#paginacao button {
+  padding: 10px 16px;
+  border: none;
+  background: #dedede;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+#paginacao button:hover {
+  background: #c2c2c2;
+}
+
+#paginacao button.ativo {
+  background: #658EA3;
+  color: #fff;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+#paginacao button:disabled {
+  background: #bbbbbb;
+  cursor: not-allowed;
 }
