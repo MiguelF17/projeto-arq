@@ -169,6 +169,29 @@ nav a:hover::after {
     position: relative;
 }
 
+.carrinho-qtd {
+    display: none;
+    /* começa escondido */
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #658EA3;
+    color: white;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: scale(1);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.carrinho-qtd.mostrar {
+    display: inline-block;
+    transform: scale(1.3);
+    opacity: 1;
+}
+
 /* Texto da saudação */
 #saudacaoPerfil {
     opacity: 0;

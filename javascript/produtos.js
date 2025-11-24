@@ -234,16 +234,16 @@ const produtos = [
     },
     {
         id: 26,
-        nome: "Cristaleira de madeira",
+        nome: "Cristaleira de Madeira",
         preco: 1752.32,
-        categoria: "Banheiro",
-        cor: "Marrom",
+        categoria: "Cozinha",
+        cor: "Madeira Natural",
         material: "Madeira",
         imagem: "../style/imgs/cristaleira"
     },
     {
         id: 27,
-        nome: "Mesa Menor para Janta",
+        nome: "Mesa Menor para Jantar",
         preco: 552.32,
         categoria: "Sala de Jantar",
         cor: "Marrom",
@@ -252,7 +252,7 @@ const produtos = [
     },
         {
         id: 28,
-        nome: "Puff Banco ",
+        nome: "Puff Banco",
         preco: 256.12,
         categoria: "Sala de Estar",
         cor: "Branco",
@@ -270,7 +270,7 @@ const produtos = [
     },
     {
         id: 30,
-        nome: "Cadeira de Janta",
+        nome: "Cadeira de Jantar",
         preco: 252.32,
         categoria: "Sala de Jantar",
         cor: "Marrom",
@@ -315,11 +315,11 @@ const produtos = [
     },
     {   
         id: 35,
-        nome: "Cadeira profissional rosa",
+        nome: "Cadeira Profissional Rosé",
         preco: 719.38,
         categoria: "Escritório & Home Office",
-        cor: "Rosê / Cobre",
-        material: "Aço Inox",
+        cor: "Rosé / Cobre",
+        material: "Plástico",
         imagem: "../style/imgs/poutrona3.jpg"
     },
     {   

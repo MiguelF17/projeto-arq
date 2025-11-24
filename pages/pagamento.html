@@ -11,7 +11,8 @@
 
 <body>
     <header>
-        <a href="index.html">
+
+        <a href="../pages/index.html">
             <div class="logo">
                 <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
                 <p>Móveis e interiores</p>
@@ -22,9 +23,9 @@
             <nav>
                 <ul>
                     <li><a href="home.html">Início</a></li>
-                    <li><a href="produto.html">Produtos</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
+                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
+                    <li><a href="contato.html" id="linkContato">Contato</a></li>
                 </ul>
             </nav>
 
@@ -34,13 +35,18 @@
             </form>
 
             <div class="icons">
-                <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
-                <a href="cadastro.html" id="btnPerfil" class="perfil-btn">
+                <a href="carrinho.html" class="carrinho-btn" id="carrinhoContainer">
+                    <img src="../style/icons/cart.png" alt="Carrinho">
+                    <span id="carrinhoQtd" class="carrinho-qtd"></span>
+                </a>
+
+                <a id="btnPerfil" class="perfil-btn">
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
             </div>
         </div>
+
     </header>
 
     <h1 class="title">Pagamento</h1>
