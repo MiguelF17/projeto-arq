@@ -226,10 +226,109 @@ const produtos = [
     {
         id: 25,
         nome: "Gabinete de Pia",
-        preco: 52.32,
+        preco:  162.90,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Madeira",
         imagem: "../style/imgs/gabinete.png"
+    },
+    {
+        id: 26,
+        nome: "Cristaleira de madeira",
+        preco: 1752.32,
+        categoria: "Banheiro",
+        cor: "Marrom",
+        material: "Madeira",
+        imagem: "../style/imgs/cristaleira"
+    },
+    {
+        id: 27,
+        nome: "Mesa Menor para Janta",
+        preco: 552.32,
+        categoria: "Sala de Jantar",
+        cor: "Marrom",
+        material: "Madeira",
+        imagem: "../style/imgs/mesa.menor"
+    },
+        {
+        id: 28,
+        nome: "Puff Banco ",
+        preco: 256.12,
+        categoria: "Sala de Estar",
+        cor: "Branco",
+        material: "Madeira",
+        imagem: "../style/imgs/puff1.jpg"
+    },
+    {
+        id: 29,
+        nome: "Puff Almofado Preto",
+        preco: 182.32,
+        categoria: "Sala de Estar",
+        cor: "Preto",
+        material: "Veludo",
+        imagem: "../style/imgs/puff2.jpg"
+    },
+    {
+        id: 30,
+        nome: "Cadeira de Janta",
+        preco: 252.32,
+        categoria: "Sala de Jantar",
+        cor: "Marrom",
+        material: "Madeira",
+        imagem: "../style/imgs/cadeiradejanta.webp"
+    },
+    {   
+        id: 31,
+        nome: "Gaveteiro Escritório",
+        preco: 319.32,
+        categoria: "Escritório & Home Office",
+        cor: "Marrom",
+        material: "Madeira",
+        imagem: "../style/imgs/gaveteiro.png"
+    },
+    {   
+        id: 32,
+        nome: "Mesa Boss Escritório",
+        preco: 659.38,
+        categoria: "Escritório & Home Office",
+        cor: "Bege",
+        material: "Madeira",
+        imagem: "../style/imgs/mesaBoss.png"
+    }, 
+    {   
+        id: 33,
+        nome: "Luminária Cinza",
+        preco: 89.90,
+        categoria: "Decoração",
+        cor: "Cinza",
+        material: "Ferro",
+        imagem: "../style/imgs/Luminaria2.png"
+    },
+    {   
+        id: 34,
+        nome: "Cadeira de Escritório",
+        preco: 1659.38,
+        categoria: "Escritório & Home Office",
+        cor: "Preto",
+        material: "Aço Inox",
+        imagem: "../style/imgs/poutronaEscritorio.jpg"
+    },
+    {   
+        id: 35,
+        nome: "Cadeira profissional rosa",
+        preco: 719.38,
+        categoria: "Escritório & Home Office",
+        cor: "Rosê / Cobre",
+        material: "Aço Inox",
+        imagem: "../style/imgs/poutrona3.jpg"
+    },
+    {   
+        id: 36,
+        nome: "Armário Superior",
+        preco: 479.38,
+        categoria: "Cozinha",
+        cor: "Cinza",
+        material: "Madeira",
+        imagem: "../style/imgs/armarioSuperior.png"
     }
 ];
