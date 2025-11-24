@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARQ - Contato</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ARQ - Início</title>
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/contato.css">
+
 </head>
 
-<body class="font-sans">
+<body>
 
     <!-- navbar -->
 
     <header>
+
         <a href="index.html">
             <div class="logo">
                 <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
@@ -26,25 +28,26 @@
                 <ul>
                     <li><a href="home.html">Início</a></li>
                     <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
+                    <li><a href="contato.html" id="linkContato">Contato</a></li>
                 </ul>
             </nav>
 
-            <form class="search-form" action="/buscar" method="get">
-                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
             </form>
 
             <div class="icons">
                 <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
-                <a href="cadastro.html" id="btnPerfil" class="perfil-btn">
+                <a id="btnPerfil" class="perfil-btn">
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
             </div>
         </div>
-    </header>
 
+    </header>
     <main class="flex-grow max-w-7xl mx-auto py-12 sm:py-16 px-4">
 
         <h1 class="text-5xl font-extrabold text-center text-arq-dark mb-4">Fale Conosco</h1>
@@ -216,6 +219,8 @@
     </footer>
 
     <script src="../javascript/auth.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
 </body>
 
 </html>
