@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARQ -</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/visualizacao.css">
+</head>
+
+<body>
+
+
+    <header>
+
+        <a href="../pages/index.html">
+            <div class="logo">
+                <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
+                <p>Móveis e interiores</p>
+            </div>
+        </a>
+
+        <div class="navegacao">
+            <nav>
+                <ul>
+                    <li><a href="home.html">Início</a></li>
+                    <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
+                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
+                    <li><a href="contato.html" id="linkContato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
+            </form>
+
+            <div class="icons">
+                <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
+                <a id="btnPerfil" class="perfil-btn">
+                    <span id="saudacaoPerfil"></span>
+                    <img src="../style/icons/user.png" alt="Perfil">
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- produto principal -->
+
+        <section id="produtoContainer" class="produto-container">
+
+            <!-- imagem principal e miniaturas -->
+
+            <div class="produtosGrid">
+
+                <div class="miniaturas" id="miniaturas"></div>
+                <img id="imgPrincipal" src="" alt="">
+                <div id="zoomView" class="zoom-view"></div>
+
+            </div>
+
+            <!-- informações do produto -->
+
+            <div class="info">
+
+                <div class="titulo-favorito">
+                    <h2 id="produtoNome"></h2>
+                    <button id="btnFavorito" class="btn-favorito"></button>
+                </div>
+
+                <p id="produtoDescricao"></p>
+
+                <div class="avaliacoes">
+                    <h3>Avaliações</h3>
+                    <div class="estrelas" id="avaliacaoEstrelas">★★★★★</div>
+                    <p id="mediaAvaliacoes">(0 avaliações)</p>
+                </div>
+
+                <div class="descricao-produto">
+                    <h3>Descrição</h3>
+                    <p id="descricaoDetalhada">Carregando...</p>
+                </div>
+
+                <div class="valores">
+                    <h5 id="produtoPrecoReal"></h5>
+                    <h3 id="produtoPrecoDesconto"></h3>
+                </div>
+
+                <button class="btn-comprar">Comprar</button>
+                <button class="btn-carrinho">Adicionar ao carrinho</button>
+
+                <div class="frete">
+                    <label for="cepEntrega">Digite seu CEP:</label>
+                    <input type="text" id="cepEntrega" placeholder="00000-000">
+                    <button id="calcularFrete">Calcular Frete</button>
+                    <p><strong>Taxa de entrega:</strong> <span id="taxaEntrega">R$ 0,00</span></p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- produtos recomendados -->
+
+        <section id="descricaoDetalhada"></section>
+        <section id="produtosRecomendados"></section>
+        <section id="informacoesTecnicas"></section>
+        <section id="faq"></section>
+        <section id="avaliacoes"></section>
+
+
+
+    </main>
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-social">
+            <h3>Siga-nos!</h3>
+            <div class="social-icons">
+                <a href="#"><img src="../style/icons/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../style/icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../style/icons/pinterest-logo.png" alt="Pinterest"></a>
+                <a href="#"><img src="../style/icons/twitter.png" alt="X"></a>
+            </div>
+        </div>
+
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Denúncias</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Como trabalhamos</h4>
+                <ul>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Troca e devolução</a></li>
+                    <li><a href="#">Requisitos</a></li>
+                    <li><a href="#">Mapa do site</a></li>
+                    <li><a href="#">Relatório de Igualdade Salarial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">A ARQ</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Sustentabilidade</a></li>
+                    <li><a href="#">Lojas</a></li>
+                    <li><a href="#">Best Friday</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>© 2025 ARQ - Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/catalogo.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
+    <script src="../javascript/visualizacao.js"></script>
+
+</body>
+
+</html>

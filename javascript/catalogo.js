@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         lista.forEach(p => {
             grid.innerHTML += `
-                <a href="#" class="card">
+                <a href="../pages/visualizacao.html?id=${p.id}" class="card">
                     <img src="${p.imagem}" alt="${p.nome}">
                     <div class="info">
                         <h2>${p.nome}</h2>

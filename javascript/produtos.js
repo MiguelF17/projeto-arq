@@ -19,7 +19,7 @@ const produtos = [
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
-        imagem: "../style/imgs/poutronas.png"
+        imagem: "../style/imgs/poutronas.png",
     },
     {
         id: 3,
