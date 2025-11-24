@@ -1,15 +1,23 @@
-document.querySelectorAll('.qtd-control').forEach(control => {
-    const minusBtn = control.querySelector('.minus');
-    const plusBtn = control.querySelector('.plus');
-    const input = control.querySelector('.qtd-input');
+document.addEventListener("DOMContentLoaded", () => {
+    const carrinhoKey = "carrinhoARQ";
+    const carrinhoQtd = document.getElementById("carrinhoQtd");
+    if (!carrinhoQtd) return;
 
-    minusBtn.addEventListener('click', () => {
-        let value = parseInt(input.value);
-        if (value > 1) input.value = value - 1;
-    });
+    function atualizarCarrinhoQtd() {
+        const carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
+        const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
 
-    plusBtn.addEventListener('click', () => {
-        let value = parseInt(input.value);
-        input.value = value + 1;
-    });
+        carrinhoQtd.textContent = totalItens;
+        carrinhoQtd.style.display = totalItens > 0 ? "inline-block" : "none";
+
+        // Animação de pop
+        carrinhoQtd.classList.add("mostrar");
+        setTimeout(() => carrinhoQtd.classList.remove("mostrar"), 300); // tempo da animação em ms
+    }
+
+    // Atualiza no carregamento da página
+    atualizarCarrinhoQtd();
+
+    // Atualiza quando algum script dispara o evento
+    document.addEventListener("carrinhoAtualizado", atualizarCarrinhoQtd);
 });

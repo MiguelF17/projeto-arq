@@ -107,35 +107,18 @@ document.addEventListener("DOMContentLoaded", () => {
     /// ===============================
     // CARRINHO
     // ===============================
-    const carrinhoQtd = document.getElementById("carrinhoQtd");
-
-    function atualizarCarrinhoQtd() {
-        const carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
-        const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
-
-        if (totalItens > 0) {
-            carrinhoQtd.textContent = totalItens;
-            carrinhoQtd.style.display = "inline-block";
-        } else {
-            carrinhoQtd.style.display = "none";
-        }
-    }
-
-    // Atualiza no carregamento da página
-    atualizarCarrinhoQtd();
 
     // Adiciona evento ao botão de carrinho
     btnAdicionarCarrinho.addEventListener("click", () => {
-        const usuarioLogado = JSON.parse(localStorage.getItem("loggedUser"));
-        if (!usuarioLogado) {
-            alert("Você precisa estar logado para adicionar ao carrinho!");
+        const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+        if (!loggedUser) {
+            alert("Você precisa estar logado para adicionar produtos ao carrinho.");
             window.location.href = "login.html";
             return;
         }
 
         let carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
         const index = carrinho.findIndex(p => p.id === produto.id);
-
         if (index > -1) {
             carrinho[index].quantidade += 1;
         } else {
@@ -150,10 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
 
-        // Atualiza número e anima
-        atualizarCarrinhoQtd();
-        carrinhoQtd.classList.add("mostrar");
-        setTimeout(() => carrinhoQtd.classList.remove("mostrar"), 300);
+        // Dispara o evento para atualizar o número global
+        document.dispatchEvent(new Event("carrinhoAtualizado"));
 
     });
 
