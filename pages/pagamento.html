@@ -43,26 +43,33 @@
         </div>
     </header>
 
+    <!-- Selecionar formas de pagamento -->
+
     <h1 class="title">Pagamento</h1>
 
     <h2 class="sub-titulo">Selecione a forma de pagamento</h2>
 
-    <form>
+    <div>
         <div class="formas-pagamento">
-            <input type="radio" id="cartao" name="metodo_pagamento" value="cartao_credito" checked>
-            <label class="botao" for="cartao">Cartão de Crédito</label>
+            <div class="fundo-pagamento botao">
+                <label for="cartao">Cartão de Crédito</label>
+                <input type="radio" name="metodo_pagamento" value="cartao_credito" checked>
+            </div>
 
-            <input type="radio" id="boleto" name="metodo_pagamento" value="boleto">
-            <label class="botao" for="boleto">Boleto</label>
-
-            <input type="radio" id="pix" name="metodo_pagamento" value="pix">
-            <label class="botao" for="pix">PIX</label>
+            <div class="fundo-pagamento botao">
+                <label for="boleto">Boleto</label>
+                <input type="radio" name="metodo_pagamento" value="boleto" checked>
+            </div>
+            
+            <div class="fundo-pagamento botao">
+                <label for="pix">PIX</label>
+                <input type="radio" name="metodo_pagamento" value="pix" checked>
+            </div>
         </div>
-    </form>
 
     <h2 class="sub-titulo">Dados do cartão</h2>
 
-    <!-- Formulário completo para os dados do cartão -->
+    <!-- Formulário para os dados do cartão -->
     <form class="form-pagamento-cartao" action="/processar_pagamento" method="POST">
         <div class="form-grupo">
             <label for="nome-completo">Nome completo</label>
@@ -89,8 +96,76 @@
                     maxlength="4" autocomplete="cc-csc" placeholder="xxx" required>
             </div>
         </div>
-
     </form>
+    </div>
+
+    <!-- Opções de parcelas  -->
+
+    <div class="opcoes">
+    <h2 class="sub-titulo">Opções de parcela</h2>
+
+        <div class="parcelas">
+            <div class="opcoes-parcela botao">
+                <label for="parcela">Sem parcela</label>
+                <input type="radio" name="opcao-parcela" value="sem_parcela" checked>
+            </div>
+
+            <div class="opcoes-parcela botao">
+                <label for="parcela">Até 3x</label>
+                <input type="radio" name="opcao-parcela" value="tres_parcelas" checked>
+            </div>
+
+            <div class="opcoes-parcela botao">
+                <label for="parcela">Até 6x</label>
+                <input type="radio" name="opcao-parcela" value="seis_parcelas" checked>
+            </div>
+
+            <div class="opcoes-parcela botao">
+                <label for="parcela">Até 12x</label>
+                <input type="radio" name="opcao-parcela" value="doze_parcelas" checked>
+            </div>
+
+            <div class="opcoes-parcela botao">
+                <label for="parcela">Até 18x</label>
+                <input type="radio" name="opcao-parcela" value="dezoito_parcelas" checked>
+            </div>
+
+            <div class="opcoes-parcela botao">
+                <label for="parcela">Até 24x</label>
+                <input type="radio" name="opcao-parcela" value="vintequatro_parcelas" checked>
+            </div>
+
+    <!-- Opções de entrega -->
+
+    <h2 class="sub-titulo1">Opções de entrega</h2>
+
+        <div class="opcoes-de-entregas">
+            <div class="entrega-opcoes botao">
+                <label for="envio">Sem parcela</label>
+                <input type="radio" name="opcao-envio" value="sem_parcela" checked>
+            </div>
+
+            <div class="entrega-opcoes botao">
+                <label for="envio">Até 3x</label>
+                <input type="radio" name="opcao-" value="tres_parcelas" checked>
+            </div>
+
+            <div class="entrega-opcoes botao">
+                <label for="envio">Até 6x</label>
+                <input type="radio" name="opcao-parcela" value="seis_parcelas" checked>
+            </div>
+
+            <div class="entrega-opcoes botao">
+                <label for="envio">Até 12x</label>
+                <input type="radio" name="opcao-parcela" value="doze_parcelas" checked>
+            </div>
+    </div>
+
+
+    <div class="container-buttons">
+        <a href="produto.html" class="btn btn-voltar">Continuar comprando</a>
+        <a class="btn btn-finalizar">Finalizar compra</a>
+    </div>
 
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/animacao.js"></script>
