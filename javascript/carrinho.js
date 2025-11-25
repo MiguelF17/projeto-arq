@@ -3,23 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".containerCarrinho");
     const carrinhoQtd = document.getElementById("carrinhoQtd");
 
-    // Pega produtos do localStorage
+    if (!carrinhoQtd) return;
+
     const carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
 
     function atualizarCarrinhoQtd() {
-        const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
-        carrinhoQtd.textContent = totalItens;
-        carrinhoQtd.style.display = totalItens > 0 ? "inline-block" : "none";
+        const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 0), 0);
 
-        // animação pop
-        carrinhoQtd.classList.add("mostrar");
-        setTimeout(() => carrinhoQtd.classList.remove("mostrar"), 300);
+        carrinhoQtd.textContent = totalItens > 0 ? totalItens : "";
+
+        if (totalItens > 0) {
+            carrinhoQtd.style.visibility = "visible";
+            carrinhoQtd.style.opacity = "1";
+            carrinhoQtd.style.transform = "scale(1)";
+        } else {
+            carrinhoQtd.style.visibility = "hidden";
+            carrinhoQtd.style.opacity = "0";
+        }
     }
 
-    atualizarCarrinhoQtd();
-
     function renderizarCarrinho() {
-        container.innerHTML = ""; // limpa container
+        if (!container) return;
+
+        container.innerHTML = "";
 
         carrinho.forEach((produto, index) => {
             const card = document.createElement("div");
@@ -29,15 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a href="#" class="lixeira" data-index="${index}">
                     <img src="../style/icons/lixeira.png" alt="Remover">
                 </a>
-
                 <div class="imagem-produto">
                     <img src="${produto.imagem}" alt="Imagem do produto">
                 </div>
-
                 <div class="card-content">
                     <h3>${produto.nome}</h3>
-                    <p class="preco">R$ ${produto.preco.toFixed(2)}</p>
-
+                    <p class="preco">R$ ${Number(produto.preco).toFixed(2)}</p>
                     <div class="acoes">
                         <div class="qtd-control">
                             <button class="qtd-btn minus" data-index="${index}">-</button>
@@ -54,47 +57,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function adicionarEventos() {
-        // Remover produto
-        const lixeiras = document.querySelectorAll(".lixeira");
-        lixeiras.forEach(btn => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-                const index = btn.dataset.index;
-                carrinho.splice(index, 1);
-                localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
-                renderizarCarrinho();
-                atualizarCarrinhoQtd();
-            });
+        document.querySelectorAll(".lixeira").forEach(btn => {
+            btn.onclick = onClickLixeira;
         });
 
-        // Aumentar ou diminuir quantidade
-        const maisBtns = document.querySelectorAll(".qtd-btn.plus");
-        const menosBtns = document.querySelectorAll(".qtd-btn.minus");
-
-        maisBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const index = btn.dataset.index;
-                carrinho[index].quantidade++;
-                localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
-                renderizarCarrinho();
-                atualizarCarrinhoQtd();
-            });
+        document.querySelectorAll(".qtd-btn.plus").forEach(btn => {
+            btn.onclick = onClickMais;
         });
 
-        menosBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const index = btn.dataset.index;
-                if (carrinho[index].quantidade > 1) {
-                    carrinho[index].quantidade--;
-                } else {
-                    carrinho.splice(index, 1);
-                }
-                localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
-                renderizarCarrinho();
-                atualizarCarrinhoQtd();
-            });
+        document.querySelectorAll(".qtd-btn.minus").forEach(btn => {
+            btn.onclick = onClickMenos;
         });
     }
 
+    function onClickLixeira(e) {
+        e.preventDefault();
+        const index = Number(this.dataset.index);
+        carrinho.splice(index, 1);
+        localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
+        renderizarCarrinho();
+        atualizarCarrinhoQtd();
+    }
+
+    function onClickMais() {
+        const index = Number(this.dataset.index);
+        carrinho[index].quantidade++;
+        localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
+        renderizarCarrinho();
+        atualizarCarrinhoQtd();
+    }
+
+    function onClickMenos() {
+        const index = Number(this.dataset.index);
+        if (carrinho[index].quantidade > 1) {
+            carrinho[index].quantidade--;
+        } else {
+            carrinho.splice(index, 1);
+        }
+        localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
+        renderizarCarrinho();
+        atualizarCarrinhoQtd();
+    }
+
     renderizarCarrinho();
+    atualizarCarrinhoQtd();
 });

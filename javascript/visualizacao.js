@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
         const index = carrinho.findIndex(p => p.id === produto.id);
+
         if (index > -1) {
             carrinho[index].quantidade += 1;
         } else {
@@ -126,17 +127,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 id: produto.id,
                 nome: produto.nome,
                 preco: produto.preco,
-                quantidade: 1,
-                imagem: produto.imagem
+                imagem: produto.imagem,
+                quantidade: 1
             });
         }
 
         localStorage.setItem(carrinhoKey, JSON.stringify(carrinho));
 
-        // Dispara o evento para atualizar o número global
-        document.dispatchEvent(new Event("carrinhoAtualizado"));
+        // Atualiza o badge imediatamente
+        const carrinhoQtd = document.getElementById("carrinhoQtd");
+        const totalItens = carrinho.reduce((acc, item) => acc + (item.quantidade || 0), 0);
+
+        carrinhoQtd.textContent = totalItens > 0 ? totalItens : "";
+        carrinhoQtd.style.visibility = "visible";
+        carrinhoQtd.style.opacity = "1";
+
+        // Animação do badge
+        carrinhoQtd.classList.add("pop");
+        setTimeout(() => carrinhoQtd.classList.remove("pop"), 300);
+
 
     });
+
 
 
     // ===============================
