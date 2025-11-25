@@ -311,7 +311,7 @@ const produtos = [
         categoria: "Escritório & Home Office",
         cor: "Preto",
         material: "Aço Inox",
-        imagem: "../style/imgs/poutronaEscritorio.jpg"
+        imagem: "../style/imgs/poltronaEscritorio.avif"
     },
     {   
         id: 35,
