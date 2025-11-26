@@ -87,6 +87,31 @@ body {
     border-color: #658EA3;
 }
 
+/* requisitos de senha */
+
+.senha-requisitos {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.senha-requisitos .req {
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.senha-requisitos .req.ok {
+    color: #4CAF50;
+    /* verde quando estiver correto */
+}
+
+.senha-requisitos .req.fail {
+    color: #E53935;
+    /* vermelho quando faltar */
+}
+
+
 /* botão */
 
 .btn-container {
