@@ -13,7 +13,8 @@
   padding: 25px;
   border-radius: 10px;
   text-align: left;
-  /* alinhar tudo à esquerda */
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6ecef;
 }
 
 .menu-lateral span {
@@ -102,7 +103,7 @@
 .card {
   background: #fff;
   padding: 28px;
-  border-radius: 14px;
+  border-radius: 10px;
   margin-bottom: 28px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
   border: 1px solid #e6ecef;
