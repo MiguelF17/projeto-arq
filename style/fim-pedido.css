@@ -9,6 +9,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     line-height: 1.6;
+    background-color: #fff;
 }
 
 /* cabeçalho */
@@ -145,11 +146,11 @@ nav a:hover::after {
 /* SETA VOLTAR */
 
 .seta-voltar img {
-    width: 35px; 
+    width: 35px;
     display: block;
     margin: 0;
     padding: 0;
-    
+
 }
 
 .seta-voltar {
@@ -165,7 +166,8 @@ nav a:hover::after {
 /* Efeito de HOVER (mouse sobre o botão) */
 .seta-voltar:hover {
     /* Suaviza a cor de fundo (você pode escolher a cor) */
-    background-color: rgba(101, 142, 163, 0.1); /* Cor da marca (658EA3) com 10% de opacidade */
+    background-color: rgba(101, 142, 163, 0.1);
+    /* Cor da marca (658EA3) com 10% de opacidade */
     /* Você também pode aumentar um pouco a escala, mas com moderação */
     transform: scale(1.1);
 }
@@ -174,8 +176,9 @@ nav a:hover::after {
 .seta-voltar:active {
     /* Um feedback visual forte no momento exato do clique */
     transform: scale(0.95);
-    background-color: rgba(101, 142, 163, 0.2); 
-    box-shadow: none; /* Remove a sombra temporariamente para parecer que foi "pressionado" */
+    background-color: rgba(101, 142, 163, 0.2);
+    box-shadow: none;
+    /* Remove a sombra temporariamente para parecer que foi "pressionado" */
 }
 
 
@@ -192,7 +195,7 @@ h2 {
 }
 
 .verificar img {
-    
+
     margin: auto;
     padding: 100px;
     width: 300px;

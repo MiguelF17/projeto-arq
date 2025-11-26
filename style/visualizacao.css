@@ -5,6 +5,7 @@
     display: flex;
     padding: 60px 0px;
     gap: 80px;
+    background-color: #fff;
 }
 
 /* Grid esquerda (imagem principal + miniaturas) */
