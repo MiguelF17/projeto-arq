@@ -2,7 +2,9 @@ body {
   background-color: #f4f6f7;
 }
 
-/* Títulos */
+/* ----------------------------
+   TÍTULOS
+----------------------------- */
 
 .title {
   margin-top: 1%;
@@ -12,134 +14,137 @@ body {
 
 .sub-titulo,
 .sub-titulo1 {
-  margin-left: 10%;
-  margin-top: 5%;
+  margin-top: 30px;
   color: #333;
 }
 
-/* Formas de pagamento */
+/* ----------------------------
+   LAYOUT GERAL
+----------------------------- */
 
-.formas-pagamento {
-  margin-left: 0;
-  margin-top: 2%;
+.pagina-pagamento {
+  display: flex;
+  gap: 40px;
+  width: 80%;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Colunas iguais */
+.cartoes,
+.opcoes {
+  flex: 1;
+}
+
+/* ----------------------------
+   FORMAS DE PAGAMENTO
+----------------------------- */
+
+.formas-pagamento,
+.parcelas,
+.opcoes-de-entregas {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Caixas de seleção */
 .botao {
+  width: 100%;
   border-radius: 15px;
   padding: 12px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   background-color: #fff;
-}
-
-/* Estilos compartilhados */
-.fundo-pagamento,
-.opcoes-parcela,
-.entrega-opcoes {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 10%;
-  width: 80%;
-  padding: 8px;
 }
 
-/* Dados do cartão */
+/* ----------------------------
+   FORMULÁRIO DO CARTÃO
+----------------------------- */
 
 .form-pagamento-cartao {
   padding: 20px;
   border-radius: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  margin-left: 10%;
-  margin-top: 1%;
-  margin-bottom: 50px;
-  width: 77%;
   background-color: #fff;
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-top: 10px;
 }
 
 .form-grupo {
-  margin: 2%;
+  margin: 10px 0;
 }
 
 .form-row {
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.form-row .form-grupo {
-  flex: 1;
+  gap: 20px;
 }
 
 label {
   display: block;
-  padding-bottom: 5px;
+  margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
 }
 
 .form-pagamento-cartao input[type="text"] {
   width: 100%;
-  padding: 2%;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 15px;
-  box-sizing: border-box;
-  font-size: 16px;
   background-color: #f4f6f7;
+  border-radius: 15px;
+  font-size: 16px;
 }
 
-#validade-cartao, #cvv-cartao {
-  padding: 4%;
+/* ----------------------------
+   RESUMO DA COMPRA
+----------------------------- */
+
+.resumo-compra {
+  width: 80%;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 8px;
 }
 
-/*  Opções de parcelas */
+.resumo-compra h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
 
-.parcelas {
-  margin-left: 0;
-  margin-top: 2%;
+#listaResumo .itemResumo {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Opções de entrega */
-
-.opcoes-de-entregas {
-  margin-left: 0;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+#listaResumo .itemResumo:last-child {
+  border-bottom: none;
 }
 
-/* Botões finais */
-
-.container-buttons {
-  width: 70%;
-  margin: 0 auto 40px;
-  display: flex;
-  margin-left: 56%;
-  gap: 16px;
-}
-
-.pagina-pagamento {
-  display: flex;
-  padding: 0 auto;
-  justify-content: center;
-  margin: 2%;
-  margin-left: 12%;
-  margin-right: 18%;
-}
-
-.cartoes, .opcoes{
-  flex-grow: 2;
-}
+/* ----------------------------
+   TOTAL
+----------------------------- */
 
 .total {
-  font: bold;
-  margin-left: 72%;
+  width: 80%;
+  margin: 15px auto 0;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ----------------------------
+   BOTÕES
+----------------------------- */
+
+.container-buttons {
+  width: 80%;
+  margin: 20px auto 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
 }
