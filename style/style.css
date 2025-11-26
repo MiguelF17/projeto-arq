@@ -91,6 +91,7 @@ nav a:hover::after {
 /* barra de pesquisa */
 
 .search-form input {
+    background-color: #fff;
     padding: 10px 20px;
     border: 1px solid #ccc;
     border-radius: 50px;

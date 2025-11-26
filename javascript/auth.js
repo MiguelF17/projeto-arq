@@ -137,11 +137,20 @@ if (etapa2) {
 
         const cpf = document.getElementById("cpf").value;
         const cep = document.getElementById("cep").value;
+        const rua = document.getElementById("rua").value;
+        const bairro = document.getElementById("bairro").value;
+        const cidade = document.getElementById("cidade").value;
+        const estado = document.getElementById("estado").value;
         const numero = document.getElementById("numero").value;
 
         tempData.cpf = cpf;
         tempData.cep = cep;
+        tempData.rua = rua;
+        tempData.bairro = bairro;
+        tempData.cidade = cidade;
+        tempData.estado = estado;
         tempData.numero = numero;
+
 
         localStorage.setItem(TEMP_USER_KEY, JSON.stringify(tempData));
 

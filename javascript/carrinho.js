@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalPrecoElement = document.getElementById("totalPreco");
     const carrinhoVazio = document.getElementById("carrinhoVazio");
     const carrinhoQtd = document.getElementById("carrinhoQtd");
+    const btnFinalizar = document.getElementById("btnFinalizar");
+
 
     const carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
 
@@ -26,11 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
         if (carrinho.length === 0) {
             carrinhoVazio.style.display = "block";
             document.getElementById("totalContainer").style.display = "none";
+
+            // DESATIVA O BOTÃO
+            btnFinalizar.classList.add("desativado");
+            btnFinalizar.style.pointerEvents = "none";
+            btnFinalizar.style.opacity = "0.5";
+
             return;
         }
 
         carrinhoVazio.style.display = "none";
         document.getElementById("totalContainer").style.display = "block";
+
+        // ATIVA O BOTÃO
+        btnFinalizar.classList.remove("desativado");
+        btnFinalizar.style.pointerEvents = "auto";
+        btnFinalizar.style.opacity = "1";
 
         carrinho.forEach((produto, index) => {
             const card = document.createElement("div");
