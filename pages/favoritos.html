@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARQ - Favoritos</title>
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/carrinho.css">
+    <link rel="stylesheet" href="../style/favoritos.css">
 </head>
 
 <body>
@@ -52,25 +52,15 @@
     <h1 class="title">Meus Favoritos</h1>
 
     <main>
-
         <div class="containerFavoritos">
-
-            <div id="carrinhoVazio" class="carrinho-vazio">
+            <div id="favoritosVazio" class="favoritos-vazio" style="display: none;">
                 Não há produtos favoritados.
             </div>
 
-            <div id="totalContainer" class="total-container">
-                <h2>Total: R$ <span id="totalPreco">0,00</span></h2>
+            <div class="containerFavoritosItems" id="containerFavoritosItems">
+                <!-- Produtos favoritos serão exibidos aqui -->
             </div>
-
-            <div class="container-buttons">
-                <a href="home.html?scroll=catalogoSecao" class="btn btn-voltar">Continuar comprando</a>
-                <a href="./pagamento.html" id="btnFinalizar" class="btn btn-finalizar">Finalizar compra</a>
-            </div>
-
-
         </div>
-
     </main>
 
 
@@ -126,6 +116,7 @@
     <script src="../javascript/produtos.js"></script>
     <script src="../javascript/pesquisa.js"></script>
     <script src="../javascript/carrinho.js"></script>
+    <script src="../javascript/favoritos.js"></script>
 </body>
 
 </html>
