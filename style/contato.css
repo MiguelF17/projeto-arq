@@ -45,18 +45,3 @@ body {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
 }
  
-.form-input:focus {
-    border-color: #658EA3;
-    outline: none;
-<<<<<<< HEAD
-    box-shadow: 0 0 0 3px rgba(101, 142, 163, 0.3);
-}
- 
-=======
-    box-shadow: 0 0 0 3px rgba(101, 142, 163, 0.3); 
-}
-
->>>>>>> 77d66bea16a0bde0bc48295dc8e3008406dbbe37
-.contact-detail svg {
-    color: #658EA3;
-}
