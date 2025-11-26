@@ -189,6 +189,50 @@ body {
 }
 
 /* ============================
+   FRETE
+============================ */
+
+.frete-box{
+    margin: 20px 0;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.frete-box input{
+    width: 160px;
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+.frete-box .linha{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-frete{
+    padding: 10px 24px;
+    background: #52778a;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-frete:hover{
+    background: #3d5a6a;
+}
+
+.msg-frete{
+    margin-top: 8px;
+    font-weight: bold;
+    color: #4d6d7c;
+}
+
+
+/* ============================
    BOTÃO FINALIZAR
 ============================ */
 .btn-finalizar {

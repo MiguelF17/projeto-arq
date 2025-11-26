@@ -3,8 +3,10 @@
 *::after {
   box-sizing: border-box;
 }
-
 body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
   overflow-x: hidden;
 }
 
@@ -51,7 +53,6 @@ body {
 .campo {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 
 .campo label {
@@ -77,10 +78,10 @@ body {
 }
 
 .campo textarea {
-  height: 120px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 130px;
   resize: vertical;
 }
-
 /* Botão */
 .btn-enviar {
   width: 100%;
@@ -118,10 +119,6 @@ body {
   font-size: 15px;
 }
 
-.contato-info i {
-  color: #658EA3;
-  margin-right: 8px;
-}
 
 /* Mapa */
 .mapa {

@@ -104,6 +104,40 @@ document.addEventListener("DOMContentLoaded", () => {
     avaliacaoEstrelas.textContent = gerarEstrelasInteiras(mediaAleatoria);
     mediaAvaliacoes.textContent = `${mediaAleatoria} (${qtdAvaliacoes} avaliações)`;
 
+
+    /// ===============================
+    // COMPRAR
+    // ===============================
+
+    const btnComprar = document.getElementById("btn-comprar");
+
+    btnComprar.addEventListener("click", () => {
+        const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
+        if (!loggedUser) {
+            alert("Você precisa estar logado para finalizar a compra.");
+            window.location.href = "login.html";
+            return;
+        }
+
+        // Salvar o produto atual como "compra imediata"
+        const compraKey = "compraDiretaARQ";
+
+        const compraDireta = {
+            id: produto.id,
+            nome: produto.nome,
+            preco: produto.preco,
+            imagem: produto.imagem,
+            quantidade: 1
+        };
+
+        localStorage.setItem(compraKey, JSON.stringify(compraDireta));
+
+        // Ir para a página de pagamento
+        window.location.href = "pagamento.html";
+    });
+
+
     /// ===============================
     // CARRINHO
     // ===============================
@@ -306,5 +340,10 @@ document.addEventListener("DOMContentLoaded", () => {
         else if (["10", "11", "12", "13", "14", "15"].includes(prefixo)) taxa = 34.90;
 
         taxaEntrega.textContent = `R$ ${taxa.toFixed(2)}`;
+
+        localStorage.setItem("freteARQ", JSON.stringify({
+            cep,
+            valor: taxa
+        }));
     });
 });

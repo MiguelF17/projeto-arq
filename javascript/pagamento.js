@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const carrinhoKey = "carrinhoARQ";
+    const compraDiretaKey = "compraDiretaARQ";
     const pedidoKey = "pedidoARQ";
 
-    const carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
+    const compraDireta = JSON.parse(localStorage.getItem(compraDiretaKey));
+    const carrinhoLS = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
+
+    let carrinho = compraDireta ? [compraDireta] : carrinhoLS;
 
     const totalElement = document.querySelector(".total h4");
     const btnFinalizar = document.querySelector(".btn-finalizar");
@@ -12,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const tituloParcelas = document.querySelectorAll(".sub-titulo")[2];
     const blocoParcelas = document.querySelectorAll(".grupo-radio.coluna")[0];
 
-    /* ============================
-       RESUMO DO PEDIDO
-    ============================ */
 
+    /* ============================
+        RESUMO DO PEDIDO
+    ============================ */
     function resumoCarrinho() {
         const lista = document.getElementById("listaResumo");
 
@@ -43,24 +47,112 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resumoCarrinho();
 
+
+    /* ============================
+        CALCULAR TOTAL + FRETE
+    ============================ */
     function calcularTotal() {
-        const total = carrinho.reduce(
-            (acc, item) => acc + item.preco * item.quantidade, 0
+        const totalProdutos = carrinho.reduce(
+            (acc, item) => acc + item.preco * item.quantidade,
+            0
         );
 
-        totalElement.textContent = "Total: R$ " + total.toFixed(2).replace(".", ",");
-        return total;
+        const frete = JSON.parse(localStorage.getItem("freteARQ"));
+        const freteValor = frete ? frete.valor : 0;
+
+        const totalFinal = totalProdutos + freteValor;
+
+        totalElement.textContent = "Total: R$ " + totalFinal.toFixed(2).replace(".", ",");
+
+        const blocoFrete = document.getElementById("freteResumo");
+        if (blocoFrete && frete) {
+            blocoFrete.innerHTML = `
+                <span>Frete (${frete.cep})</span>
+                <strong>R$ ${frete.valor.toFixed(2).replace(".", ",")}</strong>
+            `;
+        }
+
+        return totalFinal;
     }
 
-    const totalCompra = calcularTotal();
+    let totalCompra = calcularTotal();
 
     if (carrinho.length === 0) {
         btnFinalizar.classList.add("desativado");
     }
 
 
+    /* =====================================================
+        >>>>>>>>>>>>>  CÓDIGO DO FRETE AQUI  <<<<<<<<<<<<<<
+    ===================================================== */
+
+    const campoCep = document.getElementById("cep");
+    const btnCalcularFrete = document.getElementById("btnCalcularFrete");
+    const msgFrete = document.getElementById("msgFrete");
+
+    function formatarCEP(cep) {
+        cep = cep.replace(/\D/g, "");
+        if (cep.length > 5) cep = cep.slice(0, 5) + "-" + cep.slice(5);
+        return cep;
+    }
+
+    if (campoCep) {
+        campoCep.addEventListener("input", () => {
+            campoCep.value = formatarCEP(campoCep.value);
+        });
+    }
+
+    function calcularFretePorTipo(tipo) {
+        if (tipo === "retirada") return 0;
+        if (tipo === "correios") return 39.90;
+        if (tipo === "transportadora") return 59.90;
+        return 0;
+    }
+
+    if (btnCalcularFrete) {
+        btnCalcularFrete.addEventListener("click", () => {
+            const cep = campoCep.value.replace(/\D/g, "");
+
+            if (cep.length !== 8) {
+                msgFrete.innerText = "CEP inválido.";
+                msgFrete.style.color = "red";
+                return;
+            }
+
+            const tipoEntrega = document.querySelector("input[name='opcao-envio']:checked").value;
+
+            const valorFrete = calcularFretePorTipo(tipoEntrega);
+
+            const frete = { cep, valor: valorFrete };
+            localStorage.setItem("freteARQ", JSON.stringify(frete));
+
+            msgFrete.style.color = "#4d6d7c";
+            msgFrete.innerText = `Frete: R$ ${valorFrete.toFixed(2).replace(".", ",")}`;
+
+            totalCompra = calcularTotal();
+        });
+    }
+
+    document.querySelectorAll("input[name='opcao-envio']").forEach(r => {
+        r.addEventListener("change", () => {
+            const cep = campoCep.value.replace(/\D/g, "");
+            if (cep.length !== 8) return;
+
+            const tipo = r.value;
+            const valorFrete = calcularFretePorTipo(tipo);
+
+            const frete = { cep, valor: valorFrete };
+            localStorage.setItem("freteARQ", JSON.stringify(frete));
+
+            msgFrete.innerText = `Frete atualizado: R$ ${valorFrete.toFixed(2).replace(".", ",")}`;
+
+            totalCompra = calcularTotal();
+        });
+    });
+
+
     /* ==========================================
-       BLOCO DE PARCELAS NO RESUMO
+       BLOCO DE PARCELAS
     ========================================== */
 
     const totalBox = document.querySelector(".total");
@@ -77,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const parcelaSelecionadaInput = document.querySelector("input[name='opcao-parcela']:checked");
         const parcelaSelecionada = parcelaSelecionadaInput ? Number(parcelaSelecionadaInput.value) : 0;
 
-        // PIX → esconder tudo
         if (metodo === "pix") {
             resumoParcelasBox.style.display = "none";
             blocoParcelas.style.display = "none";
@@ -85,37 +176,34 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // CARTÃO + BOLETO → ambos mostram bloco e resumo
         blocoParcelas.style.display = "flex";
         tituloParcelas.style.display = "block";
 
-        // Se "Sem parcelas"
-        if (!parcelaSelecionada || parcelaSelecionada === 0) {
+        if (!parcelaSelecionada) {
             resumoParcelasBox.style.display = "none";
             return;
         }
 
-        // Calcular parcelas (AGORA FUNCIONA PARA CARTÃO E BOLETO)
         const valorParcela = (totalCompra / parcelaSelecionada)
             .toFixed(2)
             .replace(".", ",");
 
         resumoParcelasBox.style.display = "block";
         resumoParcelasBox.innerHTML = `
-        <h4 style="margin: 10px 0 6px; color:#333;">Parcelamento</h4>
-        <p style="
-            background:#eef4f7;
-            padding:10px 14px;
-            border-radius:10px;
-            font-weight:600;
-            font-size:16px;
-            color:#52778a;
-            border:1px solid #d6d6d6;
-            margin-bottom:12px;
-        ">
-            ${parcelaSelecionada}x de R$ ${valorParcela}
-        </p>
-    `;
+            <h4 style="margin: 10px 0 6px; color:#333;">Parcelamento</h4>
+            <p style="
+                background:#eef4f7;
+                padding:10px 14px;
+                border-radius:10px;
+                font-weight:600;
+                font-size:16px;
+                color:#52778a;
+                border:1px solid #d6d6d6;
+                margin-bottom:12px;
+            ">
+                ${parcelaSelecionada}x de R$ ${valorParcela}
+            </p>
+        `;
     }
 
 
@@ -131,7 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let pixBox = document.getElementById("pixBox");
 
-        // Se já existe, apenas mostra
         if (pixBox) {
             pixBox.style.display = "block";
             return;
@@ -148,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         pixBox.innerHTML = `
             <h2 style="margin-bottom:10px;">Pagamento PIX</h2>
-            <p>Escaneie o QR Code para fazer o pagamento:</p>
+            <p>Escaneie o QR Code:</p>
 
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=SIMULACAO_PIX" 
                  alt="QR Code PIX Fake" style="margin: 15px 0">
@@ -168,36 +255,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (tempo <= 0) {
                 clearInterval(timer);
-                document.getElementById("pixTimer").innerText = `Código expirado`;
+                document.getElementById("pixTimer").innerText = "Código expirado";
             }
         }, 1000);
     }
 
 
     /* ============================
-       CONTROLE DE MÉTODOS
+       CONTROLE DE MÉTODOS DE PAGAMENTO
     ============================ */
     document.querySelectorAll("input[name='metodo_pagamento']").forEach(r => {
         r.addEventListener("change", () => {
             const metodo = r.value;
 
-            // FORM DO CARTÃO
             formCartao.style.display = metodo === "cartao_credito" ? "block" : "none";
 
-            // BOLETO + CARTÃO → mostram parcelas
             if (metodo === "cartao_credito" || metodo === "boleto") {
                 blocoParcelas.style.display = "flex";
                 tituloParcelas.style.display = "block";
             }
 
-            // PIX → esconde parcelas
             if (metodo === "pix") {
                 blocoParcelas.style.display = "none";
                 tituloParcelas.style.display = "none";
                 resumoParcelasBox.style.display = "none";
             }
 
-            // PIX simulado
             if (metodo === "pix") {
                 simularPix();
             } else {
@@ -262,6 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.location.href = "./finalizar-pedido.html";
     });
+
 
     atualizarParcelas();
 });

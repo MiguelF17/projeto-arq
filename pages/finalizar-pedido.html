@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar Pedido</title>
     <link rel="stylesheet" href="../style/fim-pedido.css">
+
 </head>
 
 <body>
+
     <!-- navbar -->
 
     <header>
@@ -50,20 +52,40 @@
 
     </header>
 
-    <!-- fim da nav -->
-
-    <br><br>
-    <a href="./pagamento.html" class="seta-voltar">
+    <a href="home.html" class="seta-voltar">
         <img src="../style/imgs/seta-esquerda.png" alt="Voltar para Pagamento">
     </a>
 
-
     <div class="verificar">
-        <img src="../style/imgs/check.gif" alt="">
+        <img id="pedidoGif" src="../style/imgs/check.gif" alt="Pedido Confirmado">
     </div>
 
     <h1>Seu pedido foi finalizado com sucesso!</h1>
-    <h2>Data de entrega prevista: 5 - 10 dias úteis (via Correio)</h2>
+    <h2 id="previsaoEntrega">Data de entrega prevista: —</h2>
+
+
+    <!-- =====================
+        CAIXA DE DADOS DO PEDIDO
+    ======================= -->
+    <div class="pedido-box">
+        <h2>Dados do Pedido</h2>
+
+        <div class="linha"><span>Número do pedido:</span> <strong id="pedidoNum"></strong></div>
+        <div class="linha"><span>Cliente:</span> <strong id="pedidoNome"></strong></div>
+        <div class="linha"><span>Frete:</span> <strong id="pedidoFrete"></strong></div>
+        <div class="linha"><span>Subtotal:</span> <strong id="pedidoSubtotal"></strong></div>
+        <div class="linha total"><span>Total:</span> <strong id="pedidoTotal"></strong></div>
+    </div>
+
+
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/catalogo.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
+    <script src="../javascript/carrinho.js"></script>
+    <script src="../javascript/pagamento.js"></script>
+    <script src="../javascript/finalizar-pedido.js"></script>
+
 </body>
 
 </html>
