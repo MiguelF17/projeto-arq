@@ -74,9 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function atualizarParcelas() {
         const metodo = document.querySelector("input[name='metodo_pagamento']:checked").value;
-        const parcelaSelecionada = Number(document.querySelector("input[name='opcao-parcela']:checked").value);
+        const parcelaSelecionadaInput = document.querySelector("input[name='opcao-parcela']:checked");
+        const parcelaSelecionada = parcelaSelecionadaInput ? Number(parcelaSelecionadaInput.value) : 0;
 
-        // PIX → some parcelas + título
+        // PIX → esconder tudo
         if (metodo === "pix") {
             resumoParcelasBox.style.display = "none";
             blocoParcelas.style.display = "none";
@@ -84,44 +85,39 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // BOLETO → não deixa parcelar
-        if (metodo === "boleto") {
-            resumoParcelasBox.style.display = "none";
-            blocoParcelas.style.display = "none";
-            tituloParcelas.style.display = "none";
-            return;
-        }
-
-        // CARTÃO → permite parcelamento
+        // CARTÃO + BOLETO → ambos mostram bloco e resumo
         blocoParcelas.style.display = "flex";
         tituloParcelas.style.display = "block";
 
-        if (parcelaSelecionada === 0) {
+        // Se "Sem parcelas"
+        if (!parcelaSelecionada || parcelaSelecionada === 0) {
             resumoParcelasBox.style.display = "none";
             return;
         }
 
+        // Calcular parcelas (AGORA FUNCIONA PARA CARTÃO E BOLETO)
         const valorParcela = (totalCompra / parcelaSelecionada)
             .toFixed(2)
             .replace(".", ",");
 
         resumoParcelasBox.style.display = "block";
         resumoParcelasBox.innerHTML = `
-            <h4 style="margin: 10px 0 6px; color:#333;">Parcelamento</h4>
-            <p style="
-                background:#eef4f7;
-                padding:10px 14px;
-                border-radius:10px;
-                font-weight:600;
-                font-size:16px;
-                color:#52778a;
-                border:1px solid #d6d6d6;
-                margin-bottom:12px;
-            ">
-                ${parcelaSelecionada}x de R$ ${valorParcela}
-            </p>
-        `;
+        <h4 style="margin: 10px 0 6px; color:#333;">Parcelamento</h4>
+        <p style="
+            background:#eef4f7;
+            padding:10px 14px;
+            border-radius:10px;
+            font-weight:600;
+            font-size:16px;
+            color:#52778a;
+            border:1px solid #d6d6d6;
+            margin-bottom:12px;
+        ">
+            ${parcelaSelecionada}x de R$ ${valorParcela}
+        </p>
+    `;
     }
+
 
     document.querySelectorAll("input[name='opcao-parcela']").forEach(r => {
         r.addEventListener("change", atualizarParcelas);
@@ -183,18 +179,30 @@ document.addEventListener("DOMContentLoaded", () => {
     ============================ */
     document.querySelectorAll("input[name='metodo_pagamento']").forEach(r => {
         r.addEventListener("change", () => {
-
             const metodo = r.value;
 
-            // Cartão mostra form
+            // FORM DO CARTÃO
             formCartao.style.display = metodo === "cartao_credito" ? "block" : "none";
 
-            // PIX mostra simulação
+            // BOLETO + CARTÃO → mostram parcelas
+            if (metodo === "cartao_credito" || metodo === "boleto") {
+                blocoParcelas.style.display = "flex";
+                tituloParcelas.style.display = "block";
+            }
+
+            // PIX → esconde parcelas
+            if (metodo === "pix") {
+                blocoParcelas.style.display = "none";
+                tituloParcelas.style.display = "none";
+                resumoParcelasBox.style.display = "none";
+            }
+
+            // PIX simulado
             if (metodo === "pix") {
                 simularPix();
             } else {
                 const pixBox = document.getElementById("pixBox");
-                if (pixBox) pixBox.style.display = "none";
+                if (pixBox) pixBox.remove();
             }
 
             atualizarParcelas();

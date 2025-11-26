@@ -11,7 +11,10 @@
 
 <body>
 
+    <!-- navbar -->
+
     <header>
+
         <a href="../pages/index.html">
             <div class="logo">
                 <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
@@ -24,27 +27,29 @@
                 <ul>
                     <li><a href="home.html">Início</a></li>
                     <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
+                    <li><a href="contato.html" id="linkContato">Contato</a></li>
                 </ul>
             </nav>
 
-            <form class="search-form">
-                <input type="text" placeholder="Buscar produtos..." autocomplete="off">
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
             </form>
 
             <div class="icons">
-                <a href="carrinho.html" class="carrinho-btn">
+                <a href="carrinho.html" class="carrinho-btn" id="carrinhoContainer">
                     <img src="../style/icons/cart.png" alt="Carrinho">
                     <span id="carrinhoQtd" class="carrinho-qtd"></span>
                 </a>
 
-                <a class="perfil-btn">
+                <a id="btnPerfil" class="perfil-btn">
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
             </div>
         </div>
+
     </header>
 
     <h1 class="title">Pagamento</h1>
@@ -185,9 +190,11 @@
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
 
+
     <script src="../javascript/auth.js"></script>
-    <script src="../javascript/catalogo.js"></script>
     <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/catalogo.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
     <script src="../javascript/carrinho.js"></script>
     <script src="../javascript/pagamento.js"></script>
 
