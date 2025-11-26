@@ -145,10 +145,10 @@ nav a:hover::after {
 /* SETA VOLTAR */
 
 .seta-voltar img {
-    width: 40px;
+    width: 35px; 
+    display: block;
     margin: 0;
-    padding: 0px;
-
+    padding: 0;
     
 }
 
@@ -158,11 +158,8 @@ nav a:hover::after {
     cursor: pointer;
     outline: none;
     margin: 20px;
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    border-radius: 50%; /* Faz com que o contorno de sombra seja circular */
-    padding: 5px; /* Adiciona espaço para a sombra aparecer */
-    transition: all 0.2s ease;
+    display: inline-block;
+    transition: all 0.5s ease;
 }
 
 /* Efeito de HOVER (mouse sobre o botão) */
@@ -170,7 +167,7 @@ nav a:hover::after {
     /* Suaviza a cor de fundo (você pode escolher a cor) */
     background-color: rgba(101, 142, 163, 0.1); /* Cor da marca (658EA3) com 10% de opacidade */
     /* Você também pode aumentar um pouco a escala, mas com moderação */
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* Efeito de ACTIVE (momento do clique) */
