@@ -120,7 +120,7 @@ const produtos = [
         categoria: "Cozinha",
         cor: "Verde",
         material: "Alumínio",
-        imagem: "../style/imgs/panelas.png"
+        imagem: "../style/imgs/panelas2.webp"
     },
     {
         id: 14,
