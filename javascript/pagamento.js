@@ -1,9 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const carrinhoKey = "carrinhoARQ";
+    const compraDiretaKey = "compraDiretaARQ"; // ← ADICIONADO
     const pedidoKey = "pedidoARQ";
 
-    const carrinho = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
+    // Se existir compra direta → usar ela
+    const compraDireta = JSON.parse(localStorage.getItem(compraDiretaKey));
+
+    // Carrinho completo
+    const carrinhoLS = JSON.parse(localStorage.getItem(carrinhoKey)) || [];
+
+    // DEFINIR ORIGEM DOS PRODUTOS
+    let carrinho = [];
+
+    if (compraDireta) {
+        // Compra direta vira um "carrinho" de 1 item
+        carrinho = [compraDireta];
+    } else {
+        carrinho = carrinhoLS;
+    }
 
     const totalElement = document.querySelector(".total h4");
     const btnFinalizar = document.querySelector(".btn-finalizar");
@@ -11,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tituloParcelas = document.querySelectorAll(".sub-titulo")[2];
     const blocoParcelas = document.querySelectorAll(".grupo-radio.coluna")[0];
-
     /* ============================
        RESUMO DO PEDIDO
     ============================ */
