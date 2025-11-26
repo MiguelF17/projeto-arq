@@ -15,7 +15,7 @@ const produtos = [
     {
         id: 2,
         nome: "Poltronas Bege e Puff",
-        preco: 576.79,
+        preco: 1259.99,
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
@@ -41,8 +41,8 @@ const produtos = [
     },
     {
         id: 5,
-        nome: "Cama Bege Moderna",
-        preco: 2360.79,
+        nome: "Cama Box Casal Moderna",
+        preco: 3360.79,
         categoria: "Quarto",
         cor: "Bege",
         material: "Madeira",
@@ -69,7 +69,7 @@ const produtos = [
     {
         id: 8,
         nome: "Sofá Cinza Seccional",
-        preco: 1002.02,
+        preco: 2339.99,
         categoria: "Sala de Estar",
         cor: "Cinza",
         material: "Tecido",
@@ -98,7 +98,7 @@ const produtos = [
     {
         id: 11,
         nome: "Mesa de Janta Moderna",
-        preco: 976.79,
+        preco: 4599.99,
         categoria: "Sala de Jantar",
         cor: "Madeira Natural",
         material: "Madeira",
@@ -107,7 +107,7 @@ const produtos = [
     {
         id: 12,
         nome: "Armário de Cozinha",
-        preco: 742.45,
+        preco: 749.99,
         categoria: "Cozinha",
         cor: "Bege",
         material: "Madeira",
@@ -116,7 +116,7 @@ const produtos = [
     {
         id: 13,
         nome: "Panelas e Frigideiras",
-        preco: 642.12,
+        preco: 539.99,
         categoria: "Cozinha",
         cor: "Verde",
         material: "Alumínio",
@@ -134,7 +134,7 @@ const produtos = [
     {
         id: 15,
         nome: "Talheres Modernos",
-        preco: 32.32,
+        preco: 1.32,
         categoria: "Cozinha",
         cor: "Prata",
         material: "Metal",
@@ -226,7 +226,7 @@ const produtos = [
     {
         id: 25,
         nome: "Gabinete de Pia",
-        preco:  162.90,
+        preco: 162.90,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Madeira",
@@ -250,7 +250,7 @@ const produtos = [
         material: "Madeira",
         imagem: "../style/imgs/mesa.menor"
     },
-        {
+    {
         id: 28,
         nome: "Puff Banco",
         preco: 256.12,
@@ -277,7 +277,7 @@ const produtos = [
         material: "Madeira",
         imagem: "../style/imgs/cadeiradejanta.webp"
     },
-    {   
+    {
         id: 31,
         nome: "Gaveteiro Escritório",
         preco: 319.32,
@@ -286,7 +286,7 @@ const produtos = [
         material: "Madeira",
         imagem: "../style/imgs/gaveteiro.png"
     },
-    {   
+    {
         id: 32,
         nome: "Mesa Boss Escritório",
         preco: 659.38,
@@ -294,8 +294,8 @@ const produtos = [
         cor: "Bege",
         material: "Madeira",
         imagem: "../style/imgs/mesaBoss.png"
-    }, 
-    {   
+    },
+    {
         id: 33,
         nome: "Luminária Cinza",
         preco: 89.90,
@@ -304,7 +304,7 @@ const produtos = [
         material: "Ferro",
         imagem: "../style/imgs/Luminaria2.png"
     },
-    {   
+    {
         id: 34,
         nome: "Cadeira de Escritório",
         preco: 1659.38,
@@ -313,7 +313,7 @@ const produtos = [
         material: "Aço Inox",
         imagem: "../style/imgs/poltronaEscritorio.avif"
     },
-    {   
+    {
         id: 35,
         nome: "Cadeira Profissional Rosé",
         preco: 719.38,
@@ -322,7 +322,7 @@ const produtos = [
         material: "Plástico",
         imagem: "../style/imgs/poutrona3.jpg"
     },
-    {   
+    {
         id: 36,
         nome: "Armário Superior",
         preco: 479.38,
@@ -330,5 +330,5 @@ const produtos = [
         cor: "Cinza",
         material: "Madeira",
         imagem: "../style/imgs/armarioSuperior.png"
-    }
+    },
 ];
