@@ -1,0 +1,143 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ======================================
+   Container principal
+====================================== */
+.contato-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: #f7f9fb;
+}
+
+.contato-container section {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================================
+   Formulário
+====================================== */
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.contato-descricao {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.titulo-form {
+  color: #444;
+  font-size: 16px;
+}
+
+/* Inputs e textarea */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo label {
+  font-weight: 600;
+  color: #555;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: #658EA3;
+  outline: none;
+  box-shadow: 0 0 4px rgba(101, 142, 163, 0.4);
+}
+
+.campo textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Botão */
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  background: #658EA3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-enviar:hover {
+  background: #567b8c;
+}
+
+/* Texto da política */
+.politica {
+  font-size: 13px;
+  color: #555;
+}
+
+.politica a {
+  color: #658EA3;
+  text-decoration: underline;
+}
+
+/* ======================================
+   Informações laterais
+====================================== */
+.contato-info p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 15px;
+}
+
+.contato-info i {
+  color: #658EA3;
+  margin-right: 8px;
+}
+
+/* Mapa */
+.mapa {
+  width: 100%;
+  height: 260px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* ======================================
+   Responsividade
+====================================== */
+@media (max-width: 900px) {
+  .contato-container {
+    flex-direction: column;
+  }
+}

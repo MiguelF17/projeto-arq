@@ -145,15 +145,39 @@ nav a:hover::after {
 /* SETA VOLTAR */
 
 .seta-voltar img {
-    width: 40px;
+    width: 35px; 
+    display: block;
     margin: 0;
-    padding: 10px;
-    color: #658EA3;
+    padding: 0;
+    
 }
 
-.seta-voltar button {
-
+.seta-voltar {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    margin: 20px;
+    display: inline-block;
+    transition: all 0.5s ease;
 }
+
+/* Efeito de HOVER (mouse sobre o botão) */
+.seta-voltar:hover {
+    /* Suaviza a cor de fundo (você pode escolher a cor) */
+    background-color: rgba(101, 142, 163, 0.1); /* Cor da marca (658EA3) com 10% de opacidade */
+    /* Você também pode aumentar um pouco a escala, mas com moderação */
+    transform: scale(1.1);
+}
+
+/* Efeito de ACTIVE (momento do clique) */
+.seta-voltar:active {
+    /* Um feedback visual forte no momento exato do clique */
+    transform: scale(0.95);
+    background-color: rgba(101, 142, 163, 0.2); 
+    box-shadow: none; /* Remove a sombra temporariamente para parecer que foi "pressionado" */
+}
+
 
 h1 {
 

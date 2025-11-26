@@ -16,16 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* carrossel */
-
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.querySelector(".carousel-track");
-  const slides = Array.from(track.children);
   const dotsContainer = document.querySelector(".dots");
 
-  // Limpa qualquer dot duplicado antes de criar
+  // Se não existir carrossel na página, não roda nada
+  if (!track || !dotsContainer) return;
+
+  const slides = Array.from(track.children);
+
   dotsContainer.innerHTML = "";
 
-  // Cria os dots dinamicamente de acordo com os slides
   slides.forEach((_, i) => {
     const dot = document.createElement("span");
     dot.classList.add("dot");
