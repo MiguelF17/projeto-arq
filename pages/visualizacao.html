@@ -37,7 +37,11 @@
             </form>
 
             <div class="icons">
-                <a href="carrinho.html" class="carrinho-btn"><img src="../style/icons/cart.png" alt="Carrinho"></a>
+                <a href="carrinho.html" class="carrinho-btn" id="carrinhoContainer">
+                    <img src="../style/icons/cart.png" alt="Carrinho">
+                    <span id="carrinhoQtd" class="carrinho-qtd"></span>
+                </a>
+
                 <a id="btnPerfil" class="perfil-btn">
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
@@ -90,8 +94,8 @@
                     <h3 id="produtoPrecoDesconto"></h3>
                 </div>
 
-                <button class="btn-comprar">Comprar</button>
-                <button class="btn-carrinho">Adicionar ao carrinho</button>
+                <button id="btn-comprar" class="btn-comprar">Comprar</button>
+                <button id="btn-carrinho" class="btn-carrinho">Adicionar ao carrinho</button>
 
                 <div class="frete">
                     <label for="cepEntrega">Digite seu CEP:</label>
@@ -171,6 +175,7 @@
     <script src="../javascript/catalogo.js"></script>
     <script src="../javascript/pesquisa.js"></script>
     <script src="../javascript/visualizacao.js"></script>
+    <script src="../javascript/carrinho.js"></script>
 
 </body>
 

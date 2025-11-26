@@ -130,10 +130,11 @@
 
 /* Informações da direita */
 .info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 500px;
+    max-width: 500px;
 }
 
 .valores h5 {
@@ -204,7 +205,14 @@
 /* TAXA DE ENTREGA */
 
 .frete {
+    width: 100%;
     justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .frete span {
@@ -212,7 +220,7 @@
 }
 
 .frete input {
-    width: 200px;
+    width: 150px;
     padding: 12px 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
