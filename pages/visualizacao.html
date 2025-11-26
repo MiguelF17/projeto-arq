@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARQ - Perfil</title>
-
-    <link rel="stylesheet" href="../style/perfil.css">
+    <title>ARQ -</title>
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/visualizacao.css">
 </head>
 
 <body>
+
 
     <header>
 
@@ -51,103 +51,74 @@
 
     </header>
 
-    <div class="perfil-container">
+    <main>
 
-        <aside class="menu-lateral">
-            <div class="foto-area">
-                <label for="uploadFoto" class="upload-wrapper">
-                    <img id="fotoPerfil" src="../style/icons/user.png" class="foto-perfil">
-                </label>
-                <input type="file" id="uploadFoto" accept="image/*" style="display: none;">
+        <!-- produto principal -->
 
-                <div class="info-perfil">
-                    <h3 id="perfilNome"></h3>
-                    <p id="perfilEmail"></p>
-                    <span class="alterar-foto">Alterar foto</span>
-                </div>
+        <section id="produtoContainer" class="produto-container">
+
+            <!-- imagem principal e miniaturas -->
+
+            <div class="produtosGrid">
+
+                <div class="miniaturas" id="miniaturas"></div>
+                <img id="imgPrincipal" src="" alt="">
+                <div id="zoomView" class="zoom-view"></div>
+
             </div>
 
-            <ul class="menu-links">
-                <li>
-                    <a href="home.html">Home</a>
-                </li>
-                <li>
-                    <a href="favoritos.html">Favoritos</a>
-                </li>
-                <li>
-                    <a href="#" id="logoutBtn">Logout</a>
-                </li>
-            </ul>
-        </aside>
+            <!-- informações do produto -->
 
-        <main class="perfil-conteudo">
-            <h1>Configurações da Conta</h1>
+            <div class="info">
 
-            <!-- ======== INFORMAÇÕES PESSOAIS ======== -->
-            <section class="card">
-                <h2>Informações Pessoais</h2>
-
-                <div class="grid-two personal-info">
-                    <div>
-                        <label>Nome completo</label>
-                        <input id="nome" type="text">
-                    </div>
-                    <div>
-                        <label>CPF</label>
-                        <input id="cpf" type="text">
-                    </div>
-                    <div>
-                        <label>E-mail</label>
-                        <input id="email" type="email">
-                    </div>
-                    <div>
-                        <label>Telefone</label>
-                        <input id="telefone" type="text">
-                    </div>
+                <div class="titulo-favorito">
+                    <h2 id="produtoNome"></h2>
+                    <button id="btnFavorito" class="btn-favorito"></button>
                 </div>
 
-                <button id="editarPerfil" class="btn editar">Editar Informações</button>
-                <button id="salvarPerfil" class="btn salvar">Salvar Alterações</button>
-            </section>
+                <p id="produtoDescricao"></p>
 
-            <!-- ======== ENDEREÇO ======== -->
-            <section class="card">
-                <h2>Endereço</h2>
-
-                <div class="grid-two address-info">
-                    <div>
-                        <label>CEP</label>
-                        <input id="cep" type="text">
-                    </div>
-                    <div>
-                        <label>Número</label>
-                        <input id="numero" type="text">
-                    </div>
-                    <div>
-                        <label>Rua</label>
-                        <input id="rua" type="text">
-                    </div>
-                    <div>
-                        <label>Bairro</label>
-                        <input id="bairro" type="text">
-                    </div>
-                    <div>
-                        <label>Cidade</label>
-                        <input id="cidade" type="text">
-                    </div>
-                    <div>
-                        <label>Estado</label>
-                        <input id="estado" type="text">
-                    </div>
-
+                <div class="avaliacoes">
+                    <h3>Avaliações</h3>
+                    <div class="estrelas" id="avaliacaoEstrelas">★★★★★</div>
+                    <p id="mediaAvaliacoes">(0 avaliações)</p>
                 </div>
 
-                <button id="editarEndereco" class="btn editar">Editar Endereço</button>
-                <button id="salvarEndereco" class="btn salvar">Salvar Alterações</button>
-            </section>
-        </main>
-    </div>
+                <div class="descricao-produto">
+                    <h3>Descrição</h3>
+                    <p id="descricaoDetalhada">Carregando...</p>
+                </div>
 
+                <div class="valores">
+                    <h5 id="produtoPrecoReal"></h5>
+                    <h3 id="produtoPrecoDesconto"></h3>
+                </div>
+
+                <button id="btn-comprar" class="btn-comprar">Comprar</button>
+                <button id="btn-carrinho" class="btn-carrinho">Adicionar ao carrinho</button>
+
+                <div class="frete">
+                    <label for="cepEntrega">Digite seu CEP:</label>
+                    <input type="text" id="cepEntrega" placeholder="00000-000">
+                    <button id="calcularFrete">Calcular Frete</button>
+                    <p><strong>Taxa de entrega:</strong> <span id="taxaEntrega">R$ 0,00</span></p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- produtos recomendados -->
+
+        <section id="descricaoDetalhada"></section>
+        <section id="produtosRecomendados"></section>
+        <section id="informacoesTecnicas"></section>
+        <section id="faq"></section>
+        <section id="avaliacoes"></section>
+
+
+
+    </main>
 
     <!-- footer -->
 
@@ -198,12 +169,14 @@
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../javascript/perfil.js"></script>
+
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/produtos.js"></script>
     <script src="../javascript/catalogo.js"></script>
     <script src="../javascript/pesquisa.js"></script>
+    <script src="../javascript/visualizacao.js"></script>
     <script src="../javascript/carrinho.js"></script>
+
 </body>
 
 </html>

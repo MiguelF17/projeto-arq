@@ -7,7 +7,7 @@
 }
 
 /* Container geral */
-.container {
+.containerCarrinho {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -130,7 +130,46 @@
   gap: 16px;
 }
 
-/* RESPONSIVIDADE */
+.btn-voltar {
+  background-color: transparent;
+  color: #658EA3;
+  border: 2px solid #658EA3;
+}
+
+.btn-voltar:hover {
+  background-color: #658EA3;
+  color: white;
+}
+
+/* valor */
+
+
+.total-container {
+    width: 70%;
+    margin: 20px auto;
+    text-align: right;
+}
+
+.total-container h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* carrinho vazio */
+
+.carrinho-vazio {
+  text-align: center;
+  font-size: 22px;
+  color: #777777;
+  margin: 40px 0;
+}
+
+.desativado {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Responsiviade */
 @media (max-width: 700px) {
   .card {
     flex-direction: column;
