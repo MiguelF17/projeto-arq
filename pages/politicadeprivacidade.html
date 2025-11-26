@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidade</title>
+  <style>
+    .politica {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: justify;
+      line-height: 1.6;
+    }
+ 
+    .politica ul {
+      padding-left: 20px;
+    }
+ 
+    .avancar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ccc; /* desativado */
+      color: #666;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: not-allowed;
+      pointer-events: none; /* impede clique */
+    }
+ 
+    .avancar.ativo {
+      background-color: #658EA3;
+      color: #fff;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+ 
+    .avancar.ativo:hover {
+      background-color: #658EA3;
+    }
+  </style>
+</head>
+<body>
+  <div class="politica">
+    <h1>Política de Privacidade para Envio de Formulários</h1>
+    <p>Ao preencher e enviar qualquer formulário em nosso site, você está fornecendo informações pessoais que serão tratadas com responsabilidade e segurança pela equipe da ARQ – Venda de Móveis.</p>
+ 
+    <ul>
+      <li>Responder dúvidas, solicitações ou mensagens enviadas pelo usuário</li>
+      <li>Processar pedidos de orçamento, cadastro ou contato comercial</li>
+      <li>Melhorar a comunicação e o atendimento ao cliente</li>
+    </ul>
+ 
+    <h2>Dados coletados</h2>
+    <ul>
+      <li>Nome</li>
+      <li>E-mail</li>
+      <li>Telefone</li>
+      <li>Mensagem ou observação enviada pelo usuário</li>
+    </ul>
+ 
+    <p>Esses dados são utilizados exclusivamente para os fins descritos acima e não são compartilhados com terceiros sem autorização.</p>
+ 
+    <h2>Armazenamento e Segurança</h2>
+    <p>As informações enviadas são armazenadas em ambiente seguro e protegidas contra acessos não autorizados. Utilizamos práticas atualizadas de segurança digital para garantir a integridade dos dados.</p>
+ 
+    <h2>Consentimento</h2>
+    <p>Ao enviar um formulário, o usuário declara estar ciente e de acordo com esta Política de Privacidade, autorizando o uso dos dados conforme descrito.</p>
+ 
+    <h2>Direitos do Usuário</h2>
+    <p>O usuário pode solicitar, a qualquer momento:</p>
+    <ul>
+      <li>Acesso aos dados enviados</li>
+      <li>Correção ou atualização das informações</li>
+    </ul>
+ 
+    <p>Para isso, basta entrar em contato pelo e-mail: <strong>privacidade@arqmoveis.com.br</strong></p>
+ 
+    <h2>Atualizações</h2>
+    <p>Esta política pode ser revisada e atualizada periodicamente. Recomendamos que o usuário consulte esta página sempre que enviar um novo formulário.</p>
+ 
+    <article class="form-control-receber">
+      <label for="aceito">
+        <input type="checkbox" id="aceito" name="termos" value="sim" />
+        Li e aceito os termos e condições</label>
+    </article>
+    <!-- Botão de avançar -->
+    <a href="contato.html" class="avancar" id="btnAvancar">Avançar</a>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById("aceito");
+    const botao = document.getElementById("btnAvancar");
+
+    checkbox.addEventListener("change", function () {
+      if (this.checked) {
+        botao.classList.add("ativo");
+      } else {
+        botao.classList.remove("ativo");
+      }
+    });
+  </script>
+</body>
+</html>

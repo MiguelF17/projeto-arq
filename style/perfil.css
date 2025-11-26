@@ -1,0 +1,173 @@
+/* === LAYOUT GERAL === */
+.perfil-container {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  background: #f4f6f7;
+}
+
+/* ======== MENU LATERAL ======== */
+.menu-lateral {
+  width: 260px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: left;
+  /* alinhar tudo à esquerda */
+}
+
+.menu-lateral span {
+  display: flex;
+  justify-content: center;
+}
+
+/* Foto */
+/* AGRUPA FOTO + INFORMAÇÕES */
+.foto-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* PERFEITO PARA ALINHAR NOME + EMAIL */
+.info-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+#perfilNome {
+  font-size: 19px;
+  font-weight: 600;
+  color: #333;
+}
+
+#perfilEmail {
+  font-size: 14px;
+  color: #666;
+}
+
+/* "Alterar foto" sempre centralizado */
+.alterar-foto {
+  font-size: 15px;
+  color: #658EA3;
+  cursor: pointer;
+}
+
+.foto-perfil {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #658EA3;
+  cursor: pointer;
+}
+
+/* Links */
+.menu-links {
+  margin-top: 25px;
+}
+
+.menu-links li {
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+.menu-links a {
+  width: 100%;
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.menu-links a:hover {
+  background-color: #658EA3;
+  color: #fff;
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.perfil-conteudo {
+  flex: 1;
+  color: #658EA3;
+}
+
+.card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6ecef;
+}
+
+.card h2 {
+  color: #000;
+  margin-bottom: 18px;
+  font-size: 22px;
+}
+
+/* === GRID === */
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* === INPUTS === */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d2d8da;
+  background: #f9fafb;
+  transition: 0.2s;
+}
+
+input:disabled {
+  background: #eef1f3;
+  cursor: not-allowed;
+  color: #666;
+}
+
+input:focus {
+  border-color: #658EA3;
+  box-shadow: 0 0 0 2px rgba(101, 142, 163, 0.25);
+}
+
+/* === BOTÕES === */
+
+
+.editar {
+  margin-top: 20px;
+  background: #658EA3;
+  color: #fff;
+}
+
+
+.salvar {
+  margin-top: 20px;
+  color: #fff;
+  display: none;
+}
+
+/* Suavização geral */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
