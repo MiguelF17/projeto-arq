@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header>
 
+    <header>
         <a href="../pages/index.html">
             <div class="logo">
                 <img src="../style/imgs/logo.png" alt="ARQ - Página Inicial" />
@@ -24,162 +24,119 @@
                 <ul>
                     <li><a href="home.html">Início</a></li>
                     <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
-                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
-                    <li><a href="contato.html" id="linkContato">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
 
-            <form class="search-form" id="formPesquisa">
-                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
-                <div id="sugestoesPesquisa" class="sugestoes"></div>
+            <form class="search-form">
+                <input type="text" placeholder="Buscar produtos..." autocomplete="off">
             </form>
 
             <div class="icons">
-                <a href="carrinho.html" class="carrinho-btn" id="carrinhoContainer">
+                <a href="carrinho.html" class="carrinho-btn">
                     <img src="../style/icons/cart.png" alt="Carrinho">
                     <span id="carrinhoQtd" class="carrinho-qtd"></span>
                 </a>
 
-                <a id="btnPerfil" class="perfil-btn">
+                <a class="perfil-btn">
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
             </div>
         </div>
-
     </header>
 
     <h1 class="title">Pagamento</h1>
 
-    <div class="resumo-compra">
-        <h2>Resumo da Compra</h2>
-        <div id="listaResumo"></div>
-    </div>
+    <section class="conteudo">
 
-    <div class="pagina-pagamento">
+        <!-- RESUMO DO PEDIDO -->
+        <aside class="resumo">
+            <h2>Resumo da Compra</h2>
+            <div id="listaResumo" class="lista-resumo"></div>
+            <div class="total">
+                <h4>Total: R$ 0,00</h4>
+            </div>
+        </aside>
 
-        <!-- Formas de pagamento -->
+        <!-- PAGAMENTO -->
+        <main class="pagamento">
 
-        <div class="cartoes">
-            <h2 class="sub-titulo">Selecione a forma de pagamento</h2>
+            <!-- Formas -->
+            <h2 class="sub-titulo">Forma de Pagamento</h2>
+            <div class="grupo-radio">
+                <label class="radio-item">
+                    Cartão de Crédito
+                    <input checked type="radio" name="metodo_pagamento" value="cartao_credito">
+                </label>
 
-            <div class="formas-pagamento">
-                <div class="fundo-pagamento botao">
-                    <label for="cartao-credito">Cartão de Crédito</label>
-                    <input id="cartao-credito" type="radio" name="metodo_pagamento" value="cartao_credito" checked>
-                </div>
+                <label class="radio-item">
+                    Boleto
+                    <input type="radio" name="metodo_pagamento" value="boleto">
+                </label>
 
-                <div class="fundo-pagamento botao">
-                    <label for="pag-boleto">Boleto</label>
-                    <input id="pag-boleto" type="radio" name="metodo_pagamento" value="boleto">
-                </div>
-
-                <div class="fundo-pagamento botao">
-                    <label for="pag-pix">PIX</label>
-                    <input id="pag-pix" type="radio" name="metodo_pagamento" value="pix">
-                </div>
+                <label class="radio-item">
+                    PIX
+                    <input type="radio" name="metodo_pagamento" value="pix">
+                </label>
             </div>
 
-            <h2 class="sub-titulo">Dados do cartão</h2>
+            <!-- Dados do cartão -->
+            <div id="form-cartao" class="card-form">
+                <h2 class="sub-titulo">Dados do cartão</h2>
 
-            <form class="form-pagamento-cartao" action="/processar_pagamento" method="POST">
+                <label>Nome no cartão</label>
+                <input type="text" id="nome-completo">
 
-                <div class="form-grupo">
-                    <label for="nome-completo">Nome completo</label>
-                    <input type="text" id="nome-completo" name="nome_completo" placeholder="Digite seu nome completo"
-                        required>
-                </div>
+                <label>Número do cartão</label>
+                <input type="text" id="numero-cartao" maxlength="19">
 
-                <div class="form-grupo">
-                    <label for="numero-cartao">Número do Cartão</label>
-                    <input type="text" id="numero-cartao" name="numero_cartao" maxlength="19"
-                        placeholder="xxxx xxxx xxxx xxxx" required>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-grupo">
-                        <label for="validade-cartao">Validade (MM/AA)</label>
-                        <input type="text" id="validade-cartao" name="validade_cartao" placeholder="MM/AA" required>
+                <div class="linha">
+                    <div>
+                        <label>Validade (MM/AA)</label>
+                        <input type="text" id="validade-cartao" maxlength="5">
                     </div>
-
-                    <div class="form-grupo">
-                        <label for="cvv-cartao">CVV</label>
-                        <input type="text" id="cvv-cartao" name="cvv_cartao" maxlength="4" placeholder="xxx" required>
+                    <div>
+                        <label>CVV</label>
+                        <input type="text" id="cvv-cartao" maxlength="4">
                     </div>
                 </div>
-
-            </form>
-        </div>
-
-        <!-- Opções de parcela -->
-
-        <div class="opcoes">
-            <h2 class="sub-titulo">Opções de parcela</h2>
-
-            <div class="parcelas">
-                <div class="opcoes-parcela botao">
-                    <label for="parcela-0">Sem parcela</label>
-                    <input id="parcela-0" type="radio" name="opcao-parcela" value="0" checked>
-                </div>
-
-                <div class="opcoes-parcela botao">
-                    <label for="parcela-3">Até 3x</label>
-                    <input id="parcela-3" type="radio" name="opcao-parcela" value="3">
-                </div>
-
-                <div class="opcoes-parcela botao">
-                    <label for="parcela-6">Até 6x</label>
-                    <input id="parcela-6" type="radio" name="opcao-parcela" value="6">
-                </div>
-
-                <div class="opcoes-parcela botao">
-                    <label for="parcela-12">Até 12x</label>
-                    <input id="parcela-12" type="radio" name="opcao-parcela" value="12">
-                </div>
-
-                <div class="opcoes-parcela botao">
-                    <label for="parcela-18">Até 18x</label>
-                    <input id="parcela-18" type="radio" name="opcao-parcela" value="18">
-                </div>
-
-                <div class="opcoes-parcela botao">
-                    <label for="parcela-24">Até 24x</label>
-                    <input id="parcela-24" type="radio" name="opcao-parcela" value="24">
-                </div>
             </div>
 
-            <!-- Opções de entrega -->
-            <h2 class="sub-titulo1">Opções de entrega</h2>
+            <!-- Parcelas -->
+            <h2 class="sub-titulo">Parcelamento</h2>
+            <div class="grupo-radio coluna">
+                <label class="radio-item">
+                    Sem parcelas
+                    <input checked type="radio" name="opcao-parcela" value="0">
+                </label>
 
-            <div class="opcoes-de-entregas">
-                <div class="entrega-opcoes botao">
-                    <label for="envio-correios">Correios</label>
-                    <input id="envio-correios" type="radio" name="opcao-envio" value="correios" checked>
-                </div>
-
-                <div class="entrega-opcoes botao">
-                    <label for="envio-transportadora">Transportadora</label>
-                    <input id="envio-transportadora" type="radio" name="opcao-envio" value="transportadora">
-                </div>
-
-                <div class="entrega-opcoes botao">
-                    <label for="envio-retirada">Retirada na loja</label>
-                    <input id="envio-retirada" type="radio" name="opcao-envio" value="retirada">
-                </div>
+                <label class="radio-item">3x<input type="radio" name="opcao-parcela" value="3"></label>
+                <label class="radio-item">6x<input type="radio" name="opcao-parcela" value="6"></label>
+                <label class="radio-item">12x<input type="radio" name="opcao-parcela" value="12"></label>
+                <label class="radio-item">18x<input type="radio" name="opcao-parcela" value="18"></label>
+                <label class="radio-item">24x<input type="radio" name="opcao-parcela" value="24"></label>
             </div>
-        </div>
-    </div>
 
-    <div class="total">
-        <h4>Total: R$ 499,99</h4>
-    </div>
 
-    <!-- Botões no fim da página -->
+            <h2 class="sub-titulo">Entrega</h2>
+            <div class="grupo-radio coluna">
+                <label class="radio-item">Correios<input checked type="radio" name="opcao-envio"
+                        value="correios"></label>
+                <label class="radio-item">Transportadora<input type="radio" name="opcao-envio"
+                        value="transportadora"></label>
+                <label class="radio-item">Retirada<input type="radio" name="opcao-envio" value="retirada"></label>
+            </div>
 
-    <div class="container-buttons">
-        <a href="../javascript/produtos.js" class="btn btn-voltar">Continuar comprando</a>
-        <a href="./finalizar-pedido.html" class="btn btn-finalizar">Finalizar compra</a>
-    </div>
+            <button class="btn-finalizar">Finalizar Compra</button>
+
+        </main>
+
+
+    </section>
+
+    <!-- footer -->
 
     <footer class="footer">
         <div class="footer-social">
@@ -233,8 +190,6 @@
     <script src="../javascript/produtos.js"></script>
     <script src="../javascript/carrinho.js"></script>
     <script src="../javascript/pagamento.js"></script>
-    <script src="../javascript/carrinho.js"></script>
-
 
 </body>
 
