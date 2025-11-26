@@ -178,6 +178,12 @@ if (etapa3) {
         const senha = document.getElementById("senha").value;
         const confirmar = document.getElementById("confirmar-senha").value;
 
+        // Verifica os requisitos da senha
+        if (!validarRequisitosSenha(senha)) {
+            alert("A senha não atende aos requisitos mínimos.");
+            return;
+        }
+
         if (senha !== confirmar) {
             alert("As senhas não coincidem.");
             return;
@@ -191,6 +197,44 @@ if (etapa3) {
         alert("Cadastro concluído!");
         window.location.href = "login.html";
     });
+}
+
+// ======================================================
+//          REGRAS DE NEGÓCIO - VALIDAÇÃO DA SENHA
+// ======================================================
+
+// Verifica os requisitos conforme o usuário digita
+const inputSenha = document.getElementById("senha");
+if (inputSenha) {
+    inputSenha.addEventListener("input", () => {
+        validarRequisitosSenha(inputSenha.value);
+    });
+}
+
+function validarRequisitosSenha(senha) {
+    const regras = {
+        req8: senha.length >= 8,
+        reqMaiuscula: /[A-Z]/.test(senha),
+        reqMinuscula: /[a-z]/.test(senha),
+        reqNumero: /[0-9]/.test(senha),
+        reqEspecial: /[!@#$%^&*(),.?":{}|<>]/.test(senha)
+    };
+
+    for (let regra in regras) {
+        const el = document.getElementById(regra);
+
+        if (!el) continue;
+
+        if (regras[regra]) {
+            el.classList.add("ok");
+            el.classList.remove("fail");
+        } else {
+            el.classList.add("fail");
+            el.classList.remove("ok");
+        }
+    }
+
+    return Object.values(regras).every(v => v === true);
 }
 
 // ======================================================

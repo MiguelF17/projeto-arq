@@ -129,7 +129,7 @@ const produtos = [
         categoria: "Cozinha",
         cor: "Preto",
         material: "Metal",
-        imagem: "../style/imgs/escorredor.png"
+        imagem: "../style/imgs/escorredor3.jpeg"
     },
     {
         id: 15,
@@ -138,7 +138,7 @@ const produtos = [
         categoria: "Cozinha",
         cor: "Prata",
         material: "Metal",
-        imagem: "../style/imgs/talheres.png"
+        imagem: "../style/imgs/talheres2.png"
     },
     {
         id: 16,

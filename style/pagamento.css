@@ -1,145 +1,264 @@
-body {
-  background-color: #f4f6f7;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Títulos */
+/* ============================
+   GERAL
+============================ */
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
 
 .title {
-  margin-top: 1%;
   text-align: center;
+  margin: 35px 0;
   color: #658ea3;
+  font-size: 32px;
 }
 
-.sub-titulo,
-.sub-titulo1 {
-  margin-left: 10%;
-  margin-top: 5%;
+/* ============================
+   LAYOUT PRINCIPAL
+============================ */
+.conteudo {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* ============================
+   CARDS BASE
+============================ */
+.card-base {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================
+   RESUMO DO PEDIDO
+============================ */
+.resumo {
+  width: 32%;
+  position: sticky;
+  top: 20px;
+}
+
+.resumo h2 {
+  margin-bottom: 15px;
   color: #333;
 }
 
-/* Formas de pagamento */
-
-.formas-pagamento {
-  margin-left: 0;
-  margin-top: 2%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.lista-resumo {
+  border-top: 1px solid #e3e3e3;
+  padding-top: 15px;
 }
 
-/* Caixas de seleção */
-.botao {
-  border-radius: 15px;
-  padding: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  background-color: #fff;
-}
-
-/* Estilos compartilhados */
-.fundo-pagamento,
-.opcoes-parcela,
-.entrega-opcoes {
+.lista-resumo .itemResumo {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-left: 10%;
-  width: 80%;
-  padding: 8px;
-}
-
-/* Dados do cartão */
-
-.form-pagamento-cartao {
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  margin-left: 10%;
-  margin-top: 1%;
-  margin-bottom: 50px;
-  width: 77%;
-  background-color: #fff;
-}
-
-.form-grupo {
-  margin: 2%;
-}
-
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.form-row .form-grupo {
-  flex: 1;
-}
-
-label {
-  display: block;
-  padding-bottom: 5px;
-  font-weight: bold;
-  color: #333;
-}
-
-.form-pagamento-cartao input[type="text"] {
-  width: 100%;
-  padding: 2%;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  box-sizing: border-box;
-  font-size: 16px;
-  background-color: #f4f6f7;
-}
-
-#validade-cartao, #cvv-cartao {
-  padding: 4%;
-}
-
-/*  Opções de parcelas */
-
-.parcelas {
-  margin-left: 0;
-  margin-top: 2%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Opções de entrega */
-
-.opcoes-de-entregas {
-  margin-left: 0;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Botões finais */
-
-.container-buttons {
-  width: 70%;
-  margin: 0 auto 40px;
-  display: flex;
-  margin-left: 56%;
-  gap: 16px;
-}
-
-.pagina-pagamento {
-  display: flex;
-  padding: 0 auto;
-  justify-content: center;
-  margin: 2%;
-  margin-left: 12%;
-  margin-right: 18%;
-}
-
-.cartoes, .opcoes{
-  flex-grow: 2;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 15.5px;
 }
 
 .total {
-  font: bold;
-  margin-left: 72%;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.total h4 {
+  font-size: 22px;
+  color: #222;
+  font-weight: 700;
+}
+
+/* ============================
+   SEÇÃO DE PAGAMENTO
+============================ */
+.pagamento {
+  width: 66%;
+}
+
+.sub-titulo {
+  margin: 25px 0 10px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ============================
+   GRUPOS DE RADIO
+============================ */
+.grupo-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.grupo-radio.coluna {
+  padding: 22px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.radio-item {
+  background: #f8f9fa;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #d6d6d6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.radio-item:hover {
+  border-color: #87a7b9;
+  background: #eef3f6;
+}
+
+.radio-item input {
+  transform: scale(1.2);
+}
+
+.valor-parcelas {
+  font-size: 16px;
+  color: #52778a;
+  font-weight: 600;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  background: #eef4f7;
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
+/* ============================
+   FORMULÁRIO DO CARTÃO
+============================ */
+.card-form {
+  margin-bottom: 30px;
+  padding: 25px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.card-form label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.card-form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f4f6f7;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.card-form input:focus {
+  border-color: #658ea3;
+  background: #ffffff;
+}
+
+.linha {
+  display: flex;
+  gap: 25px;
+}
+
+.linha div {
+  flex: 1;
+}
+
+/* ============================
+   BOTÃO FINALIZAR
+============================ */
+.btn-finalizar {
+  width: 100%;
+  padding: 16px;
+  margin: 25px 0;
+  background-color: #658ea3;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0px 4px 10px rgba(101, 142, 163, 0.3);
+}
+
+.btn-finalizar:hover {
+  background-color: #52778a;
+  transform: translateY(-2px);
+}
+
+.btn-finalizar.desativado {
+  background-color: #b9b9b9 !important;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================
+   PARCELAMENTO - AJUSTES
+============================ */
+
+/* Deixa os radio-item menores e alinhados */
+.grupo-radio.coluna .radio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  border: 1px solid #d6d6d6;
+  cursor: pointer;
+}
+
+/* Ajusta o texto para não quebrar */
+.grupo-radio.coluna .radio-item label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Deixa os inputs alinhados sem aumentar o item */
+.grupo-radio.coluna .radio-item input[type="radio"] {
+  margin-left: 10px;
+  transform: scale(1.1);
+}
+
+/* Deixa todos com a mesma largura */
+.grupo-radio.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Remove esticamento desnecessário do label */
+.grupo-radio.coluna .radio-item {
+  width: 100%;
+}
+
+/* Efeito hover mais discreto */
+.grupo-radio.coluna .radio-item:hover {
+  background: #eef3f6;
+  border-color: #87a7b9;
 }

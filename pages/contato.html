@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
-    
     <header>
 
         <a href="../pages/index.html">
@@ -18,22 +18,19 @@
                 <p>Móveis e interiores</p>
             </div>
         </a>
-
         <div class="navegacao">
             <nav>
                 <ul>
                     <li><a href="home.html">Início</a></li>
-                    <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
-                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
-                    <li><a href="contato.html" id="linkContato">Contato</a></li>
+                    <li><a href="produto.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
-
-            <form class="search-form" id="formPesquisa">
-                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
-                <div id="sugestoesPesquisa" class="sugestoes"></div>
+            <form class="search-form" action="/buscar" method="get">
+                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
             </form>
-
+ 
             <div class="icons">
                 <a href="carrinho.html" class="carrinho-btn" id="carrinhoContainer">
                     <img src="../style/icons/cart.png" alt="Carrinho">
@@ -46,72 +43,123 @@
                 </a>
             </div>
         </div>
-
     </header>
 
-    <main class="container">
-        <section class="contentContato">
-            <h1 style=" color: #658EA3">Fale conosco</h1>
-            <br>
-            <p>Quer tirar dúvidas, fazer sugestões ou acompanhar seu pedido?
-            <br>
-            Estamos aqui para ajudar!</p>
-            <br>
-            <form>
-                <article class="form-control"></article>
-                <strong>Deixe suas informações para contato:</strong>
-                    <div class="input-box">
-                    <!-- Input=Entrada Ela cria um campo de entrada. Onde você insere informações-->
-                    <input placeholder="Nome" type="name">
-                    <i class="bx bxs-user"></i>
-                    </div>
-                </article>
-                <article class="form-control">
-                    <div class="input-box">
-                    <input placeholder="E-mail" type="email">
-                    <i class="bx bxs-user"></i>
-                    </div>
-                </article class="form-control">
-                <article class="form-control">
-                    <div class="input-box">
-                    <input placeholder="Telefone" type="tel">
-                    <i class="bx bxs-user"></i>
-                </div>
-                <div class="form-control">
-                <br>
-                <textarea placeholder="Deixe sua observação aqui..." id="descricao"></textarea>
-                </div>
-                </article>
-                <div class="register-link">
-            <p>Certifique-se que ao enviar esse formlário, você concorda com a nossa 
-            <br>
-            <a href="politicadeprivacidade.html">Política de Privacidade</a>.</p>
-            </div>
-            <button type="submit">Enviar</button>
-                </form>
-            </section class="contentContato">
-            <section class="contentInformacoes">
-                <!-- <div class="informacoes"> -->
-                <h2>Atendimento direto</h2>
-                <br>
-                <p><i class="fa-brands fa-whatsapp"></i>(11) 1234-5678</p>
-                <br>
-                <p><i class="fa-solid fa-phone"></i>(11) 8765-4321</p>
-                <br>
-                <p><i class="fa-regular fa-envelope"></i> atendimentoarq@gmail.com.br</p>
-                <br>
-                <p><i class="fa-regular fa-clock"></i> Segunda a sexta das 9h às 18h</p>
-                <br>
-                <h2>Encontre nossa loja:</h2>
-                <br>
-                <p>Rua Direita, 965 - Vila Santo Antônio - Cotia/SP</p>
-                <p>CEP: 06700-260</p>
-                <br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.368530399213!2d-46.84910942466902!3d-23.591112578779477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cfaa98c1ec5cb3%3A0x735b8a2fd3f338c5!2sSENAI%20Cotia%20-%20%22Ricardo%20Lerner%22!5e0!3m2!1spt-BR!2sbr!4v1762956958732!5m2!1spt-BR!2sbr" width="560" height="315" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <main class="contato-container">
 
-                    <!-- <iframe src="URL_DO_MAPA_AQUI" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
-                <!-- </div> -->
-            </section class="informacoes">
-        </main>
+        <section class="contato-form">
+            <h1 style=" color: #658EA3">Fale conosco</h1>
+            <p class="contato-descricao">
+                Quer tirar dúvidas, fazer sugestões ou acompanhar seu pedido?<br>
+                Estamos aqui para ajudar!
+            </p>
+
+            <form class="form-contato">
+                <strong class="titulo-form">Deixe suas informações para contato:</strong>
+
+                <div class="campo">
+                    <label>Nome:</label>
+                    <input type="text" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="campo">
+                    <label>E-mail:</label>
+                    <input type="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="campo">
+                    <label>Telefone</label>
+                    <input type="tel" placeholder="Digite seu telefone" required>
+                </div>
+
+                <div class="campo">
+                    <label>Mensagem</label>
+                    <textarea placeholder="Deixe sua mensagem..." required></textarea>
+                </div>
+
+                <p class="politica">
+                    Ao enviar este formulário, você concorda com nossa
+                    <a href="politicadeprivacidade.html">Política de Privacidade</a>.
+                </p>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </section>
+
+        <section class="contato-info">
+            <h2>Atendimento direto</h2>
+
+            <p><i class="fa-brands fa-whatsapp"></i> (11) 1234-5678</p>
+            <p><i class="fa-solid fa-phone"></i> (11) 8765-4321</p>
+            <p><i class="fa-regular fa-envelope"></i> atendimentoarq@gmail.com.br</p>
+            <p><i class="fa-regular fa-clock"></i> Segunda a sexta das 9h às 18h</p>
+
+            <h2 class="subtitulo-mapa">Encontre nossa loja:</h2>
+            <p>Rua Direita, 965 - Vila Santo Antônio - Cotia/SP</p>
+            <p>CEP: 06700-260</p>
+
+            <iframe class="mapa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.368530399213!2d-46.84910942466902!3d-23.591112578779477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cfaa98c1ec5cb3%3A0x735b8a2fd3f338c5!2sSENAI%20Cotia%20-%20%22Ricardo%20Lerner%22!5e0!3m2!1spt-BR!2sbr!4v1762956958732!5m2!1spt-BR!2sbr"
+                allowfullscreen loading="lazy">
+            </iframe>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-social">
+            <h3>Siga-nos!</h3>
+            <div class="social-icons">
+                <a href="#"><img src="../style/icons/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../style/icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../style/icons/pinterest-logo.png" alt="Pinterest"></a>
+                <a href="#"><img src="../style/icons/twitter.png" alt="X"></a>
+            </div>
+        </div>
+
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Denúncias</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Como trabalhamos</h4>
+                <ul>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Troca e devolução</a></li>
+                    <li><a href="#">Requisitos</a></li>
+                    <li><a href="#">Mapa do site</a></li>
+                    <li><a href="#">Relatório de Igualdade Salarial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">A ARQ</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Sustentabilidade</a></li>
+                    <li><a href="#">Lojas</a></li>
+                    <li><a href="#">Best Friday</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>© 2025 ARQ - Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src="../javascript/auth.js"></script>
+    <script src="../javascript/produtos.js"></script>
+    <script src="../javascript/catalogo.js"></script>
+    <script src="../javascript/pesquisa.js"></script>
+    <script src="../javascript/carrinho.js"></script>
 </body>
 </html>
