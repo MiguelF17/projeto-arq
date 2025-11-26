@@ -60,6 +60,7 @@
         <aside class="resumo">
             <h2>Resumo da Compra</h2>
             <div id="listaResumo" class="lista-resumo"></div>
+            <div id="freteResumo" class="itemResumo"></div>
             <div class="total">
                 <h4>Total: R$ 0,00</h4>
             </div>
@@ -124,8 +125,24 @@
                 <label class="radio-item">24x<input type="radio" name="opcao-parcela" value="24"></label>
             </div>
 
+            <!-- frete -->
 
+            <h2 class="sub-titulo">Calcular Frete</h2>
+
+            <div class="frete-box">
+                <label for="cep">Digite seu CEP:</label>
+                <div class="linha">
+                    <input type="text" id="cep" maxlength="9" placeholder="00000-000">
+                    <button id="btnCalcularFrete" class="btn-frete">Calcular</button>
+                </div>
+                <p id="msgFrete" class="msg-frete"></p>
+            </div>
+
+
+            <!-- entrega -->
+             
             <h2 class="sub-titulo">Entrega</h2>
+
             <div class="grupo-radio coluna">
                 <label class="radio-item">Correios<input checked type="radio" name="opcao-envio"
                         value="correios"></label>
