@@ -128,12 +128,3 @@ body {
   border-radius: 10px;
   margin-top: 15px;
 }
-
-/* ======================================
-   Responsividade
-====================================== */
-@media (max-width: 900px) {
-  .contato-container {
-    flex-direction: column;
-  }
-}

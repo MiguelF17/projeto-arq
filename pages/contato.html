@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
+    <!-- navbar -->
+
     <header>
 
         <a href="../pages/index.html">
@@ -18,19 +20,22 @@
                 <p>Móveis e interiores</p>
             </div>
         </a>
+
         <div class="navegacao">
             <nav>
                 <ul>
                     <li><a href="home.html">Início</a></li>
-                    <li><a href="produto.html">Produtos</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="home.html?scroll=catalogoSecao">Produtos</a></li>
+                    <li><a href="sobre.html" id="linkSobre">Sobre</a></li>
+                    <li><a href="contato.html" id="linkContato">Contato</a></li>
                 </ul>
             </nav>
-            <form class="search-form" action="/buscar" method="get">
-                <input type="text" name="q" id="pesquisa" placeholder="Buscar produtos...">
+
+            <form class="search-form" id="formPesquisa">
+                <input type="text" id="campoPesquisa" placeholder="Buscar produtos..." autocomplete="off">
+                <div id="sugestoesPesquisa" class="sugestoes"></div>
             </form>
- 
+
             <div class="icons">
                 <a href="carrinho.html" class="carrinho-btn" id="carrinhoContainer">
                     <img src="../style/icons/cart.png" alt="Carrinho">
@@ -43,6 +48,7 @@
                 </a>
             </div>
         </div>
+
     </header>
 
     <main class="contato-container">
