@@ -3,7 +3,8 @@
   display: flex;
   gap: 30px;
   padding: 30px;
-  background-color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.308), rgba(0, 0, 0, 0.445)),
+    url(./imgs/perfil-bg.jpg) no-repeat center center/cover;
 }
 
 /* ======== MENU LATERAL ======== */
@@ -97,7 +98,7 @@
 /* === CONTEÚDO PRINCIPAL === */
 .perfil-conteudo {
   flex: 1;
-  color: #658EA3;
+  color: #fff;
 }
 
 .card {
