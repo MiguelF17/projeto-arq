@@ -1,207 +1,102 @@
-/* === LAYOUT GERAL === */
-.perfil-container {
-  display: flex;
-  gap: 30px;
-  padding: 30px;
-  background-color: #f4f6f9;
-}
+/* =========================================
+   FAVORITOS - NOVO LAYOUT ESTILIZADO
+   Paleta principal: #658EA3
+   ========================================= */
 
-/* ======== MENU LATERAL ======== */
-.menu-lateral {
-  width: 260px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  text-align: left;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e6ecef;
-}
-
-.menu-lateral span {
-  display: flex;
-  justify-content: center;
-}
-
-/* Foto + Informações */
-.foto-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Título */
+.title {
   text-align: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.info-perfil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-#perfilNome {
-  font-size: 19px;
-  font-weight: 600;
-  color: #333;
-}
-
-#perfilEmail {
-  font-size: 14px;
-  color: #666;
-}
-
-/* "Alterar foto" */
-.alterar-foto {
-  font-size: 15px;
-  color: #658EA3;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.alterar-foto:hover {
+  font-size: 34px;
+  font-weight: 700;
   color: #3f6272;
+  margin: 40px 0 25px;
+  letter-spacing: 1px;
 }
 
-.foto-perfil {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #658EA3;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
+/* Container geral */
+.containerFavoritos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 25px 60px;
 }
 
-.foto-perfil:hover {
-  border-color: #3f6272;
-}
-
-/* Links */
-.menu-links {
-  margin-top: 25px;
-}
-
-.menu-links li {
-  list-style: none;
-  margin-bottom: 18px;
-}
-
-.menu-links a {
-  width: 100%;
-  display: flex;
-  padding: 12px;
-  align-items: center;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  transition: 0.3s ease;
-}
-
-.menu-links a:hover {
-  background-color: #658EA3;
-  color: #fff;
-}
-
-/* === CONTEÚDO PRINCIPAL === */
-.perfil-conteudo {
-  flex: 1;
-  color: #333;
-}
-
-/* === CARD ESTILIZADOS === */
-.card {
-  background: #fff;
-  padding: 28px;
-  border-radius: 10px;
-  margin-bottom: 28px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e6ecef;
-  transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
-}
-
-.card h2 {
-  color: #000;
-  margin-bottom: 18px;
-  font-size: 22px;
-}
-
-/* === GRID PARA CARDS === */
-.grid-two {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-/* === INPUTS === */
-input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  border-radius: 8px;
-  border: 1px solid #d2d8da;
-  background: #f9fafb;
-  transition: 0.2s;
-}
-
-input:disabled {
-  background: #eef1f3;
-  cursor: not-allowed;
-  color: #666;
-}
-
-input:focus {
-  border-color: #658EA3;
-  box-shadow: 0 0 0 2px rgba(101, 142, 163, 0.25);
-}
-
-/* === BOTÕES === */
-.editar {
-  margin-top: 20px;
-  background: #658EA3;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.editar:hover {
-  background-color: #3f6272;
-}
-
-.salvar {
-  margin-top: 20px;
-  background: #3f6272;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  display: none;
-  transition: background-color 0.3s ease;
-}
-
-.salvar:hover {
-  background-color: #658EA3;
-}
-
-/* === MENSAGEM "Favoritos vazios" === */
+/* Mensagem de favoritos vazios */
 .favoritos-vazio {
   text-align: center;
-  font-size: 18px;
-  color: #888;
-  margin-top: 50px;
+  font-size: 20px;
+  padding: 50px 0;
+  color: #7d8b90;
 }
 
-/* === SUAVIZAÇÃO GERAL === */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* Grid dos itens */
+.containerFavoritosItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* CARD DO PRODUTO */
+.produto-item{
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(101, 142, 163, 0.25);
+  transition: all 0.25s ease;
+  text-align: center;
+  position: relative;
+}
+
+.produto-item a {
+  text-decoration: none;
+}
+
+.produto-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+  border-color: #658EA3;
+}
+
+/* Imagem */
+.produto-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Nome do produto */
+.produto-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3f6272;
+  margin-bottom: 8px;
+}
+
+/* Preço */
+.produto-item p {
+  font-size: 17px;
+  color: #4a4a4a;
+  margin-bottom: 15px;
+
+}
+
+/* BOTÃO REMOVER */
+.remover-favorito {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: #658EA3;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.remover-favorito:hover {
+  background: #3f6272;
+  transform: translateY(-2px);
 }
