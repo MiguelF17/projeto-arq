@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const icons = document.querySelector(".icons");
     const dropdown = document.getElementById("dropdownPerfil");
     const logoutBtn = document.getElementById("logoutBtn");
-    
+    const btnFavoritos = document.getElementById("btnFavoritos");
+
     let closeTimeout;
 
     // Mostrar dropdown ao passar o mouse
@@ -29,6 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
         logoutBtn.addEventListener("click", (e) => {
             e.preventDefault();
             logoutUser();
+        });
+    }
+
+    // Favoritos
+    if (btnFavoritos) {
+        btnFavoritos.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const user = JSON.parse(localStorage.getItem("loggedUser"));
+
+            if (!user) {
+                window.location.href = "login.html";
+            } else {
+                window.location.href = "favoritos.html";
+            }
         });
     }
 });
