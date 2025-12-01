@@ -6,15 +6,17 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(./imgs/cadastro-bg.jpg) center/cover no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .conta-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5vw;
-    height: 80vh;
+    padding: 20px;
+    height: auto;
+    min-height: 80vh;
     box-sizing: border-box;
 }
 
@@ -28,7 +30,7 @@ body {
 
 .form-box {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     background-color: #f9f9f9;
     padding: 2rem;
     border-radius: 15px;

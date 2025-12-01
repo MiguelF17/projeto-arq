@@ -68,7 +68,7 @@
 
 /* Nome do produto */
 .produto-item h3 {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   color: #3f6272;
   margin-bottom: 8px;
@@ -88,8 +88,9 @@
   padding: 10px 0;
   border: none;
   border-radius: 10px;
-  background: #658EA3;
-  color: white;
+  background: transparent;
+  border: 2px solid #658EA3;
+  color: #658EA3;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -97,6 +98,7 @@
 }
 
 .remover-favorito:hover {
-  background: #3f6272;
+  background-color: #658EA3;
+  color: #fff;
   transform: translateY(-2px);
 }
