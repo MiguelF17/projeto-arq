@@ -346,6 +346,14 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "./finalizar-pedido.html";
     });
 
-
     atualizarParcelas();
+
+    window.addEventListener("beforeunload", () => {
+        const finalizado = sessionStorage.getItem("pagamentoFinalizado");
+
+        // Se não finalizou, apaga a compra direta
+        if (!finalizado) {
+            localStorage.removeItem("compraDiretaARQ");
+        }
+    });
 });
