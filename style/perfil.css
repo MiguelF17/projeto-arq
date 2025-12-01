@@ -1,4 +1,4 @@
-/* === LAYOUT GERAL === */
+/* LAYOUT GERAL */
 .perfil-container {
   display: flex;
   gap: 30px;
@@ -7,7 +7,7 @@
     url(./imgs/perfil-bg.jpg) no-repeat center center/cover;
 }
 
-/* ======== MENU LATERAL ======== */
+/* MENU LATERAL */
 .menu-lateral {
   width: 260px;
   background: #fff;
@@ -95,7 +95,7 @@
   color: #fff;
 }
 
-/* === CONTEÚDO PRINCIPAL === */
+/* CONTEÚDO PRINCIPAL */
 .perfil-conteudo {
   flex: 1;
   color: #fff;
@@ -116,7 +116,7 @@
   font-size: 22px;
 }
 
-/* === GRID === */
+/* GRID */
 .grid-two {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -129,7 +129,7 @@ label {
   font-weight: 500;
 }
 
-/* === INPUTS === */
+/* INPUTS */
 input {
   width: 100%;
   padding: 10px;
@@ -151,7 +151,7 @@ input:focus {
   box-shadow: 0 0 0 2px rgba(101, 142, 163, 0.25);
 }
 
-/* === BOTÕES === */
+/* BOTÕES */
 
 
 .editar {

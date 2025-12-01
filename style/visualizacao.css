@@ -253,9 +253,7 @@
 }
 
 
-/* ================================
-   ESTRUTURA GERAL DAS SEÇÕES
-================================== */
+/* ESTRUTURA GERAL DAS SEÇÕES */
 
 #informacoesTecnicas,
 #produtosRecomendados,
@@ -278,18 +276,14 @@
     color: #333;
 }
 
-/* ================================
-   DESCRIÇÃO
-================================== */
+/* DESCRIÇÃO */
 #descricaoDetalhada p {
     font-size: 14px;
     line-height: 1.6;
     color: #444;
 }
 
-/* ================================
-   INFORMAÇÕES TÉCNICAS
-================================== */
+/* INFORMAÇÕES TÉCNICAS */
 #informacoesTecnicas ul {
     list-style: none;
     padding: 0;
@@ -305,9 +299,7 @@
     color: #000;
 }
 
-/* ================================
-   PRODUTOS RECOMENDADOS
-================================== */
+/* PRODUTOS RECOMENDADOS */
 .recomendados-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -347,9 +339,7 @@
     font-weight: bold;
 }
 
-/* ================================
-   AVALIAÇÕES
-================================== */
+/* AVALIAÇÕES */
 .avaliacao {
     padding: 15px 0;
     border-bottom: 1px solid #ddd;
@@ -376,9 +366,7 @@
     color: #555;
 }
 
-/* ================================
-   FAQ
-================================== */
+/* FAQ */
 .faq-item {
     margin-bottom: 18px;
     padding: 12px 0;

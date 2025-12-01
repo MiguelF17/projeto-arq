@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setDisabled(secaoEndereco, true);
 
 
-    // ======== EDITAR PERFIL ========
+    // EDITAR PERFIL
     const btnEditarPerfil = document.getElementById("editarPerfil");
     const btnSalvarPerfil = document.getElementById("salvarPerfil");
 
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // ======== EDITAR ENDEREÇO ========
+    // EDITAR ENDEREÇO
     const btnEditarEndereco = document.getElementById("editarEndereco");
     const btnSalvarEndereco = document.getElementById("salvarEndereco");
 
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // ======== FOTO DE PERFIL ======== //
+    // FOTO DE PERFIL //
 
     const uploadFoto = document.getElementById("uploadFoto");
     const fotoPerfil = document.getElementById("fotoPerfil");
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // ======== LOGOUT ======== //
+    // LOGOUT //
 
     document.getElementById("logoutBtn").addEventListener("click", () => {
         localStorage.removeItem(LOGGED_KEY);

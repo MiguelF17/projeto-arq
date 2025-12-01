@@ -1,8 +1,7 @@
-// ===============================
 // 1. LISTA DE PRODUTOS
-// ===============================
+
 const produtos = [
-    // -------- Sala de Estar / Quarto --------
+    // Sala de Estar / Quarto
     {
         id: 1,
         nome: "Sofá Cor Cinza Moderno",
@@ -85,7 +84,7 @@ const produtos = [
         imagem: "../style/imgs/murrat.png"
     },
 
-    // -------- Cozinha e Jantar --------
+    // Cozinha e Jantar
     {
         id: 10,
         nome: "Banco Chique Branco",
@@ -159,7 +158,7 @@ const produtos = [
         imagem: "../style/imgs/utencilios .png"
     },
 
-    // -------- Banheiro --------
+    // Banheiro
     {
         id: 18,
         nome: "Suporte para Toalhas",
