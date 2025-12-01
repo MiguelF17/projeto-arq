@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const blocoParcelas = document.querySelectorAll(".grupo-radio.coluna")[0];
 
 
-    /* ============================
-        RESUMO DO PEDIDO
-    ============================ */
+    /* RESUMO DO PEDIDO */
     function resumoCarrinho() {
         const lista = document.getElementById("listaResumo");
 
@@ -48,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resumoCarrinho();
 
 
-    /* ============================
-        CALCULAR TOTAL + FRETE
-    ============================ */
+    /* CALCULAR TOTAL + FRETE */
     function calcularTotal() {
         const totalProdutos = carrinho.reduce(
             (acc, item) => acc + item.preco * item.quantidade,
@@ -82,9 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-        >>>>>>>>>>>>>  CÓDIGO DO FRETE AQUI  <<<<<<<<<<<<<<
-    ===================================================== */
+    /* CÓDIGO DO FRETE */
 
     const campoCep = document.getElementById("cep");
     const btnCalcularFrete = document.getElementById("btnCalcularFrete");
@@ -151,9 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ==========================================
-       BLOCO DE PARCELAS
-    ========================================== */
+    /* BLOCO DE PARCELAS */
 
     const totalBox = document.querySelector(".total");
 
@@ -212,9 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ============================
-       PIX SIMULADO
-    ============================ */
+    /* PIX SIMULADO */
     function simularPix() {
 
         let pixBox = document.getElementById("pixBox");
@@ -261,9 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ============================
-       CONTROLE DE MÉTODOS DE PAGAMENTO
-    ============================ */
+    /* CONTROLE DE MÉTODOS DE PAGAMENTO */
     document.querySelectorAll("input[name='metodo_pagamento']").forEach(r => {
         r.addEventListener("change", () => {
             const metodo = r.value;
@@ -293,9 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ============================
-       FINALIZAR COMPRA
-    ============================ */
+    /* FINALIZAR COMPRA */
     btnFinalizar.addEventListener("click", () => {
 
         if (btnFinalizar.classList.contains("desativado")) return;

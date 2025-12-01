@@ -1,9 +1,8 @@
 // catalogo.js (corrigido)
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===============================
     // VARIÁVEIS INICIAIS
-    // ===============================
+
     if (typeof produtos === "undefined") {
         console.error("Array 'produtos' não encontrado.");
         return;
@@ -35,9 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const corSel = safe(corSelect);
     const ordSelect = safe(ordenarSelect);
 
-    // ===============================
     // FUNÇÕES AUXILIARES (NORMALIZAÇÃO + LEVENSHTEIN)
-    // ===============================
+
     function normalizar(str) {
         if (!str) return "";
         // remove acentos, transforma em minúscula e tira caracteres especiais extras
@@ -105,9 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
     }
 
-    // ===============================
     // RENDERIZAÇÃO DE PRODUTOS
-    // ===============================
+
     function renderizarProdutos(lista) {
         const grid = document.getElementById("produtosGrid");
         if (!grid) return;
@@ -132,9 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===============================
     // PESQUISA: usa fuzzyMatch + normalização
-    // ===============================
+
     (function aplicarPesquisaSeHouver() {
         const termoPesquisaRaw = localStorage.getItem("pesquisa");
         if (!termoPesquisaRaw) return;
@@ -153,9 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
         mostrarPagina(1);
     })();
 
-    // ===============================
+
     // PAGINAÇÃO
-    // ===============================
+
     function mostrarPagina(pagina) {
         paginaAtual = pagina;
 
@@ -199,9 +195,8 @@ document.addEventListener("DOMContentLoaded", () => {
         paginacaoDiv.appendChild(botaoNext);
     }
 
-    // ===============================
     // Lógica de filtro / menu / eventos
-    // ===============================
+
     function limparCategoriaDoMenu() {
         categoriaSelecionada = "";
         // se usuário começar a usar selects, sincronizamos título
