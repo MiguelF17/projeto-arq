@@ -1,4 +1,4 @@
-/* LAYOUT GERAL */
+/* Layout geral */
 .perfil-container {
   display: flex;
   gap: 30px;
@@ -7,7 +7,7 @@
     url(./imgs/perfil-bg.jpg) no-repeat center center/cover;
 }
 
-/* MENU LATERAL */
+/* Menu lateral */
 .menu-lateral {
   width: 260px;
   background: #fff;
@@ -24,7 +24,7 @@
 }
 
 /* Foto */
-/* AGRUPA FOTO + INFORMAÇÕES */
+/* Agrupa foto + informações */
 .foto-area {
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@
   gap: 10px;
 }
 
-/* PERFEITO PARA ALINHAR NOME + EMAIL */
+/* Alinhar nome + email */
 .info-perfil {
   display: flex;
   flex-direction: column;
@@ -95,7 +95,7 @@
   color: #fff;
 }
 
-/* CONTEÚDO PRINCIPAL */
+/* Conteúdo principal */
 .perfil-conteudo {
   flex: 1;
   color: #fff;
@@ -116,7 +116,7 @@
   font-size: 22px;
 }
 
-/* GRID */
+/* Grid */
 .grid-two {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -129,7 +129,7 @@ label {
   font-weight: 500;
 }
 
-/* INPUTS */
+/* Inputs */
 input {
   width: 100%;
   padding: 10px;

@@ -1,4 +1,4 @@
-/* SETA VOLTAR */
+/* Seta voltar */
 
 .seta-voltar img {
     width: 35px;
@@ -22,7 +22,7 @@
     transform: scale(1.1);
 }
 
-/* Efeito de ACTIVE (momento do clique) */
+/* Efeito de active (momento do clique) */
 .seta-voltar:active {
     /* Um feedback visual forte no momento exato do clique */
     transform: scale(0.95);

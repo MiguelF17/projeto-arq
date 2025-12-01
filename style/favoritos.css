@@ -1,7 +1,4 @@
-/* =========================================
-   FAVORITOS - NOVO LAYOUT ESTILIZADO
-   Paleta principal: #658EA3
-   ========================================= */
+/* Favoritos */
 
 /* Título */
 .title {
@@ -35,7 +32,7 @@
   gap: 25px;
 }
 
-/* CARD DO PRODUTO */
+/* Card do produto */
 .produto-item{
   background: #ffffff;
   border-radius: 10px;

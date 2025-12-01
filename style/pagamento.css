@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/* GERAL */
+/* Geral */
 body {
   background-color: #fff;
   margin: 0;
@@ -18,7 +18,7 @@ body {
   font-size: 32px;
 }
 
-/* LAYOUT PRINCIPAL */
+/* Layout principal */
 .conteudo {
   width: 85%;
   margin: auto;
@@ -28,7 +28,7 @@ body {
   justify-content: space-between;
 }
 
-/* CARDS BASE */
+/* Cards base */
 .card-base {
   background: #ffffff;
   border-radius: 16px;
@@ -36,7 +36,7 @@ body {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-/* RESUMO DO PEDIDO */
+/* Resumo do pedido */
 .resumo {
   width: 32%;
   position: sticky;
@@ -72,7 +72,7 @@ body {
   font-weight: 700;
 }
 
-/* SEÇÃO DE PAGAMENTO */
+/* Seção de pagamento */
 .pagamento {
   width: 66%;
 }
@@ -84,7 +84,7 @@ body {
   font-weight: 600;
 }
 
-/* GRUPOS DE RADIO */
+/* Grupos de radio */
 .grupo-radio {
   display: flex;
   flex-direction: column;
@@ -133,7 +133,7 @@ body {
 }
 
 
-/* FORMULÁRIO DO CARTÃO */
+/* Formuçário do cartão */
 .card-form {
   margin-bottom: 30px;
   padding: 25px;
@@ -174,7 +174,7 @@ body {
   flex: 1;
 }
 
-/* FRETE */
+/* Frete */
 
 .frete-box{
     margin: 20px 0;
@@ -216,7 +216,7 @@ body {
 }
 
 
-/* BOTÃO FINALIZAR */
+/* Botão finalizar */
 .btn-finalizar {
   width: 100%;
   padding: 16px;
@@ -242,7 +242,7 @@ body {
   transform: none;
 }
 
-/* PARCELAMENTO - AJUSTES */
+/* Parcelamento */
 
 /* Deixa os radio-item menores e alinhados */
 .grupo-radio.coluna .radio-item {
