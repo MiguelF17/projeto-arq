@@ -1,6 +1,4 @@
-/* ------------------------ */
-/*  LAYOUT DO CATÁLOGO      */
-/* ------------------------ */
+/* LAYOUT DO CATÁLOGO */
 
 .catalogo {
   max-width: 1200px;
@@ -10,9 +8,7 @@
   gap: 30px;
 }
 
-/* ------------------------ */
-/*          FILTRO          */
-/* ------------------------ */
+/* FILTRO */
 
 .filtro {
   background: #fff;
@@ -106,10 +102,7 @@
   background: #f5f5f5;
 }
 
-
-/* ------------------------ */
-/*         PRODUTOS         */
-/* ------------------------ */
+/*  PRODUTOS */
 
 .produtos h1 {
   font-size: 28px;

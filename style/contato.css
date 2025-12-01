@@ -10,9 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ======================================
-   Container principal
-====================================== */
+/* Container principal */
 .contato-container {
   display: flex;
   gap: 40px;
@@ -29,9 +27,7 @@ body {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
 }
 
-/* ======================================
-   Formulário
-====================================== */
+/* Formulário */
 .form-contato {
   display: flex;
   flex-direction: column;
@@ -110,9 +106,7 @@ body {
   text-decoration: underline;
 }
 
-/* ======================================
-   Informações laterais
-====================================== */
+/* Informações laterais */
 .contato-info p {
   margin: 10px 0;
   color: #444;
