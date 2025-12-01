@@ -1,7 +1,7 @@
 // catalogo.js (corrigido)
 document.addEventListener("DOMContentLoaded", () => {
 
-    // VARIÁVEIS INICIAIS
+    // Variáveis iniciais
 
     if (typeof produtos === "undefined") {
         console.error("Array 'produtos' não encontrado.");
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let paginaAtual = 1;
     const produtosPorPagina = 12;
 
-    let categoriaSelecionada = ""; // categoria do MENU
+    let categoriaSelecionada = ""; // categoria do menu
     const tituloCatalogo = document.getElementById("tituloCatalogo");
 
     // Inputs do filtro (verifica se existem antes de usar)
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const corSel = safe(corSelect);
     const ordSelect = safe(ordenarSelect);
 
-    // FUNÇÕES AUXILIARES (NORMALIZAÇÃO + LEVENSHTEIN)
+    // Funções auxiliares (normalização + levenshtein)
 
     function normalizar(str) {
         if (!str) return "";
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
     }
 
-    // RENDERIZAÇÃO DE PRODUTOS
+    // Renderização de produtos
 
     function renderizarProdutos(lista) {
         const grid = document.getElementById("produtosGrid");
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // PESQUISA: usa fuzzyMatch + normalização
+    // Pesquisa: usa fuzzyMatch + normalização
 
     (function aplicarPesquisaSeHouver() {
         const termoPesquisaRaw = localStorage.getItem("pesquisa");
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
 
 
-    // PAGINAÇÃO
+    // Paginação
 
     function mostrarPagina(pagina) {
         paginaAtual = pagina;
