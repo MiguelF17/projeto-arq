@@ -102,6 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
         fotoPerfil.src = fotoSalva;
     }
 
+    /* Foto do header */
+    const fotoPerfilHeader = document.getElementById("fotoPerfilHeader");
+
+    if (fotoSalva && fotoPerfilHeader) {
+        fotoPerfilHeader.src = fotoSalva;
+    }
+
+
     /* Abrir upload ao clicar no texto "Alterar foto" */
     alterarFoto.addEventListener("click", () => {
         uploadFoto.click();
@@ -123,6 +131,17 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("fotoPerfil", e.target.result);
         };
         reader.readAsDataURL(file);
+
+        reader.onload = function (e) {
+            fotoPerfil.src = e.target.result;
+            localStorage.setItem("fotoPerfil", e.target.result);
+
+            // Atualiza foto do header também
+            if (fotoPerfilHeader) {
+                fotoPerfilHeader.src = e.target.result;
+            }
+        };
+
     });
 
 
