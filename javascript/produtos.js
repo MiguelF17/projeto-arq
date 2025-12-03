@@ -5,7 +5,7 @@ const produtos = [
     {
         id: 1,
         nome: "Sofá Cor Cinza Moderno",
-        preco: 2120.50,
+        preco: 2129.99,
         categoria: "Sala de Estar",
         cor: "Cinza",
         material: "Tecido",
@@ -32,7 +32,7 @@ const produtos = [
     {
         id: 4,
         nome: "Poltrona Bege Simples",
-        preco: 562.30,
+        preco: 569.99,
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
@@ -50,7 +50,7 @@ const produtos = [
     {
         id: 6,
         nome: "Poltrona Bege Atual",
-        preco: 662.30,
+        preco: 669.99,
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
@@ -59,7 +59,7 @@ const produtos = [
     {
         id: 7,
         nome: "Lustre Luminária",
-        preco: 835.35,
+        preco: 1779.99,
         categoria: "Decoração",
         cor: "Branco",
         material: "Vidro",
@@ -88,7 +88,7 @@ const produtos = [
     {
         id: 10,
         nome: "Banco Chique Branco",
-        preco: 420.90,
+        preco: 429.99,
         categoria: "Sala de Jantar",
         cor: "Branco",
         material: "Madeira",
@@ -133,7 +133,7 @@ const produtos = [
     {
         id: 15,
         nome: "Talheres Modernos",
-        preco: 21.30,
+        preco: 239.99,
         categoria: "Cozinha",
         cor: "Prata",
         material: "Metal",
@@ -142,7 +142,7 @@ const produtos = [
     {
         id: 16,
         nome: "Pratos de Porcelana",
-        preco: 135.90,
+        preco: 249.99,
         categoria: "Cozinha",
         cor: "Branco",
         material: "Porcelana",
@@ -151,7 +151,7 @@ const produtos = [
     {
         id: 17,
         nome: "Conjunto de Utensílios",
-        preco: 32.60,
+        preco: 129.99,
         categoria: "Cozinha",
         cor: "Cinza",
         material: "Plástico",
@@ -162,7 +162,7 @@ const produtos = [
     {
         id: 18,
         nome: "Suporte para Toalhas",
-        preco: 35.75,
+        preco: 99.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Metal",
@@ -171,7 +171,7 @@ const produtos = [
     {
         id: 19,
         nome: "Banqueira Moderna",
-        preco: 49.79,
+        preco: 139.99,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Madeira",
@@ -180,7 +180,7 @@ const produtos = [
     {
         id: 20,
         nome: "Banheira Moderna",
-        preco: 842.50,
+        preco: 6799.99,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Mármore",
@@ -189,7 +189,7 @@ const produtos = [
     {
         id: 21,
         nome: "Box Lateral Moderno",
-        preco: 562.30,
+        preco: 569.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Vidro",
@@ -198,7 +198,7 @@ const produtos = [
     {
         id: 22,
         nome: "Espelho Circular",
-        preco: 59.99,
+        preco: 369.99,
         categoria: "Banheiro",
         cor: "Marrom",
         material: "Vidro",
@@ -207,7 +207,7 @@ const produtos = [
     {
         id: 23,
         nome: "Pia Preta Moderna",
-        preco: 74.30,
+        preco: 329.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Mármore",
@@ -216,7 +216,7 @@ const produtos = [
     {
         id: 24,
         nome: "Torneira Preta para Pia",
-        preco: 28.30,
+        preco: 289.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Aço Inox",
@@ -225,7 +225,7 @@ const produtos = [
     {
         id: 25,
         nome: "Gabinete de Pia",
-        preco: 299.99,
+        preco: 379.99,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Madeira",
@@ -234,7 +234,7 @@ const produtos = [
     {
         id: 26,
         nome: "Cristaleira de Madeira",
-        preco: 1752.30,
+        preco: 2479.99,
         categoria: "Cozinha",
         cor: "Madeira Natural",
         material: "Madeira",
@@ -243,7 +243,7 @@ const produtos = [
     {
         id: 27,
         nome: "Mesa Menor para Jantar",
-        preco: 552.30,
+        preco: 1439.99,
         categoria: "Sala de Jantar",
         cor: "Marrom",
         material: "Madeira",
@@ -252,7 +252,7 @@ const produtos = [
     {
         id: 28,
         nome: "Puff Banco",
-        preco: 256.10,
+        preco: 259.99,
         categoria: "Sala de Estar",
         cor: "Branco",
         material: "Madeira",
@@ -260,8 +260,8 @@ const produtos = [
     },
     {
         id: 29,
-        nome: "Puff Almofado Preto",
-        preco: 182.30,
+        nome: "Puff Almofadado",
+        preco: 189.99,
         categoria: "Sala de Estar",
         cor: "Grafite",
         material: "Veludo",
@@ -270,7 +270,7 @@ const produtos = [
     {
         id: 30,
         nome: "Cadeira de Jantar",
-        preco: 252.30,
+        preco: 479.99,
         categoria: "Sala de Jantar",
         cor: "Marrom",
         material: "Madeira",
@@ -279,7 +279,7 @@ const produtos = [
     {
         id: 31,
         nome: "Gaveteiro Escritório",
-        preco: 319.30,
+        preco: 319.99,
         categoria: "Escritório & Home Office",
         cor: "Marrom",
         material: "Madeira",
@@ -288,7 +288,7 @@ const produtos = [
     {
         id: 32,
         nome: "Mesa Boss Escritório",
-        preco: 659.40,
+        preco: 789.99,
         categoria: "Escritório & Home Office",
         cor: "Bege",
         material: "Madeira",
@@ -306,7 +306,7 @@ const produtos = [
     {
         id: 34,
         nome: "Cadeira de Escritório",
-        preco: 1659.40,
+        preco: 1659.99,
         categoria: "Escritório & Home Office",
         cor: "Preto",
         material: "Aço Inox",
@@ -315,7 +315,7 @@ const produtos = [
     {
         id: 35,
         nome: "Cadeira Profissional Rosé",
-        preco: 719.40,
+        preco: 719.99,
         categoria: "Escritório & Home Office",
         cor: "Rosé / Cobre",
         material: "Plástico",
@@ -324,7 +324,7 @@ const produtos = [
     {
         id: 36,
         nome: "Armário Superior",
-        preco: 479.40,
+        preco: 479.99,
         categoria: "Cozinha",
         cor: "Cinza",
         material: "Madeira",
