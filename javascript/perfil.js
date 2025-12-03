@@ -144,12 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
-
-
     // Logout //
 
-    document.getElementById("logoutBtn").addEventListener("click", () => {
+    document.getElementById("logoutBtnPerfil").addEventListener("click", () => {
         localStorage.removeItem(LOGGED_KEY);
         window.location.href = "login.html";
     });
