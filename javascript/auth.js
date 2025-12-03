@@ -318,4 +318,5 @@ document.addEventListener("DOMContentLoaded", () => {
         // Usuário não logado, clique leva para login
         btnPerfil.href = "login.html";
     }
+
 });

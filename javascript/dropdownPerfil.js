@@ -47,4 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    /* foto de perfil */
+    const fotoPerfilHeader = document.getElementById("fotoPerfilHeader");
+    const fotoSalva = localStorage.getItem("fotoPerfil");
+
+    if (fotoPerfilHeader && fotoSalva) {
+        fotoPerfilHeader.src = fotoSalva;
+    }
 });
+
+
