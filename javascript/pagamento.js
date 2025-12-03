@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const blocoFrete = document.getElementById("freteResumo");
         if (blocoFrete && frete) {
             blocoFrete.innerHTML = `
-                <span>Frete (${frete.cep})</span>
+                <span>Frete (${frete.cep.replace(/(\d{5})(\d{3})/, "$1-$2")})</span>
                 <strong>R$ ${frete.valor.toFixed(2).replace(".", ",")}</strong>
             `;
         }
@@ -84,10 +84,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnCalcularFrete = document.getElementById("btnCalcularFrete");
     const msgFrete = document.getElementById("msgFrete");
 
+    // Formata o CEP
     function formatarCEP(cep) {
         cep = cep.replace(/\D/g, "");
         if (cep.length > 5) cep = cep.slice(0, 5) + "-" + cep.slice(5);
         return cep;
+    }
+
+    // 🟦 tipo de frete com valor fixo
+    function calcularFretePorTipo(tipo) {
+        if (tipo === "retirada") return 0;
+        if (tipo === "correios") return 19.90;
+        if (tipo === "transportadora") return 39.90;
+        return 0;
+    }
+
+    // 🟦 Carregar frete pré-calculado do visualizacao.js
+    function carregarFreteSalvo() {
+        const frete = JSON.parse(localStorage.getItem("freteARQ"));
+        if (!frete) return;
+
+        // Preenche o CEP automaticamente
+        campoCep.value = formatarCEP(frete.cep);
+
+        // Mantém o valor vindo de visualização.js
+        msgFrete.innerText = `Frete: R$ ${frete.valor.toFixed(2).replace(".", ",")}`;
+        msgFrete.style.color = "#4d6d7c";
+
+        calcularTotal(); // recalcula o total com o frete salvo
     }
 
     if (campoCep) {
@@ -96,13 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function calcularFretePorTipo(tipo) {
-        if (tipo === "retirada") return 0;
-        if (tipo === "correios") return 39.90;
-        if (tipo === "transportadora") return 59.90;
-        return 0;
-    }
-
+    // 🟦 Ao clicar em calcular frete
     if (btnCalcularFrete) {
         btnCalcularFrete.addEventListener("click", () => {
             const cep = campoCep.value.replace(/\D/g, "");
@@ -114,35 +132,39 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const tipoEntrega = document.querySelector("input[name='opcao-envio']:checked").value;
-
             const valorFrete = calcularFretePorTipo(tipoEntrega);
 
             const frete = { cep, valor: valorFrete };
             localStorage.setItem("freteARQ", JSON.stringify(frete));
 
-            msgFrete.style.color = "#4d6d7c";
             msgFrete.innerText = `Frete: R$ ${valorFrete.toFixed(2).replace(".", ",")}`;
+            msgFrete.style.color = "#4d6d7c";
 
-            totalCompra = calcularTotal();
+            calcularTotal();
         });
     }
 
+    // 🟦 Alterou o tipo de entrega → atualiza valor sem perder o CEP
     document.querySelectorAll("input[name='opcao-envio']").forEach(r => {
         r.addEventListener("change", () => {
-            const cep = campoCep.value.replace(/\D/g, "");
-            if (cep.length !== 8) return;
 
-            const tipo = r.value;
-            const valorFrete = calcularFretePorTipo(tipo);
+            const freteAtual = JSON.parse(localStorage.getItem("freteARQ"));
+            if (!freteAtual) return; // só troca se já tiver calculado pelo menos uma vez
 
-            const frete = { cep, valor: valorFrete };
-            localStorage.setItem("freteARQ", JSON.stringify(frete));
+            const novoValor = calcularFretePorTipo(r.value);
 
-            msgFrete.innerText = `Frete atualizado: R$ ${valorFrete.toFixed(2).replace(".", ",")}`;
+            freteAtual.valor = novoValor;
+            localStorage.setItem("freteARQ", JSON.stringify(freteAtual));
 
-            totalCompra = calcularTotal();
+            msgFrete.innerText = `Frete atualizado: R$ ${novoValor.toFixed(2).replace(".", ",")}`;
+            msgFrete.style.color = "#4d6d7c";
+
+            calcularTotal();
         });
     });
+
+    // 🟦 Inicializar com frete vindo da página do produto
+    carregarFreteSalvo();
 
 
     /* Bloco de parcelas */

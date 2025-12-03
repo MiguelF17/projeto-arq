@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-// Checagem inicial
+    // Checagem inicial
 
     if (typeof produtos === "undefined") {
         console.error("Array 'produtos' não encontrado.");
@@ -300,32 +300,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cálculo do frete
 
-    const inputCEP = document.getElementById("cepEntrega");
-    const btnCalcular = document.getElementById("calcularFrete");
+    const cepInput = document.getElementById("cepEntrega");
+    const btnFrete = document.getElementById("calcularFrete");
 
-    inputCEP.addEventListener("input", () => {
-        let valor = inputCEP.value.replace(/\D/g, "");
-        if (valor.length > 8) valor = valor.slice(0, 8);
-        if (valor.length > 5) valor = valor.slice(0, 5) + "-" + valor.slice(5);
-        inputCEP.value = valor;
-    });
+    // Função que gera valor de frete baseado no CEP (fixo, mas realista)
+    function calcularValorFrete(cep) {
+        cep = cep.replace(/\D/g, "");
 
-    btnCalcular.addEventListener("click", () => {
-        const cep = inputCEP.value;
-        if (cep.length !== 9) return alert("Digite um CEP válido com 8 números.");
+        if (cep.length !== 8) return null;
 
-        let taxa = 12.50;
-        const prefixo = cep.substring(0, 2);
+        const prefixo = Number(cep.substring(0, 3));
 
-        if (["01", "02", "03", "04", "05"].includes(prefixo)) taxa = 19.90;
-        else if (["06", "07", "08", "09"].includes(prefixo)) taxa = 24.90;
-        else if (["10", "11", "12", "13", "14", "15"].includes(prefixo)) taxa = 34.90;
+        if (prefixo < 200) return 19.90;
+        if (prefixo < 400) return 24.90;
+        if (prefixo < 700) return 29.90;
+        return 34.90;
+    }
 
-        taxaEntrega.textContent = `R$ ${taxa.toFixed(2)}`;
+    btnFrete.addEventListener("click", () => {
+        const cep = cepInput.value;
 
+        const valor = calcularValorFrete(cep);
+
+        if (valor === null) {
+            taxaEntrega.textContent = "CEP inválido.";
+            return;
+        }
+
+        taxaEntrega.textContent = `R$ ${valor.toFixed(2)}`;
+
+        // Salvar frete no localStorage para usar na página de pagamento
         localStorage.setItem("freteARQ", JSON.stringify({
-            cep,
-            valor: taxa
+            cep: cep,
+            valor: valor
         }));
     });
 });
