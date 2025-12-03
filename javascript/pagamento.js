@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const blocoParcelas = document.querySelectorAll(".grupo-radio.coluna")[0];
 
 
-    /* ============================
-        RESUMO DO PEDIDO
-    ============================ */
+    /* Resumo do pedido */
     function resumoCarrinho() {
         const lista = document.getElementById("listaResumo");
 
@@ -48,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resumoCarrinho();
 
 
-    /* ============================
-        CALCULAR TOTAL + FRETE
-    ============================ */
+    /* Calcular total + frete */
     function calcularTotal() {
         const totalProdutos = carrinho.reduce(
             (acc, item) => acc + item.preco * item.quantidade,
@@ -82,9 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-        >>>>>>>>>>>>>  CÓDIGO DO FRETE AQUI  <<<<<<<<<<<<<<
-    ===================================================== */
+    /* Código do frete */
 
     const campoCep = document.getElementById("cep");
     const btnCalcularFrete = document.getElementById("btnCalcularFrete");
@@ -151,9 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ==========================================
-       BLOCO DE PARCELAS
-    ========================================== */
+    /* Bloco de parcelas */
 
     const totalBox = document.querySelector(".total");
 
@@ -212,9 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ============================
-       PIX SIMULADO
-    ============================ */
+    /* Pix simulado */
     function simularPix() {
 
         let pixBox = document.getElementById("pixBox");
@@ -261,9 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ============================
-       CONTROLE DE MÉTODOS DE PAGAMENTO
-    ============================ */
+    /* Controle de métodos de pagamento */
     document.querySelectorAll("input[name='metodo_pagamento']").forEach(r => {
         r.addEventListener("change", () => {
             const metodo = r.value;
@@ -293,9 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ============================
-       FINALIZAR COMPRA
-    ============================ */
+    /* Finalizar compra */
     btnFinalizar.addEventListener("click", () => {
 
         if (btnFinalizar.classList.contains("desativado")) return;
@@ -346,6 +332,14 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "./finalizar-pedido.html";
     });
 
-
     atualizarParcelas();
+
+    window.addEventListener("beforeunload", () => {
+        const finalizado = sessionStorage.getItem("pagamentoFinalizado");
+
+        // Se não finalizou, apaga a compra direta
+        if (!finalizado) {
+            localStorage.removeItem("compraDiretaARQ");
+        }
+    });
 });

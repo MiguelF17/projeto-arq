@@ -1,12 +1,11 @@
-// ===============================
 // 1. LISTA DE PRODUTOS
-// ===============================
+
 const produtos = [
-    // -------- Sala de Estar / Quarto --------
+    // Sala de Estar / Quarto
     {
         id: 1,
         nome: "Sofá Cor Cinza Moderno",
-        preco: 2129.99,
+        preco: 2120.50,
         categoria: "Sala de Estar",
         cor: "Cinza",
         material: "Tecido",
@@ -33,7 +32,7 @@ const produtos = [
     {
         id: 4,
         nome: "Poltrona Bege Simples",
-        preco: 569.99,
+        preco: 562.30,
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
@@ -51,7 +50,7 @@ const produtos = [
     {
         id: 6,
         nome: "Poltrona Bege Atual",
-        preco: 669.99,
+        preco: 662.30,
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
@@ -60,7 +59,7 @@ const produtos = [
     {
         id: 7,
         nome: "Lustre Luminária",
-        preco: 839.99,
+        preco: 835.35,
         categoria: "Decoração",
         cor: "Branco",
         material: "Vidro",
@@ -85,11 +84,11 @@ const produtos = [
         imagem: "../style/imgs/murrat.png"
     },
 
-    // -------- Cozinha e Jantar --------
+    // Cozinha e Jantar
     {
         id: 10,
         nome: "Banco Chique Branco",
-        preco: 429.99,
+        preco: 420.90,
         categoria: "Sala de Jantar",
         cor: "Branco",
         material: "Madeira",
@@ -134,7 +133,7 @@ const produtos = [
     {
         id: 15,
         nome: "Talheres Modernos",
-        preco: 199.99,
+        preco: 21.30,
         categoria: "Cozinha",
         cor: "Prata",
         material: "Metal",
@@ -143,7 +142,7 @@ const produtos = [
     {
         id: 16,
         nome: "Pratos de Porcelana",
-        preco: 349.99,
+        preco: 135.90,
         categoria: "Cozinha",
         cor: "Branco",
         material: "Porcelana",
@@ -152,18 +151,18 @@ const produtos = [
     {
         id: 17,
         nome: "Conjunto de Utensílios",
-        preco: 129.99,
+        preco: 32.60,
         categoria: "Cozinha",
         cor: "Cinza",
         material: "Plástico",
         imagem: "../style/imgs/utencilios .png"
     },
 
-    // -------- Banheiro --------
+    // Banheiro
     {
         id: 18,
         nome: "Suporte para Toalhas",
-        preco: 69.99,
+        preco: 35.75,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Metal",
@@ -172,7 +171,7 @@ const produtos = [
     {
         id: 19,
         nome: "Banqueira Moderna",
-        preco: 129.99,
+        preco: 49.79,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Madeira",
@@ -181,7 +180,7 @@ const produtos = [
     {
         id: 20,
         nome: "Banheira Moderna",
-        preco: 7899.99,
+        preco: 842.50,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Mármore",
@@ -190,7 +189,7 @@ const produtos = [
     {
         id: 21,
         nome: "Box Lateral Moderno",
-        preco: 569.99,
+        preco: 562.30,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Vidro",
@@ -199,7 +198,7 @@ const produtos = [
     {
         id: 22,
         nome: "Espelho Circular",
-        preco: 339.99,
+        preco: 59.99,
         categoria: "Banheiro",
         cor: "Marrom",
         material: "Vidro",
@@ -208,7 +207,7 @@ const produtos = [
     {
         id: 23,
         nome: "Pia Preta Moderna",
-        preco: 219.99,
+        preco: 74.30,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Mármore",
@@ -217,7 +216,7 @@ const produtos = [
     {
         id: 24,
         nome: "Torneira Preta para Pia",
-        preco: 389.99,
+        preco: 28.30,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Aço Inox",
@@ -235,7 +234,7 @@ const produtos = [
     {
         id: 26,
         nome: "Cristaleira de Madeira",
-        preco: 1759.99,
+        preco: 1752.30,
         categoria: "Cozinha",
         cor: "Madeira Natural",
         material: "Madeira",
@@ -244,7 +243,7 @@ const produtos = [
     {
         id: 27,
         nome: "Mesa Menor para Jantar",
-        preco: 1159.99,
+        preco: 552.30,
         categoria: "Sala de Jantar",
         cor: "Marrom",
         material: "Madeira",
@@ -253,7 +252,7 @@ const produtos = [
     {
         id: 28,
         nome: "Puff Banco",
-        preco: 259.99,
+        preco: 256.10,
         categoria: "Sala de Estar",
         cor: "Branco",
         material: "Madeira",
@@ -261,8 +260,8 @@ const produtos = [
     },
     {
         id: 29,
-        nome: "Puff FRAPÊ",
-        preco: 189.99,
+        nome: "Puff Almofado Preto",
+        preco: 182.30,
         categoria: "Sala de Estar",
         cor: "Grafite",
         material: "Veludo",
@@ -271,7 +270,7 @@ const produtos = [
     {
         id: 30,
         nome: "Cadeira de Jantar",
-        preco: 629.99,
+        preco: 252.30,
         categoria: "Sala de Jantar",
         cor: "Marrom",
         material: "Madeira",
@@ -280,7 +279,7 @@ const produtos = [
     {
         id: 31,
         nome: "Gaveteiro Escritório",
-        preco: 319.99,
+        preco: 319.30,
         categoria: "Escritório & Home Office",
         cor: "Marrom",
         material: "Madeira",
@@ -289,7 +288,7 @@ const produtos = [
     {
         id: 32,
         nome: "Mesa Boss Escritório",
-        preco: 1599.99,
+        preco: 659.40,
         categoria: "Escritório & Home Office",
         cor: "Bege",
         material: "Madeira",
@@ -307,7 +306,7 @@ const produtos = [
     {
         id: 34,
         nome: "Cadeira de Escritório",
-        preco: 1659.99,
+        preco: 1659.40,
         categoria: "Escritório & Home Office",
         cor: "Preto",
         material: "Aço Inox",
@@ -316,7 +315,7 @@ const produtos = [
     {
         id: 35,
         nome: "Cadeira Profissional Rosé",
-        preco: 1359.99,
+        preco: 719.40,
         categoria: "Escritório & Home Office",
         cor: "Rosé / Cobre",
         material: "Plástico",
@@ -325,7 +324,7 @@ const produtos = [
     {
         id: 36,
         nome: "Armário Superior",
-        preco: 479.99,
+        preco: 479.40,
         categoria: "Cozinha",
         cor: "Cinza",
         material: "Madeira",

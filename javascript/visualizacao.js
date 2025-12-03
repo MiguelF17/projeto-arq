@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ===============================
-    // CHECAGEM INICIAL
-    // ===============================
+
+// Checagem inicial
+
     if (typeof produtos === "undefined") {
         console.error("Array 'produtos' não encontrado.");
         return;
@@ -17,9 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // ===============================
-    // ELEMENTOS
-    // ===============================
+    // Elementos
+
     const produtoNome = document.getElementById("produtoNome");
     const produtoDescricao = document.getElementById("produtoDescricao");
     const produtoPrecoReal = document.getElementById("produtoPrecoReal");
@@ -34,18 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnAdicionarCarrinho = document.getElementById("btn-carrinho");
     const carrinhoKey = "carrinhoARQ"; // localStorage
 
-    // ===============================
-    // PREENCHER INFORMAÇÕES
-    // ===============================
+    // Preencher informações
+
     document.title = "ARQ - " + produto.nome;
     produtoNome.textContent = produto.nome;
     produtoDescricao.textContent = `Categoria: ${produto.categoria} • Material: ${produto.material} • Cor: ${produto.cor}`;
     produtoPrecoReal.textContent = "R$ " + (produto.preco * 1.2).toFixed(2);
     produtoPrecoDesconto.textContent = "R$ " + produto.preco.toFixed(2);
 
-    // ===============================
-    // IMAGEM PRINCIPAL + MINIATURAS
-    // ===============================
+    // Imagem principal + miniaturas
+
     imgPrincipal.src = produto.imagem;
     const listaImagens = produto.imagens ?? [produto.imagem];
     miniaturas.innerHTML = "";
@@ -58,19 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
         miniaturas.appendChild(mini);
     });
 
-    // ===============================
-    // DESCRIÇÃO DETALHADA
-    // ===============================
+    // Descrição detalhada
+
     descricaoDetalhada.textContent = produto.descricao || "Este produto é de alta qualidade.";
 
-    // ===============================
-    // TAXA ENTREGA
-    // ===============================
+    // Taxa de entrega
+
     taxaEntrega.textContent = produto.taxaEntrega ? `R$ ${produto.taxaEntrega.toFixed(2)}` : "R$ 12.50";
 
-    // ===============================
-    // FAVORITOS
-    // ===============================
+    // Favoritos
+
     const favKey = "favoritosARQ";
     const listaFav = JSON.parse(localStorage.getItem(favKey)) || [];
     if (listaFav.includes(produto.id)) btnFavorito.classList.add("favorito");
@@ -90,9 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem(favKey, JSON.stringify(listaFav));
     });
 
-    // ===============================
-    // AVALIAÇÕES ALEATÓRIAS
-    // ===============================
+    // Avaliações aleatórias
+
     const mediaAleatoria = (Math.random() * 1.5 + 3.5).toFixed(1);
     const qtdAvaliacoes = Math.floor(Math.random() * 491) + 10;
 
@@ -104,10 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     avaliacaoEstrelas.textContent = gerarEstrelasInteiras(mediaAleatoria);
     mediaAvaliacoes.textContent = `${mediaAleatoria} (${qtdAvaliacoes} avaliações)`;
 
-
-    /// ===============================
-    // COMPRAR
-    // ===============================
+    // Comprar
 
     const btnComprar = document.getElementById("btn-comprar");
 
@@ -137,10 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "pagamento.html";
     });
 
-
-    /// ===============================
-    // CARRINHO
-    // ===============================
+    // Carrinho
 
     // Adiciona evento ao botão de carrinho
     btnAdicionarCarrinho.addEventListener("click", () => {
@@ -183,11 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // Geração de html dinâmico
 
-
-    // ===============================
-    // GERAÇÃO DE HTML DINÂMICO
-    // ===============================
     function gerarDescricao(prod) {
         return `
             <p>${prod.nome} é um produto da categoria ${prod.categoria.toLowerCase()} projetado para oferecer conforto e estilo.</p>
@@ -272,9 +256,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("avaliacoes").innerHTML = gerarAvaliacoes(produto);
     document.getElementById("faq").innerHTML = gerarFAQ(produto);
 
-    // ===============================
-    // ZOOM COM LENTE
-    // ===============================
+    // Zoom com lente
+
     const zoomView = document.getElementById("zoomView");
     const lens = document.createElement("div");
     lens.classList.add("zoom-lens");
@@ -315,9 +298,8 @@ document.addEventListener("DOMContentLoaded", () => {
         zoomView.style.backgroundPosition = `-${zoomX}px -${zoomY}px`;
     });
 
-    // ===============================
-    // CÁLCULO DE FRETE
-    // ===============================
+    // Cálculo do frete
+
     const inputCEP = document.getElementById("cepEntrega");
     const btnCalcular = document.getElementById("calcularFrete");
 

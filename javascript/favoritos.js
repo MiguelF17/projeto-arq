@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ===============================
-    // CHECAGEM INICIAL
-    // ===============================
+    
+    // Checagem inicial
+
     if (typeof produtos === "undefined") {
         console.error("Array 'produtos' não encontrado.");
         return;

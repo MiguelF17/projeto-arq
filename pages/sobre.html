@@ -47,12 +47,41 @@
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
+
+                <div id="dropdownPerfil" class="dropdown-perfil">
+                    <ul>
+                        <li>
+                            <a href="perfil.html">
+                                Meu perfil
+                                <img src="../style/icons/miniuser.png" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="favoritos.html" id="btnFavoritos">
+                                Favoritos
+                                <img src="../style/icons/favorito.png" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="" id="logoutBtn">
+                                Logout
+                                <img src="../style/icons/logout.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
     </header>
 
+    <!-- Sobre -->
+
     <main>
+
+        <!-- Nossa história -->
 
         <section class="sobre-hero">
             <div class="hero-text">
@@ -75,6 +104,7 @@
 
         </section>
 
+        <!-- Trajetória -->
 
         <section class="linha-do-tempo">
             <h2 class="titulo-sobre" data-animate>Nossa trajetória</h2>
@@ -102,6 +132,8 @@
             </div>
         </section>
 
+        <!-- Números -->
+
         <section class="nossos-numeros">
             <h2 class="titulo-sobre" data-animate>ARQ em números</h2>
             <div class="numeros-grid" data-animate data-delay="0.2s">
@@ -123,6 +155,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- O que nos guia -->
 
         <section class="oque-guia">
             <h2 data-animate>O que nos guia</h2>
@@ -150,62 +184,66 @@
             </div>
         </section>
 
+        <!-- Nossa equipe -->
+
         <section class="nossa-equipe">
             <h2 class="titulo-sobre" data-animate="">Nosso Time</h2>
             <p data-animate data-delay="0.2s">Um grupo apaixonado por design, arquitetura e experiência humana.</p>
 
             <div class="equipe-grid" data-animate data-delay="0.2s">
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=8" alt="">
-                    <h4>Ana Ribeiro</h4>
-                    <span>Designer de Interiores</span>
+                    <img src="../style/imgs/ana.jpg" alt="">
+                    <h4>Ana Clara Previatto</h4>
+                    <span>Dev Front, Designer e Gerente de Projetos</span>
                 </div>
 
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=13" alt="">
-                    <h4>Lucas Moretti</h4>
-                    <span>Arquiteto</span>
+                    <img src="../style/imgs/brenda.jpg" alt="">
+                    <h4>Brenda Bolog</h4>
+                    <span>Dev Front e Designer</span>
                 </div>
 
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=15" alt="">
-                    <h4>Marina Duarte</h4>
-                    <span>Consultora de Estilo</span>
+                    <img src="#" alt="">
+                    <h4>Cauã Sousa</h4>
+                    <span>Designer e Testador de Qualidade</span>
                 </div>
 
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=21" alt="">
-                    <h4>João Martins</h4>
-                    <span>Gerente de Produção</span>
+                    <img src="../style/imgs/laura.png" alt="">
+                    <h4>Laura Eloá</h4>
+                    <span>Dev Front e Designer</span>
                 </div>
             </div>
 
             <div class="equipe-grid" data-animate data-delay="0.4s">
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=8" alt="">
-                    <h4>Ana Ribeiro</h4>
-                    <span>Designer de Interiores</span>
+                    <img src="#" alt="">
+                    <h4>Lucas Kupferman</h4>
+                    <span>Designer</span>
                 </div>
 
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=13" alt="">
-                    <h4>Lucas Moretti</h4>
-                    <span>Arquiteto</span>
+                    <img src="../style/imgs/mel.png" alt="">
+                    <h4>Melissa Borba</h4>
+                    <span>Designer e Analista de Requisistos</span>
                 </div>
 
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=15" alt="">
-                    <h4>Marina Duarte</h4>
-                    <span>Consultora de Estilo</span>
+                    <img src="../style/imgs/miguel.png" alt="">
+                    <h4>Miguel Francelino</h4>
+                    <span>Dev Front, Eng. Software e Analista de Segurança</span>
                 </div>
 
                 <div class="membro">
-                    <img src="https://i.pravatar.cc/200?img=21" alt="">
-                    <h4>João Martins</h4>
-                    <span>Gerente de Produção</span>
+                    <img src="../style/imgs/samuel.png" alt="">
+                    <h4>Samuel Lira</h4>
+                    <span>Dev Front</span>
                 </div>
             </div>
         </section>
+
+        <!-- Nosso compromisso -->
 
         <section class="compromisso">
             <h2 class="titulo-sobre" data-animate="">Nosso compromisso</h2>
@@ -274,6 +312,7 @@
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
 
+    <script src="../javascript/dropdownPerfil.js"></script>
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/animacao.js"></script>
     <script src="../javascript/produtos.js"></script>

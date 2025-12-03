@@ -11,7 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 620px;
+    min-height: 80vh;
     overflow: hidden;
 }
 
@@ -19,6 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
     position: relative;
@@ -29,16 +31,18 @@
     line-height: 1.2;
     z-index: 2;
     text-align: center;
+    min-width: 300px
 }
 
 .hero-text h2 {
     font-size: 70px;
+    word-break: break-all;
 }
 
 .hero-text img {
     filter: invert(81%) sepia(31%) saturate(574%) hue-rotate(180deg) brightness(100%) contrast(81%);
     width: 300px;
-    padding: -60px;
+    padding: 0px;
 }
 
 .hero-text p {
@@ -58,6 +62,7 @@
     border-radius: 50px;
     font-family: sans-serif;
     font-weight: bold;
+    min-width: 200px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -65,8 +70,6 @@
     background-color: #fff;
     color: #a2c1dd;
 }
-
-/* produtos em destaque */
 
 /* Produtos em destaque */
 
@@ -82,7 +85,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0px auto;
-    margin-bottom: 60px;
+    margin-bottom: 55px;
     overflow: hidden;
     border-radius: 15px;
     border: 5px solid #fff;
@@ -113,7 +116,8 @@
 
 .slide img {
     width: 100%;
-    height: 450px;
+    height: 45vw;
+    max-height: 450px;
     object-fit: cover;
     display: block;
     border-radius: 15px;
@@ -158,6 +162,7 @@
 
 .app-phone img {
     width: 300px;
+    max-width: 60xw;
     position: relative;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
     transition: transform 0.3s ease;
@@ -185,6 +190,9 @@
 
 .app-stores {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .store {
@@ -232,6 +240,7 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 .about-text,

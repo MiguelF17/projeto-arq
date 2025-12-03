@@ -1,16 +1,14 @@
-// ===============================================
-// SISTEMA DE AUTENTICAÇÃO - ARQ
+// Sistema de autenticação - ARQ
 // Cadastro em 3 etapas, login, perfil, logout
-// ===============================================
 
-// --- LOCAL STORAGE KEYS ---
+// Local storage keys
+
 const TEMP_USER_KEY = "tempUserData";
 const USER_KEY = "userData";
 const LOGGED_KEY = "loggedUser";
 
-// ======================================================
-//                VERIFICA LOGIN GLOBAL + SAUDAÇÃO
-// ======================================================
+// Verifica login global + saudação
+
 document.addEventListener("DOMContentLoaded", () => {
     const perfilBtn = document.getElementById("btnPerfil");
     const saudacao = document.getElementById("saudacaoPerfil");
@@ -28,9 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     carregarDadosPerfil();
 });
 
-// ======================================================
-//                    ETAPA 1 DO CADASTRO
-// ======================================================
+// Etapa 1 do cadastro
+
 const etapa1 = document.getElementById("cadastroEtapa1");
 
 if (etapa1) {
@@ -54,13 +51,12 @@ if (etapa1) {
     });
 }
 
-// ======================================================
-//          MÁSCARAS → CPF, CEP e TELEFONE
-// ======================================================
+// Máscaras → CPF, CEP e telefone
+
 document.addEventListener("input", (e) => {
     let input = e.target;
 
-    // TELEFONE
+    // Telefone
     if (input.id === "telefone") {
         input.value = input.value
             .replace(/\D/g, "")
@@ -88,9 +84,8 @@ document.addEventListener("input", (e) => {
     }
 });
 
-// ======================================================
-//         BUSCA AUTOMÁTICA DE ENDEREÇO PELO CEP
-// ======================================================
+// Busca automatomática de endereço pelo cep
+
 const cepInput = document.getElementById("cep");
 
 if (cepInput) {
@@ -118,9 +113,7 @@ if (cepInput) {
     });
 }
 
-// ======================================================
-//                    ETAPA 2 DO CADASTRO
-// ======================================================
+// Etapa 2 do cadastro
 const etapa2 = document.getElementById("cadastroEtapa2");
 
 if (etapa2) {
@@ -158,9 +151,7 @@ if (etapa2) {
     });
 }
 
-// ======================================================
-//                    ETAPA 3 DO CADASTRO
-// ======================================================
+// Etapa 3 do cadastro
 const etapa3 = document.getElementById("cadastroEtapa3");
 
 if (etapa3) {
@@ -199,9 +190,7 @@ if (etapa3) {
     });
 }
 
-// ======================================================
-//          REGRAS DE NEGÓCIO - VALIDAÇÃO DA SENHA
-// ======================================================
+// Regra de negócio - validação da senha
 
 // Verifica os requisitos conforme o usuário digita
 const inputSenha = document.getElementById("senha");
@@ -237,9 +226,7 @@ function validarRequisitosSenha(senha) {
     return Object.values(regras).every(v => v === true);
 }
 
-// ======================================================
-//                        LOGIN
-// ======================================================
+// Login
 const formLogin = document.getElementById("formLogin");
 
 if (formLogin) {
@@ -265,9 +252,7 @@ if (formLogin) {
     });
 }
 
-// ======================================================
-//             CARREGAR DADOS DO PERFIL
-// ======================================================
+// Carregar daos do perfil
 function carregarDadosPerfil() {
     if (!document.getElementById("perfilNome")) return;
 
@@ -282,17 +267,14 @@ function carregarDadosPerfil() {
     document.getElementById("perfilEmail").textContent = user.email;
 }
 
-// ======================================================
-//                       LOGOUT
-// ======================================================
+// Logout
 function logoutUser() {
     localStorage.removeItem(LOGGED_KEY);
     window.location.href = "login.html";
 }
 
-// ======================================================
-//                MOSTRAR/OCULTAR SENHA
-// ======================================================
+// Mostrar/ocultar texto
+
 function toggleSenha(img, id) {
     const input = document.getElementById(id);
 
@@ -305,10 +287,8 @@ function toggleSenha(img, id) {
     }
 }
 
+// Animação "Olá"
 
-// ======================================================
-//               Animação "Olá"
-// ======================================================
 document.addEventListener("DOMContentLoaded", () => {
     const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
     const saudacao = document.getElementById("saudacaoPerfil");

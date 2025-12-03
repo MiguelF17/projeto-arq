@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             carrinhoVazio.style.display = "block";
             document.getElementById("totalContainer").style.display = "none";
 
-            // DESATIVA O BOTÃO
+            // Desativa o botão
             btnFinalizar.classList.add("desativado");
             btnFinalizar.style.pointerEvents = "none";
             btnFinalizar.style.opacity = "0.5";
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         carrinhoVazio.style.display = "none";
         document.getElementById("totalContainer").style.display = "block";
 
-        // ATIVA O BOTÃO
+        // Ativa o botão
         btnFinalizar.classList.remove("desativado");
         btnFinalizar.style.pointerEvents = "auto";
         btnFinalizar.style.opacity = "1";

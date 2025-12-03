@@ -48,10 +48,37 @@
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
+
+                <div id="dropdownPerfil" class="dropdown-perfil">
+                    <ul>
+                        <li>
+                            <a href="perfil.html">
+                                Meu perfil
+                                <img src="../style/icons/miniuser.png" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="favoritos.html" id="btnFavoritos">
+                                Favoritos
+                                <img src="../style/icons/favorito.png" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="" id="logoutBtn">
+                                Logout
+                                <img src="../style/icons/logout.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
     </header>
+
+    <!-- Perfil -->
 
     <div class="perfil-container">
 
@@ -85,7 +112,7 @@
         <main class="perfil-conteudo">
             <h1>Configurações da Conta</h1>
 
-            <!-- ======== INFORMAÇÕES PESSOAIS ======== -->
+            <!-- Informações pessoais -->
             <section class="card">
                 <h2>Informações Pessoais</h2>
 
@@ -112,7 +139,7 @@
                 <button id="salvarPerfil" class="btn salvar">Salvar Alterações</button>
             </section>
 
-            <!-- ======== ENDEREÇO ======== -->
+            <!-- Endereço -->
             <section class="card">
                 <h2>Endereço</h2>
 
@@ -200,6 +227,7 @@
         <p>© 2025 ARQ - Todos os direitos reservados.</p>
     </footer>
 
+    <script src="../javascript/dropdownPerfil.js"></script>
     <script src="../javascript/perfil.js"></script>
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/produtos.js"></script>

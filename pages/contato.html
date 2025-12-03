@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../style/contato.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
+
 <body>
     <!-- navbar -->
 
@@ -46,10 +47,37 @@
                     <span id="saudacaoPerfil"></span>
                     <img src="../style/icons/user.png" alt="Perfil">
                 </a>
+
+                <div id="dropdownPerfil" class="dropdown-perfil">
+                    <ul>
+                        <li>
+                            <a href="perfil.html">
+                                Meu perfil
+                                <img src="../style/icons/miniuser.png" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="favoritos.html" id="btnFavoritos">
+                                Favoritos
+                                <img src="../style/icons/favorito.png" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="" id="logoutBtn">
+                                Logout
+                                <img src="../style/icons/logout.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
     </header>
+
+    <!-- Contato -->
 
     <main class="contato-container">
 
@@ -162,6 +190,7 @@
     </footer>
 
 
+    <script src="../javascript/dropdownPerfil.js"></script>
     <script src="../javascript/auth.js"></script>
     <script src="../javascript/produtos.js"></script>
     <script src="../javascript/catalogo.js"></script>
@@ -169,4 +198,5 @@
     <script src="../javascript/carrinho.js"></script>
     <script src="../javascript/contato.js"></script>
 </body>
+
 </html>
