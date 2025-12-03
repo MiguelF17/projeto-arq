@@ -1,4 +1,4 @@
-/* HERO */
+/* Hero */
 .sobre-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./imgs/sobre-bg.webp);
     background-position: center;
@@ -28,7 +28,7 @@
     text-align: center;
 }
 
-/* HISTÓRIA */
+/* História */
 
 .historia-narrativa {
     max-width: 70%;
@@ -43,7 +43,7 @@
 }
 
 
-/* LINHA DO TEMPO */
+/* Linha do tempo */
 
 
 .linha-do-tempo {
@@ -68,7 +68,7 @@
 }
 
 
-/* NÚMEROS */
+/* Números */
 
 .nossos-numeros {
     background: #99B4C2;
@@ -88,8 +88,7 @@
     font-size: 40px;
 }
 
-
-/* MISSÃO */
+/* Missão */
 
 /* Fundo da seção */
 .oque-guia {
@@ -150,9 +149,7 @@
     line-height: 1.7;
 }
 
-
-
-/* EQUIPE */
+/* Equipe */
 .nossa-equipe {
     background: #fafafa;
     padding: 80px 10%;

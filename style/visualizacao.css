@@ -89,7 +89,6 @@
     transform: scale(1.15);
 }
 
-
 /* Imagem principal */
 #imgPrincipal {
     width: 600px;
@@ -112,7 +111,6 @@
     display: none;
 }
 
-
 /* Caixa onde mostra o zoom */
 .zoom-view {
     position: absolute;
@@ -129,7 +127,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 50;
 }
-
 
 /* Container das miniaturas */
 .miniaturas {
@@ -220,7 +217,7 @@
     border-color: #82b4cd;
 }
 
-/* AVALIAÇÕES */
+/* Avaliações */
 
 .avaliacoes p {
     font-size: 12px;
@@ -237,7 +234,7 @@
     font-size: 14px;
 }
 
-/* TAXA DE ENTREGA */
+/* Taxa de entrega */
 
 .frete {
     width: 100%;
@@ -287,9 +284,7 @@
 }
 
 
-/* ================================
-   ESTRUTURA GERAL DAS SEÇÕES
-================================== */
+/* Estrutura geral das seções */
 
 #informacoesTecnicas,
 #produtosRecomendados,
@@ -312,18 +307,14 @@
     color: #333;
 }
 
-/* ================================
-   DESCRIÇÃO
-================================== */
+/* Descrição */
 #descricaoDetalhada p {
     font-size: 14px;
     line-height: 1.6;
     color: #444;
 }
 
-/* ================================
-   INFORMAÇÕES TÉCNICAS
-================================== */
+/* Informações técnicas */
 #informacoesTecnicas ul {
     list-style: none;
     padding: 0;
@@ -339,9 +330,7 @@
     color: #000;
 }
 
-/* ================================
-   PRODUTOS RECOMENDADOS
-================================== */
+/* Produtos recomendados */
 .recomendados-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -381,9 +370,7 @@
     font-weight: bold;
 }
 
-/* ================================
-   AVALIAÇÕES
-================================== */
+/* Avaliações */
 .avaliacao {
     padding: 15px 0;
     border-bottom: 1px solid #ddd;
@@ -410,9 +397,7 @@
     color: #555;
 }
 
-/* ================================
-   FAQ
-================================== */
+/* FAQ */
 .faq-item {
     margin-bottom: 18px;
     padding: 12px 0;
