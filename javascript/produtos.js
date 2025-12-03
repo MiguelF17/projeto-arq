@@ -6,7 +6,7 @@ const produtos = [
     {
         id: 1,
         nome: "Sofá Cor Cinza Moderno",
-        preco: 2120.55,
+        preco: 2129.99,
         categoria: "Sala de Estar",
         cor: "Cinza",
         material: "Tecido",
@@ -24,7 +24,7 @@ const produtos = [
     {
         id: 3,
         nome: "Conjunto Cabeceiras",
-        preco: 242.45,
+        preco: 789.99,
         categoria: "Quarto",
         cor: "Branco",
         material: "Madeira",
@@ -33,7 +33,7 @@ const produtos = [
     {
         id: 4,
         nome: "Poltrona Bege Simples",
-        preco: 562.32,
+        preco: 569.99,
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
@@ -42,7 +42,7 @@ const produtos = [
     {
         id: 5,
         nome: "Cama Box Casal Moderna",
-        preco: 3360.79,
+        preco: 3369.99,
         categoria: "Quarto",
         cor: "Bege",
         material: "Madeira",
@@ -51,7 +51,7 @@ const produtos = [
     {
         id: 6,
         nome: "Poltrona Bege Atual",
-        preco: 662.32,
+        preco: 669.99,
         categoria: "Sala de Estar",
         cor: "Bege",
         material: "Tecido",
@@ -60,7 +60,7 @@ const produtos = [
     {
         id: 7,
         nome: "Lustre Luminária",
-        preco: 835.36,
+        preco: 839.99,
         categoria: "Decoração",
         cor: "Branco",
         material: "Vidro",
@@ -78,7 +78,7 @@ const produtos = [
     {
         id: 9,
         nome: "Cabeceira Murat Preta",
-        preco: 662.32,
+        preco: 669.99,
         categoria: "Quarto",
         cor: "Preto",
         material: "Couro Sintético",
@@ -89,7 +89,7 @@ const produtos = [
     {
         id: 10,
         nome: "Banco Chique Branco",
-        preco: 420.55,
+        preco: 429.99,
         categoria: "Sala de Jantar",
         cor: "Branco",
         material: "Madeira",
@@ -134,7 +134,7 @@ const produtos = [
     {
         id: 15,
         nome: "Talheres Modernos",
-        preco: 1.32,
+        preco: 199.99,
         categoria: "Cozinha",
         cor: "Prata",
         material: "Metal",
@@ -143,7 +143,7 @@ const produtos = [
     {
         id: 16,
         nome: "Pratos de Porcelana",
-        preco: 135.36,
+        preco: 349.99,
         categoria: "Cozinha",
         cor: "Branco",
         material: "Porcelana",
@@ -152,7 +152,7 @@ const produtos = [
     {
         id: 17,
         nome: "Conjunto de Utensílios",
-        preco: 32.32,
+        preco: 129.99,
         categoria: "Cozinha",
         cor: "Cinza",
         material: "Plástico",
@@ -163,7 +163,7 @@ const produtos = [
     {
         id: 18,
         nome: "Suporte para Toalhas",
-        preco: 35.55,
+        preco: 69.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Metal",
@@ -172,7 +172,7 @@ const produtos = [
     {
         id: 19,
         nome: "Banqueira Moderna",
-        preco: 46.79,
+        preco: 129.99,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Madeira",
@@ -181,7 +181,7 @@ const produtos = [
     {
         id: 20,
         nome: "Banheira Moderna",
-        preco: 842.45,
+        preco: 7899.99,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Mármore",
@@ -190,7 +190,7 @@ const produtos = [
     {
         id: 21,
         nome: "Box Lateral Moderno",
-        preco: 562.32,
+        preco: 569.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Vidro",
@@ -199,7 +199,7 @@ const produtos = [
     {
         id: 22,
         nome: "Espelho Circular",
-        preco: 60.79,
+        preco: 339.99,
         categoria: "Banheiro",
         cor: "Marrom",
         material: "Vidro",
@@ -208,7 +208,7 @@ const produtos = [
     {
         id: 23,
         nome: "Pia Preta Moderna",
-        preco: 74.32,
+        preco: 219.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Mármore",
@@ -217,7 +217,7 @@ const produtos = [
     {
         id: 24,
         nome: "Torneira Preta para Pia",
-        preco: 28.36,
+        preco: 389.99,
         categoria: "Banheiro",
         cor: "Preto",
         material: "Aço Inox",
@@ -226,7 +226,7 @@ const produtos = [
     {
         id: 25,
         nome: "Gabinete de Pia",
-        preco: 162.90,
+        preco: 299.99,
         categoria: "Banheiro",
         cor: "Branco",
         material: "Madeira",
@@ -235,7 +235,7 @@ const produtos = [
     {
         id: 26,
         nome: "Cristaleira de Madeira",
-        preco: 1752.32,
+        preco: 1759.99,
         categoria: "Cozinha",
         cor: "Madeira Natural",
         material: "Madeira",
@@ -244,7 +244,7 @@ const produtos = [
     {
         id: 27,
         nome: "Mesa Menor para Jantar",
-        preco: 552.32,
+        preco: 1159.99,
         categoria: "Sala de Jantar",
         cor: "Marrom",
         material: "Madeira",
@@ -253,7 +253,7 @@ const produtos = [
     {
         id: 28,
         nome: "Puff Banco",
-        preco: 256.12,
+        preco: 259.99,
         categoria: "Sala de Estar",
         cor: "Branco",
         material: "Madeira",
@@ -261,17 +261,17 @@ const produtos = [
     },
     {
         id: 29,
-        nome: "Puff Almofado Preto",
-        preco: 182.32,
+        nome: "Puff FRAPÊ",
+        preco: 189.99,
         categoria: "Sala de Estar",
-        cor: "Preto",
+        cor: "Grafite",
         material: "Veludo",
-        imagem: "../style/imgs/puff2.jpg"
+        imagem: "../style/imgs/pufffrappe.png"
     },
     {
         id: 30,
         nome: "Cadeira de Jantar",
-        preco: 252.32,
+        preco: 629.99,
         categoria: "Sala de Jantar",
         cor: "Marrom",
         material: "Madeira",
@@ -280,7 +280,7 @@ const produtos = [
     {
         id: 31,
         nome: "Gaveteiro Escritório",
-        preco: 319.32,
+        preco: 319.99,
         categoria: "Escritório & Home Office",
         cor: "Marrom",
         material: "Madeira",
@@ -289,7 +289,7 @@ const produtos = [
     {
         id: 32,
         nome: "Mesa Boss Escritório",
-        preco: 659.38,
+        preco: 1599.99,
         categoria: "Escritório & Home Office",
         cor: "Bege",
         material: "Madeira",
@@ -298,7 +298,7 @@ const produtos = [
     {
         id: 33,
         nome: "Luminária Cinza",
-        preco: 89.90,
+        preco: 339.99,
         categoria: "Decoração",
         cor: "Cinza",
         material: "Ferro",
@@ -307,7 +307,7 @@ const produtos = [
     {
         id: 34,
         nome: "Cadeira de Escritório",
-        preco: 1659.38,
+        preco: 1659.99,
         categoria: "Escritório & Home Office",
         cor: "Preto",
         material: "Aço Inox",
@@ -316,7 +316,7 @@ const produtos = [
     {
         id: 35,
         nome: "Cadeira Profissional Rosé",
-        preco: 719.38,
+        preco: 1359.99,
         categoria: "Escritório & Home Office",
         cor: "Rosé / Cobre",
         material: "Plástico",
@@ -325,10 +325,168 @@ const produtos = [
     {
         id: 36,
         nome: "Armário Superior",
-        preco: 479.38,
+        preco: 479.99,
         categoria: "Cozinha",
         cor: "Cinza",
         material: "Madeira",
         imagem: "../style/imgs/armarioSuperior.png"
     },
-];
+    {
+        id: 37,
+        nome: "Cama casal FRIGGA",
+        preco: 6999.99,
+        categoria: "Quarto",
+        cor: "Cinza",
+        material: "Madeira",
+        imagem: "../style/imgs/cama3.png"
+    },
+    {
+        id: 38,
+        nome: "Guarda roupa PULSE",
+        preco: 1259.99,
+        categoria: "Quarto",
+        cor: "Cinza",
+        material: "Madeira",
+        imagem: "../style/imgs/guardaroupapulse.png"
+    },
+    {
+        id: 39,
+        nome: "Sofá RODEO 4 lugares",
+        preco: 6679.99,
+        categoria: "Sala de Estar",
+        cor: "Off White",
+        material: "Linho e Courino",
+        imagem: "../style/imgs/sofarodeo.png"
+    },
+    {
+        id: 40,
+        nome: "Sofá PAMPA 4 lugares",
+        preco: 6349.99,
+        categoria: "Sala de Estar",
+        cor: "Off White",
+        material: "Linho",
+        imagem: "../style/imgs/sofapampa.png"
+    },
+    {
+        id: 41,
+        nome: "Sofá HORSE 6 lugares",
+        preco: 7559.99,
+        categoria: "Sala de Estar",
+        cor: "Off White",
+        material: "Linho",
+        imagem: "../style/imgs/sofahorse.png"
+    },
+    {
+        id: 42,
+        nome: "Rack ARQ",
+        preco: 569.99,
+        categoria: "Sala de Estar",
+        cor: "Off White",
+        material: "Madeira",
+        imagem: "../style/imgs/rackarq.png"
+    },
+    {
+        id: 43,
+        nome: "Mesa JURERÊ + 8 cadeiras de jantar HIPICA",
+        preco: 6679.99,
+        categoria: "Sala de jantar",
+        cor: "Off White",
+        material: "Madeira e Linho",
+        imagem: "../style/imgs/mesajurere.png"
+    },
+    {
+        id: 44,
+        nome: "Mesa VALÊNCIA",
+        preco: 4579.99,
+        categoria: "Sala de jantar",
+        cor: "Cinza",
+        material: "Madeira",
+        imagem: "../style/imgs/mesavalencia.png"
+    },
+    {
+        id: 45,
+        nome: "Mesa NATURE",
+        preco: 4259.99,
+        categoria: "Sala de jantar",
+        cor: "Cinza",
+        material: "Madeira",
+        imagem: "../style/imgs/mesanature.png"
+    },
+    {
+        id: 46,
+        nome: "Mesa DOMANN + 8 cadeiras",
+        preco: 5639.99,
+        categoria: "Sala de jantar",
+        cor: "Cinza",
+        material: "Madeira",
+        imagem: "../style/imgs/mesavalencia.png"
+    },
+    {
+        id: 47,
+        nome: "Cadeira HIPICA",
+        preco: 869.99,
+        categoria: "Sala de jantar",
+        cor: "Cinza",
+        material: "Madeira E Linho",
+        imagem: "../style/imgs/cadeirahipica.png"
+    },
+     {
+        id: 48,
+        nome: " 2 Cadeiras TERRACOTA",
+        preco: 1699.99,
+        categoria: "Sala de jantar",
+        cor: "Off White",
+        material: "Madeira e Linho",
+        imagem: "../style/imgs/cadeiraterracota.png"
+    },
+    {
+        id: 49,
+        nome: "Cama PREMIUM",
+        preco: 2579.99,
+        categoria: "Quarto",
+        cor: "Branca",
+        material: "Madeira",
+        imagem: "../style/imgs/camapremium.png"
+    },
+    {
+        id: 50,
+        nome: "Cama LAPA",
+        preco: 1329.99,
+        categoria: "Quarto",
+        cor: "Off White",
+        material: "Madeira e Estofado",
+        imagem: "../style/imgs/camalapa.png"
+    },
+    {
+        id: 52,
+        nome: "Sofá AMENDOA",
+        preco: 1159.99,
+        categoria: "Sala de estar",
+        cor: "Grafite",
+        material: "Madeira e Linho",
+        imagem: "../style/imgs/sofaamendoa.png"
+    },
+        {
+        id: 53,
+        nome: "Buffet LUNA",
+        preco: 659.99,
+        categoria: "Sala de jantar",
+        cor: "Dourado",
+        material: "Madeira e Linho",
+        imagem: "../style/imgs/buffetluna.png"
+    },
+    {
+        id: 53,
+        nome: "Buffet LIA",
+        preco: 1159.99,
+        categoria: "Sala de jantar",
+        cor: "Azul Petróleo",
+        material: "Mdf",
+        imagem: "../style/imgs/buffetlia.png"
+    },
+
+
+
+
+   
+ ]
