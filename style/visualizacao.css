@@ -34,6 +34,37 @@
 }
 
 /* botao favorito */
+/* animação pop */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.4);
+    }
+
+    60% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* brilho ao favoritar */
+@keyframes brilho {
+    0% {
+        filter: drop-shadow(0 0 0px #fff);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 6px #ffb2b2);
+    }
+}
+
+/* botao */
 .btn-favorito {
     position: absolute;
     right: 12px;
@@ -47,9 +78,12 @@
     transition: transform 0.15s ease;
 }
 
+/* quando ativado */
 .btn-favorito.favorito {
     background-image: url("../style/icons/favorito2.png");
+    animation: pop 0.35s ease, brilho 0.4s ease forwards;
 }
+
 
 .btn-favorito:hover {
     transform: scale(1.15);
